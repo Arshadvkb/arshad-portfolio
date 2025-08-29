@@ -10,7 +10,7 @@ const Projects = () => {
     {
       title: "Aero AI",
       description: "Revolutionary AI-powered aeroponics automation system that optimizes plant growth through intelligent monitoring and control of nutrients, pH levels, and environmental conditions.",
-      technologies: ["Python", "Django", "IoT Sensors", "Machine Learning", "React", "MongoDB"],
+      technologies: ["Python", "Node.js", "Flutter", "Appwrite", "Embedded C", "MQTT", "Raspberry Pi", "ESP32"],
       image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=400&fit=crop",
       github: "#",
       live: "#",
@@ -19,7 +19,7 @@ const Projects = () => {
     {
       title: "All-in-One Fitness App",
       description: "Comprehensive fitness companion featuring workout tracking, nutrition planning, progress analytics, and social features to help users achieve their health goals.",
-      technologies: ["Flutter", "Node.js", "Express", "SQL", "REST APIs", "Firebase"],
+      technologies: ["Python", "Django", "MySQL", "HTML", "CSS", "JavaScript", "jQuery", "Bootstrap", "Flutter"],
       image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&h=400&fit=crop",
       github: "#",
       live: "#",
