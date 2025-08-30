@@ -21,7 +21,7 @@ const Hero = () => {
         </div>
         
         <div className="flex flex-wrap justify-center gap-4 text-sm md:text-base">
-          {['Python', 'Django', 'Node.js', 'Flutter', 'React', 'MongoDB', 'SQL'].map((tech) => (
+          {['Python', 'Django', 'Node.js', 'Flutter', 'Express.js', 'MongoDB', 'SQL'].map((tech) => (
             <span 
               key={tech}
               className="px-4 py-2 bg-muted rounded-full border border-border hover:border-accent transition-colors duration-300"
