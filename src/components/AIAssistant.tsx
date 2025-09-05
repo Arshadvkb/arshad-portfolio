@@ -163,8 +163,12 @@ What would you like to know?`;
         }`}
         size="lg"
       >
-        <MessageCircle className="w-6 h-6 mr-2" />
-        Ask About Portfolio
+        <img 
+          src="/lovable-uploads/314fe94b-27e1-4b25-908d-a7cc05e75d9d.png" 
+          alt="Aero AI Logo" 
+          className="w-6 h-6 mr-2 object-contain"
+        />
+        Ask Aero AI
       </Button>
 
       {/* AI Assistant Chat Window */}
@@ -172,8 +176,12 @@ What would you like to know?`;
         <Card className="fixed bottom-6 right-6 z-50 w-96 h-[500px] shadow-2xl bg-background border-border">
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-3">
             <CardTitle className="text-lg flex items-center gap-2">
-              <Bot className="w-5 h-5 text-primary" />
-              Portfolio Assistant
+              <img 
+                src="/lovable-uploads/314fe94b-27e1-4b25-908d-a7cc05e75d9d.png" 
+                alt="Aero AI Logo" 
+                className="w-6 h-6 object-contain"
+              />
+              Aero AI Assistant
             </CardTitle>
             <Button
               variant="ghost"
