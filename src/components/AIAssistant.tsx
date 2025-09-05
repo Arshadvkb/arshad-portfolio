@@ -89,7 +89,7 @@ This project shows his ability to create full-stack applications with both web a
     if (lowerMessage.includes('contact') || lowerMessage.includes('reach') || lowerMessage.includes('email')) {
       return `You can contact Arshad through:
       
-📧 **Email:** contact@arshadvkb.com
+📧 **Email:** arshadvkb969@gmail.com
 💼 **LinkedIn:** Check the social links in the portfolio
 🐙 **GitHub:** Available in the portfolio's social section
 
