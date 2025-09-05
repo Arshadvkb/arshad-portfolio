@@ -4,7 +4,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { ExternalLink, Github } from 'lucide-react';
-import fitnessAppLogo from '@/assets/fitness-app-logo.png';
+import fitnessAppLogo from '@/assets/fitness-app-logo-cropped.png';
 
 const Projects = () => {
   const projects = [
