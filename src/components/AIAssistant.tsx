@@ -164,11 +164,6 @@ What would you like to know?`;
         }`}
         size="lg"
       >
-        <img 
-          src={aeroAiLogo} 
-          alt="Aero AI Logo" 
-          className="w-6 h-6 mr-2 object-contain"
-        />
         Ask  AI
       </Button>
 
