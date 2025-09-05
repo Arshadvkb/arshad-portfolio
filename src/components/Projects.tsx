@@ -4,8 +4,6 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { ExternalLink, Github } from 'lucide-react';
-import fitnessAppLogo from '@/assets/fitness-app-clean.png';
-import aeroAiProject from '@/assets/aero-ai-project.png';
 
 const Projects = () => {
   const projects = [
@@ -13,7 +11,7 @@ const Projects = () => {
       title: "Aero AI",
       description: "Revolutionary AI-powered aeroponics automation system that optimizes plant growth through intelligent monitoring and control of nutrients, pH levels, and environmental conditions.",
       technologies: ["Python", "Node.js", "Flutter", "Appwrite", "Embedded C", "MQTT", "Raspberry Pi", "ESP32"],
-      image: aeroAiProject,
+      image: "/lovable-uploads/314fe94b-27e1-4b25-908d-a7cc05e75d9d.png",
       github: "#",
       live: "#",
       featured: true
@@ -22,7 +20,7 @@ const Projects = () => {
       title: "All-in-One Fitness App",
       description: "Comprehensive fitness companion featuring workout tracking, nutrition planning, progress analytics, and social features to help users achieve their health goals.",
       technologies: ["Python", "Django", "MySQL", "HTML", "CSS", "JavaScript", "jQuery", "Bootstrap", "Flutter"],
-      image: fitnessAppLogo,
+      image: "/lovable-uploads/a38ac704-4929-49fe-b3b4-eba6b58a7244.png",
       github: "#",
       live: "#",
       featured: true
