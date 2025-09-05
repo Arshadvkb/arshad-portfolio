@@ -40,7 +40,7 @@ const Hero = () => {
             <a href="https://github.com/arshadvkb" className="p-3 bg-secondary rounded-xl hover:bg-secondary/80 transition-colors">
               <Github className="w-6 h-6" />
             </a>
-            <a href="https://linkedin.com" className="p-3 bg-secondary rounded-xl hover:bg-secondary/80 transition-colors">
+            <a href="https://www.linkedin.com/in/arshad-vkb-b860a0323?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" className="p-3 bg-secondary rounded-xl hover:bg-secondary/80 transition-colors">
               <Linkedin className="w-6 h-6" />
             </a>
             <a href="mailto: arshadvkb969@gmail.com" className="p-3 bg-secondary rounded-xl hover:bg-secondary/80 transition-colors">
