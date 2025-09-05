@@ -5,6 +5,7 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { ExternalLink, Github } from 'lucide-react';
 import fitnessAppLogo from '@/assets/fitness-app-clean.png';
+import aeroAiProject from '@/assets/aero-ai-project.png';
 
 const Projects = () => {
   const projects = [
@@ -12,7 +13,7 @@ const Projects = () => {
       title: "Aero AI",
       description: "Revolutionary AI-powered aeroponics automation system that optimizes plant growth through intelligent monitoring and control of nutrients, pH levels, and environmental conditions.",
       technologies: ["Python", "Node.js", "Flutter", "Appwrite", "Embedded C", "MQTT", "Raspberry Pi", "ESP32"],
-      image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=400&fit=crop",
+      image: aeroAiProject,
       github: "#",
       live: "#",
       featured: true
