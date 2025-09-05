@@ -169,7 +169,7 @@ What would you like to know?`;
           alt="Aero AI Logo" 
           className="w-6 h-6 mr-2 object-contain"
         />
-        Ask Aero AI
+        Ask  AI
       </Button>
 
       {/* AI Assistant Chat Window */}
@@ -182,7 +182,7 @@ What would you like to know?`;
                 alt="Aero AI Logo" 
                 className="w-6 h-6 object-contain"
               />
-              Aero AI Assistant
+              AI Assistant
             </CardTitle>
             <Button
               variant="ghost"
