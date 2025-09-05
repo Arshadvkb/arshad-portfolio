@@ -4,6 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { MessageCircle, X, Send, Bot, User } from 'lucide-react';
+import aeroAiLogo from '@/assets/aero-ai-logo.png';
 
 interface Message {
   id: string;
@@ -164,7 +165,7 @@ What would you like to know?`;
         size="lg"
       >
         <img 
-          src="/lovable-uploads/314fe94b-27e1-4b25-908d-a7cc05e75d9d.png" 
+          src={aeroAiLogo} 
           alt="Aero AI Logo" 
           className="w-6 h-6 mr-2 object-contain"
         />
@@ -177,7 +178,7 @@ What would you like to know?`;
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-3">
             <CardTitle className="text-lg flex items-center gap-2">
               <img 
-                src="/lovable-uploads/314fe94b-27e1-4b25-908d-a7cc05e75d9d.png" 
+                src={aeroAiLogo} 
                 alt="Aero AI Logo" 
                 className="w-6 h-6 object-contain"
               />
