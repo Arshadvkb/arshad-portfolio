@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -27,7 +26,7 @@ const Contact = () => {
               <div className="space-y-4">
                 <div className="flex items-center gap-4">
                   <Mail className="w-5 h-5 text-primary" />
-                  <span>contact@arshadvkb.com</span>
+                  <span>arshadvkb969@gmail.com</span>
                 </div>
                 <div className="flex items-center gap-4">
                   <MapPin className="w-5 h-5 text-primary" />
