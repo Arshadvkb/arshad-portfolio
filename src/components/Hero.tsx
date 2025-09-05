@@ -37,13 +37,13 @@ const Hero = () => {
           </Button>
           
           <div className="flex gap-4">
-            <a href="https://github.com" className="p-3 bg-secondary rounded-xl hover:bg-secondary/80 transition-colors">
+            <a href="https://github.com/arshadvkb" className="p-3 bg-secondary rounded-xl hover:bg-secondary/80 transition-colors">
               <Github className="w-6 h-6" />
             </a>
             <a href="https://linkedin.com" className="p-3 bg-secondary rounded-xl hover:bg-secondary/80 transition-colors">
               <Linkedin className="w-6 h-6" />
             </a>
-            <a href="mailto:contact@arshadvkb.com" className="p-3 bg-secondary rounded-xl hover:bg-secondary/80 transition-colors">
+            <a href="mailto: arshadvkb969@gmail.com" className="p-3 bg-secondary rounded-xl hover:bg-secondary/80 transition-colors">
               <Mail className="w-6 h-6" />
             </a>
           </div>
