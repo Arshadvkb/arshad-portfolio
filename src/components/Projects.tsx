@@ -1,16 +1,20 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { ExternalLink, Github } from 'lucide-react';
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
+import { ExternalLink, Github, Info } from 'lucide-react';
 
 const Projects = () => {
+  const [selectedProject, setSelectedProject] = useState(null);
+  
   const projects = [
     {
       title: "Aero AI",
       description: "Revolutionary AI-powered aeroponics automation system that optimizes plant growth through intelligent monitoring and control of nutrients, pH levels, and environmental conditions.",
-      technologies: ["Python", "Node.js", "Flutter", "Appwrite", "Embedded C", "MQTT", "Raspberry Pi", "ESP32"],
+      detailedDescription: "The AERO AI project automates an aeroponics system by integrating Gemini 2.5 Flash for AI-driven optimization, MQTT for real-time data communication, Raspberry Pi as the central hub hosting a Mosquitto MQTT broker and Node.js server, ESP32 for interfacing with sensors (e.g., DHT22 for temperature/humidity, pH for nutrients) and actuators (e.g., ultrasonic foggers, pumps), and a Flutter-based dashboard for user monitoring and control. Sensor data is published via MQTT, processed by the Node.js server with Gemini API for intelligent decisions (e.g., adjusting misting based on humidity), and commands are sent back to the ESP32, while the Flutter dashboard displays real-time data and allows manual control, creating an efficient, scalable system for automated plant growth.",
+      technologies: ["Gemini 2.5 Flash", "Python", "Node.js", "Flutter", "MQTT", "Raspberry Pi", "ESP32", "DHT22 Sensors", "pH Sensors", "Mosquitto Broker", "Embedded C"],
       image: "/lovable-uploads/314fe94b-27e1-4b25-908d-a7cc05e75d9d.png",
       github: "#",
       live: "#",
@@ -19,7 +23,8 @@ const Projects = () => {
     {
       title: "All-in-One Fitness App",
       description: "Comprehensive fitness companion featuring workout tracking, nutrition planning, progress analytics, and social features to help users achieve their health goals.",
-      technologies: ["Python", "Django", "MySQL", "HTML", "CSS", "JavaScript", "jQuery", "Bootstrap", "Flutter"],
+      detailedDescription: "All-In-One Fitness app project is an innovative and comprehensive platform designed to cater to the diverse needs of fitness enthusiasts, integrating features for admins, users, trainers, and experts. The app enhances user engagement by incorporating advanced functionalities like facial recognition for seamless attendance tracking, enabling accurate and efficient check-ins at gyms or fitness centers. It also includes a robust chat system, allowing users to communicate directly with trainers and experts for personalized health tips and guidance, fostering a supportive fitness community. Additionally, the app features an AI-powered chatbot, leveraging cutting-edge technology to provide instant responses, workout suggestions, and motivational support, enhancing the user experience. Built with a focus on modularity and scalability, potentially using technologies like Appwrite for backend services and SQLite for data persistence, the app aims to streamline fitness management, making it a versatile tool for users to achieve their health and fitness goals efficiently.",
+      technologies: ["Python", "Django", "MySQL", "HTML", "CSS", "JavaScript", "jQuery", "Bootstrap", "Flutter", "Facial Recognition", "AI Chatbot", "Appwrite", "SQLite", "Real-time Chat"],
       image: "/lovable-uploads/a38ac704-4929-49fe-b3b4-eba6b58a7244.png",
       github: "#",
       live: "#",
@@ -70,6 +75,58 @@ const Projects = () => {
                 </div>
                 
                 <div className="flex gap-4">
+                  <Dialog>
+                    <DialogTrigger asChild>
+                      <Button variant="outline" size="sm" className="flex items-center gap-2">
+                        <Info className="w-4 h-4" />
+                        Learn More
+                      </Button>
+                    </DialogTrigger>
+                    <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
+                      <DialogHeader>
+                        <DialogTitle className="text-2xl font-bold">{project.title}</DialogTitle>
+                      </DialogHeader>
+                      <div className="space-y-6">
+                        <div className="aspect-video overflow-hidden rounded-lg">
+                          <img 
+                            src={project.image} 
+                            alt={project.title}
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
+                        
+                        <div>
+                          <h3 className="text-lg font-semibold mb-3">Project Overview</h3>
+                          <p className="text-muted-foreground leading-relaxed">
+                            {project.detailedDescription}
+                          </p>
+                        </div>
+                        
+                        <div>
+                          <h3 className="text-lg font-semibold mb-3">Technology Stack</h3>
+                          <div className="flex flex-wrap gap-2">
+                            {project.technologies.map((tech) => (
+                              <Badge key={tech} variant="secondary" className="text-sm">
+                                {tech}
+                              </Badge>
+                            ))}
+                          </div>
+                        </div>
+                        
+                        <div className="flex gap-4 pt-4">
+                          <Button variant="outline" className="flex items-center gap-2">
+                            <Github className="w-4 h-4" />
+                            View Code
+                          </Button>
+                          <Button className="flex items-center gap-2">
+                            <ExternalLink className="w-4 h-4" />
+                            Live Demo
+                          </Button>
+                        </div>
+                      </div>
+                    </DialogContent>
+                  </Dialog>
+                  
                   <Button variant="outline" size="sm" className="flex items-center gap-2">
                     <Github className="w-4 h-4" />
                     Code
