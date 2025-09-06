@@ -4,6 +4,15 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Mail, MessageSquare, Calendar, MapPin } from 'lucide-react';
 
 const Contact = () => {
+  const handleDownloadCV = () => {
+    const link = document.createElement('a');
+    link.href = '/resume.pdf';
+    link.download = 'Arshad_VKB_Resume.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
     <section className="section-padding px-6">
       <div className="max-w-4xl mx-auto">
@@ -39,8 +48,8 @@ const Contact = () => {
               </div>
               
               <div className="pt-4">
-                <Button className="btn-primary w-full">
-                  Send Message
+                <Button className="btn-primary w-full" onClick={handleDownloadCV}>
+                  Download CV
                 </Button>
               </div>
             </CardContent>
