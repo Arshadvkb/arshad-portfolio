@@ -8,6 +8,12 @@ import { ExternalLink, Github, Info } from 'lucide-react';
 
 const Projects = () => {
   const [selectedProject, setSelectedProject] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  
+  const handleCardClick = (project) => {
+    setSelectedProject(project);
+    setIsModalOpen(true);
+  };
   
   const projects = [
     {
@@ -44,7 +50,11 @@ const Projects = () => {
         
         <div className="grid lg:grid-cols-2 gap-8">
           {projects.map((project, index) => (
-            <Card key={index} className="card-glow overflow-hidden group">
+            <Card 
+              key={index} 
+              className="card-glow overflow-hidden group cursor-pointer hover:shadow-lg transition-all duration-300"
+              onClick={() => handleCardClick(project)}
+            >
               <div className="aspect-video overflow-hidden">
                 <img 
                   src={project.image} 
@@ -75,63 +85,20 @@ const Projects = () => {
                 </div>
                 
                 <div className="flex gap-4">
-                  <Dialog>
-                    <DialogTrigger asChild>
-                      <Button variant="outline" size="sm" className="flex items-center gap-2">
-                        <Info className="w-4 h-4" />
-                        Learn More
-                      </Button>
-                    </DialogTrigger>
-                    <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
-                      <DialogHeader>
-                        <DialogTitle className="text-2xl font-bold">{project.title}</DialogTitle>
-                      </DialogHeader>
-                      <div className="space-y-6">
-                        <div className="aspect-video overflow-hidden rounded-lg">
-                          <img 
-                            src={project.image} 
-                            alt={project.title}
-                            className="w-full h-full object-cover"
-                          />
-                        </div>
-                        
-                        <div>
-                          <h3 className="text-lg font-semibold mb-3">Project Overview</h3>
-                          <p className="text-muted-foreground leading-relaxed">
-                            {project.detailedDescription}
-                          </p>
-                        </div>
-                        
-                        <div>
-                          <h3 className="text-lg font-semibold mb-3">Technology Stack</h3>
-                          <div className="flex flex-wrap gap-2">
-                            {project.technologies.map((tech) => (
-                              <Badge key={tech} variant="secondary" className="text-sm">
-                                {tech}
-                              </Badge>
-                            ))}
-                          </div>
-                        </div>
-                        
-                        <div className="flex gap-4 pt-4">
-                          <Button variant="outline" className="flex items-center gap-2">
-                            <Github className="w-4 h-4" />
-                            View Code
-                          </Button>
-                          <Button className="flex items-center gap-2">
-                            <ExternalLink className="w-4 h-4" />
-                            Live Demo
-                          </Button>
-                        </div>
-                      </div>
-                    </DialogContent>
-                  </Dialog>
-                  
-                  <Button variant="outline" size="sm" className="flex items-center gap-2">
+                  <Button 
+                    variant="outline" 
+                    size="sm" 
+                    className="flex items-center gap-2"
+                    onClick={(e) => e.stopPropagation()}
+                  >
                     <Github className="w-4 h-4" />
                     Code
                   </Button>
-                  <Button size="sm" className="flex items-center gap-2 btn-primary">
+                  <Button 
+                    size="sm" 
+                    className="flex items-center gap-2 btn-primary"
+                    onClick={(e) => e.stopPropagation()}
+                  >
                     <ExternalLink className="w-4 h-4" />
                     Live Demo
                   </Button>
@@ -140,6 +107,56 @@ const Projects = () => {
             </Card>
           ))}
         </div>
+        
+        <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
+          <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
+            {selectedProject && (
+              <>
+                <DialogHeader>
+                  <DialogTitle className="text-2xl font-bold">{selectedProject.title}</DialogTitle>
+                </DialogHeader>
+                <div className="space-y-6">
+                  <div className="aspect-video overflow-hidden rounded-lg">
+                    <img 
+                      src={selectedProject.image} 
+                      alt={selectedProject.title}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  
+                  <div>
+                    <h3 className="text-lg font-semibold mb-3">Project Overview</h3>
+                    <p className="text-muted-foreground leading-relaxed">
+                      {selectedProject.detailedDescription}
+                    </p>
+                  </div>
+                  
+                  <div>
+                    <h3 className="text-lg font-semibold mb-3">Technology Stack</h3>
+                    <div className="flex flex-wrap gap-2">
+                      {selectedProject.technologies.map((tech) => (
+                        <Badge key={tech} variant="secondary" className="text-sm">
+                          {tech}
+                        </Badge>
+                      ))}
+                    </div>
+                  </div>
+                  
+                  <div className="flex gap-4 pt-4">
+                    <Button variant="outline" className="flex items-center gap-2">
+                      <Github className="w-4 h-4" />
+                      View Code
+                    </Button>
+                    <Button className="flex items-center gap-2">
+                      <ExternalLink className="w-4 h-4" />
+                      Live Demo
+                    </Button>
+                  </div>
+                </div>
+              </>
+            )}
+          </DialogContent>
+        </Dialog>
       </div>
     </section>
   );
