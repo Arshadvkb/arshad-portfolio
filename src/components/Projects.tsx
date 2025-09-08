@@ -30,7 +30,7 @@ const Projects = () => {
       title: "All-in-One Fitness App",
       description: "Comprehensive fitness companion featuring workout tracking, nutrition planning, progress analytics, and social features to help users achieve their health goals.",
       detailedDescription: "All-In-One Fitness app project is an innovative and comprehensive platform designed to cater to the diverse needs of fitness enthusiasts, integrating features for admins, users, trainers, and experts. The app enhances user engagement by incorporating advanced functionalities like facial recognition for seamless attendance tracking, enabling accurate and efficient check-ins at gyms or fitness centers. It also includes a robust chat system, allowing users to communicate directly with trainers and experts for personalized health tips and guidance, fostering a supportive fitness community. Additionally, the app features an AI-powered chatbot, leveraging cutting-edge technology to provide instant responses, workout suggestions, and motivational support, enhancing the user experience. Built with a focus on modularity and scalability, the app aims to streamline fitness management, making it a versatile tool for users to achieve their health and fitness goals efficiently.",
-      technologies: ["Python", "Django", "MySQL", "HTML", "CSS", "JavaScript", "jQuery", "Bootstrap", "Flutter", "Facial Recognition", "AI Chatbot", "Real-time Chat"],
+      technologies: ["Python", "Django", "MySQL", "HTML", "CSS", "JavaScript", "jQuery", "Bootstrap", "Flutter", "OpenCV", "Tensorflow", "Gemni 2.5 flash"],
       image: "/lovable-uploads/a38ac704-4929-49fe-b3b4-eba6b58a7244.png",
       github: "#",
       live: "#",
@@ -41,7 +41,7 @@ const Projects = () => {
   return (
     <section id="projects" className="section-padding px-6">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16 animate-fade-up">
+        <div className="text-center mb-16 an-fade-up">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">Featured Projects</h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             Innovative solutions that showcase my expertise in full-stack development and emerging technologies
