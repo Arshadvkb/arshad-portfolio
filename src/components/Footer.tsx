@@ -72,13 +72,9 @@ const Footer = () => {
         {/* Copyright */}
         <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
           <p className="text-muted-foreground text-sm">
-            © {new Date().getFullYear()} Portfolio. All rights reserved.
+            © {new Date().getFullYear()} Arshad VKB. All rights reserved.
           </p>
-          <div className="flex items-center space-x-1 text-muted-foreground text-sm">
-            <span>Made with</span>
-            <Heart className="h-4 w-4 text-red-500" />
-            <span>using React & Tailwind CSS</span>
-          </div>
+          
         </div>
       </div>
     </footer>
