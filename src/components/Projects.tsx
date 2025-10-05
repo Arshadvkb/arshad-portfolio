@@ -5,6 +5,7 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
 import { ExternalLink, Github, Info } from 'lucide-react';
+import libraryLogo from '@/assets/library-management-logo.png';
 
 const Projects = () => {
   const [selectedProject, setSelectedProject] = useState(null);
@@ -41,7 +42,7 @@ const Projects = () => {
       description: "Secure library management system with JWT authentication, enabling CRUD operations for managing books, members, and lending records with role-based access control.",
       detailedDescription: "A comprehensive Library Management System built with robust security using JWT (JSON Web Tokens) for authentication and authorization. The system streamlines library operations through essential CRUD (Create, Read, Update, Delete) functionalities with role-based access control for administrators and librarians. Features include secure user authentication, book cataloging with advanced search capabilities, member management with verification, circulation tracking, automated due date reminders, and comprehensive administrative controls for seamless library operations.",
       technologies: ["React", "Node.js", "Express", "MongoDB", "JWT", "REST API", "JavaScript", "Tailwind CSS"],
-      image: "/placeholder.svg",
+      image: libraryLogo,
       github: "#",
       live: "#",
       featured: false
