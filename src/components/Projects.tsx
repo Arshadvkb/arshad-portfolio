@@ -35,6 +35,16 @@ const Projects = () => {
       github: "#",
       live: "#",
       featured: true
+    },
+    {
+      title: "Library Management System",
+      description: "Efficient library management system enabling basic CRUD operations for managing books, members, and lending records with an intuitive interface.",
+      detailedDescription: "A comprehensive Library Management System that streamlines library operations through essential CRUD (Create, Read, Update, Delete) functionalities. The system allows librarians to efficiently manage book inventories, track member registrations, handle book lending and returns, and maintain detailed records. Features include book cataloging with search capabilities, member management, circulation tracking, and administrative controls for seamless library operations.",
+      technologies: ["React", "Node.js", "Express", "MongoDB", "REST API", "JavaScript", "Tailwind CSS"],
+      image: "/placeholder.svg",
+      github: "#",
+      live: "#",
+      featured: false
     }
   ];
 
