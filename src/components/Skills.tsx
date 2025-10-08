@@ -6,22 +6,22 @@ const Skills = () => {
   const skillCategories = [
     {
       title: "Backend Development",
-      skills: ["Python", "Django", "Node.js", "Express.js", "REST APIs"],
+      skills: ["Python", "Django", "Node.js", "Express.js", "REST APIs","Django Restframewok"],
       icon: "🔧"
     },
     {
       title: "Frontend Development", 
-      skills: ["HTML5", "CSS3", "JavaScript", "Bootstrap", "jQuery"],
+      skills: ["HTML5", "CSS3", "JavaScript", "Bootstrap", "jQuery","React.js"],
       icon: "🎨"
     },
     {
       title: "Mobile Development",
-      skills: ["Flutter", "Dart", "Cross-platform", "Firebase", "State Management"],
+      skills: ["Flutter", "Dart"],
       icon: "📱"
     },
     {
       title: "Database & Tools",
-      skills: ["MongoDB", "SQL", "PostgreSQL", "Git"],
+      skills: ["MongoDB", "SQL", "PostgreSQL","MySQL" ,"Sqlite", "Git", "GitHub","Postman"],
       icon: "💾"
     }
   ];
