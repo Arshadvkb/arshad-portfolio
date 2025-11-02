@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
 import { ExternalLink, Github, Info } from 'lucide-react';
 import libraryLogo from '@/assets/library-management-logo.png';
+import chatapp from '@/assets/chatapp.png'
 
 const Projects = () => {
   const [selectedProject, setSelectedProject] = useState(null);
@@ -45,7 +46,17 @@ const Projects = () => {
       image: libraryLogo,
       github: "#",
       live: "#",
-      featured: false
+      featured: true
+    },
+    {
+      title: "Real Time Chatting Application",
+      description: "ChatSphere is a lively real-time chat app I crafted with the MERN stack and Socket.io, enabling secure sign-ups, instant messaging in private or group rooms, and easy sharing of images or files with zero lag. Deployed on Vercel and Heroku, it cuts wait times by 80% over traditional methods, making it ideal for quick team chats or fun hangouts—grab the open-source code on GitHub to dive in!",
+      detailedDescription: "ChatSphere is a fun, real-time chat app I built using the MERN stack (MongoDB for data, Express and Node.js for the backend, React for the sleek frontend) and Socket.io to make conversations feel instant and alive. It lets users sign up securely, jump into private or group rooms, send messages with typing indicators and read receipts, and even share images or files—all without any lag. Deployed on Vercel and Heroku, it's perfect for quick team huddles or casual catch-ups, slashing wait times by 80% compared to old-school polling, and the code's open on GitHub for anyone to tweak or join in!",
+      technologies: ["React", "Node.js", "Express", "MongoDB", "JWT", "REST API", "JavaScript", "Tailwind CSS","Socket.io","DaisyUi","Cloudinary"],
+      image: chatapp,
+      github: "#",
+      live: "#",
+      featured: true
     }
   ];
 
