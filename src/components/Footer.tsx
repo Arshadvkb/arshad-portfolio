@@ -39,7 +39,7 @@ const Footer = () => {
             <h4 className="text-lg font-semibold">Connect</h4>
             <div className="flex space-x-4">
               <a
-                href="https://github.com"
+                href="https://github.com/Arshadvkb"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2 rounded-md bg-secondary hover:bg-secondary/80 transition-colors"
@@ -48,7 +48,7 @@ const Footer = () => {
                 <Github className="h-5 w-5" />
               </a>
               <a
-                href="https://linkedin.com"
+                href="https://linkedin.com/in/arshad-vkb-b860a0323"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2 rounded-md bg-secondary hover:bg-secondary/80 transition-colors"
@@ -57,7 +57,7 @@ const Footer = () => {
                 <Linkedin className="h-5 w-5" />
               </a>
               <a
-                href="mailto:contact@example.com"
+                href="mailto:arshadvkb969.com"
                 className="p-2 rounded-md bg-secondary hover:bg-secondary/80 transition-colors"
                 aria-label="Email Contact"
               >
