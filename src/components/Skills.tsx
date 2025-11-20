@@ -1,30 +1,29 @@
 
 import React from 'react';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
 const Skills = () => {
-  const skills = [
-    { name: "Python", icon: "🐍" },
-    { name: "Django", icon: "🎸" },
-    { name: "Node.js", icon: "🟢" },
-    { name: "Express.js", icon: "🚂" },
-    { name: "REST APIs", icon: "🔌" },
-    { name: "Django REST", icon: "🔧" },
-    { name: "HTML5", icon: "🌐" },
-    { name: "CSS3", icon: "🎨" },
-    { name: "JavaScript", icon: "⚡" },
-    { name: "Bootstrap", icon: "🅱️" },
-    { name: "jQuery", icon: "💫" },
-    { name: "React.js", icon: "⚛️" },
-    { name: "Flutter", icon: "📱" },
-    { name: "Dart", icon: "🎯" },
-    { name: "MongoDB", icon: "🍃" },
-    { name: "SQL", icon: "🗄️" },
-    { name: "PostgreSQL", icon: "🐘" },
-    { name: "MySQL", icon: "🐬" },
-    { name: "SQLite", icon: "💾" },
-    { name: "Git", icon: "📦" },
-    { name: "GitHub", icon: "🐙" },
-    { name: "Postman", icon: "📮" }
+  const skillCategories = [
+    {
+      title: "Backend Development",
+      skills: ["Python", "Django", "Node.js", "Express.js", "REST APIs","Django Restframewok"],
+      icon: "🔧"
+    },
+    {
+      title: "Frontend Development", 
+      skills: ["HTML5", "CSS3", "JavaScript", "Bootstrap", "jQuery","React.js"],
+      icon: "🎨"
+    },
+    {
+      title: "Mobile Development",
+      skills: ["Flutter", "Dart"],
+      icon: "📱"
+    },
+    {
+      title: "Database & Tools",
+      skills: ["MongoDB", "SQL", "PostgreSQL","MySQL" ,"Sqlite", "Git", "GitHub","Postman"],
+      icon: "💾"
+    }
   ];
 
   return (
@@ -37,19 +36,26 @@ const Skills = () => {
           </p>
         </div>
         
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
-          {skills.map((skill, index) => (
-            <div 
-              key={index}
-              className="group flex flex-col items-center justify-center gap-3 p-6 transition-all duration-300 hover:-translate-y-2"
-            >
-              <div className="text-6xl transition-transform duration-300 group-hover:scale-125 group-hover:rotate-12">
-                {skill.icon}
-              </div>
-              <span className="text-sm font-medium text-foreground text-center transition-colors duration-300 group-hover:text-primary">
-                {skill.name}
-              </span>
-            </div>
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {skillCategories.map((category, index) => (
+            <Card key={index} className="card-glow text-center">
+              <CardHeader>
+                <div className="text-4xl mb-4">{category.icon}</div>
+                <CardTitle className="text-xl">{category.title}</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-2">
+                  {category.skills.map((skill) => (
+                    <div 
+                      key={skill}
+                      className="px-3 py-1 bg-secondary rounded-full text-sm"
+                    >
+                      {skill}
+                    </div>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
           ))}
         </div>
       </div>
