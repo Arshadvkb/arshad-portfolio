@@ -2,31 +2,29 @@
 import React from 'react';
 
 const Skills = () => {
-  const skillCategories = [
-    {
-      title: "Backend Development",
-      skills: ["Python", "Django", "Node.js", "Express.js", "REST APIs", "Django Restframewok"],
-      icon: "🔧",
-      gridClass: "md:col-span-2 md:row-span-2"
-    },
-    {
-      title: "Frontend Development", 
-      skills: ["HTML5", "CSS3", "JavaScript", "Bootstrap", "jQuery", "React.js"],
-      icon: "🎨",
-      gridClass: "md:col-span-1 md:row-span-2"
-    },
-    {
-      title: "Mobile Development",
-      skills: ["Flutter", "Dart"],
-      icon: "📱",
-      gridClass: "md:col-span-1 md:row-span-1"
-    },
-    {
-      title: "Database & Tools",
-      skills: ["MongoDB", "SQL", "PostgreSQL", "MySQL", "Sqlite", "Git", "GitHub", "Postman"],
-      icon: "💾",
-      gridClass: "md:col-span-2 md:row-span-1"
-    }
+  const skills = [
+    { name: "Python", icon: "🐍" },
+    { name: "Django", icon: "🎸" },
+    { name: "Node.js", icon: "🟢" },
+    { name: "Express.js", icon: "🚂" },
+    { name: "REST APIs", icon: "🔌" },
+    { name: "Django REST", icon: "🔧" },
+    { name: "HTML5", icon: "🌐" },
+    { name: "CSS3", icon: "🎨" },
+    { name: "JavaScript", icon: "⚡" },
+    { name: "Bootstrap", icon: "🅱️" },
+    { name: "jQuery", icon: "💫" },
+    { name: "React.js", icon: "⚛️" },
+    { name: "Flutter", icon: "📱" },
+    { name: "Dart", icon: "🎯" },
+    { name: "MongoDB", icon: "🍃" },
+    { name: "SQL", icon: "🗄️" },
+    { name: "PostgreSQL", icon: "🐘" },
+    { name: "MySQL", icon: "🐬" },
+    { name: "SQLite", icon: "💾" },
+    { name: "Git", icon: "📦" },
+    { name: "GitHub", icon: "🐙" },
+    { name: "Postman", icon: "📮" }
   ];
 
   return (
@@ -39,35 +37,18 @@ const Skills = () => {
           </p>
         </div>
         
-        {/* Bento Box Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 auto-rows-[200px]">
-          {skillCategories.map((category, index) => (
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
+          {skills.map((skill, index) => (
             <div 
-              key={index} 
-              className={`group relative overflow-hidden rounded-2xl border border-border bg-card p-6 transition-all duration-300 hover:shadow-[var(--shadow-glow)] hover:-translate-y-1 ${category.gridClass}`}
+              key={index}
+              className="group flex flex-col items-center justify-center gap-3 p-6 transition-all duration-300 hover:-translate-y-2"
             >
-              {/* Category Header */}
-              <div className="mb-6">
-                <div className="text-5xl mb-3 transition-transform duration-300 group-hover:scale-110">
-                  {category.icon}
-                </div>
-                <h3 className="text-2xl font-bold text-foreground">{category.title}</h3>
+              <div className="text-6xl transition-transform duration-300 group-hover:scale-125 group-hover:rotate-12">
+                {skill.icon}
               </div>
-              
-              {/* Skills Grid */}
-              <div className="grid grid-cols-2 gap-2">
-                {category.skills.map((skill) => (
-                  <div 
-                    key={skill}
-                    className="flex items-center justify-center rounded-lg border border-border bg-secondary/50 px-3 py-2 text-xs font-medium text-secondary-foreground transition-all duration-200 hover:bg-primary hover:text-primary-foreground hover:border-primary hover:scale-105"
-                  >
-                    {skill}
-                  </div>
-                ))}
-              </div>
-              
-              {/* Gradient Overlay on Hover */}
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100 pointer-events-none" />
+              <span className="text-sm font-medium text-foreground text-center transition-colors duration-300 group-hover:text-primary">
+                {skill.name}
+              </span>
             </div>
           ))}
         </div>
