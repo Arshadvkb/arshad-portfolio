@@ -14,7 +14,7 @@ const Contact = () => {
   };
 
   return (
-    <section className="section-padding px-6">
+    <section id="contact" className="section-padding px-6 bg-background">
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-16 animate-fade-up">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">Let's Build Something Amazing</h2>
@@ -22,7 +22,7 @@ const Contact = () => {
             Ready to turn your ideas into reality? Let's discuss your next project.
           </p>
         </div>
-        
+
         <div className="grid md:grid-cols-2 gap-8">
           <Card className="card-glow">
             <CardHeader>
@@ -46,7 +46,7 @@ const Contact = () => {
                   <span>Available for new projects</span>
                 </div>
               </div>
-              
+
               <div className="pt-4">
                 <Button className="btn-primary w-full" onClick={handleDownloadCV}>
                   Download CV
@@ -54,7 +54,7 @@ const Contact = () => {
               </div>
             </CardContent>
           </Card>
-          
+
           <Card className="card-glow">
             <CardHeader>
               <CardTitle className="text-2xl">What I Offer</CardTitle>

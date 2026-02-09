@@ -3,26 +3,26 @@ import React, { useState } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
-import { ExternalLink, Github, Info } from 'lucide-react';
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
+import { ExternalLink, Github, Code2, Globe, Database } from 'lucide-react';
 import libraryLogo from '@/assets/library-management-logo.png';
 import chatapp from '@/assets/chatapp.png'
 
 const Projects = () => {
   const [selectedProject, setSelectedProject] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  
+
   const handleCardClick = (project) => {
     setSelectedProject(project);
     setIsModalOpen(true);
   };
-  
+
   const projects = [
     {
       title: "Aero AI",
-      description: "Revolutionary AI-powered aeroponics automation system that optimizes plant growth through intelligent monitoring and control of nutrients, pH levels, and environmental conditions.",
+      description: "AI-powered aeroponics automation system optimizing plant growth via intelligent monitoring and control.",
       detailedDescription: "The AERO AI project automates an aeroponics system by integrating Gemini 2.5 Flash for AI-driven optimization, MQTT for real-time data communication, Raspberry Pi as the central hub hosting a Mosquitto MQTT broker and Node.js server, ESP32 for interfacing with sensors (e.g., DHT22 for temperature/humidity, pH for nutrients) and actuators (e.g., ultrasonic foggers, pumps), and a Flutter-based dashboard for user monitoring and control. Sensor data is published via MQTT, processed by the Node.js server with Gemini API for intelligent decisions (e.g., adjusting misting based on humidity), and commands are sent back to the ESP32, while the Flutter dashboard displays real-time data and allows manual control, creating an efficient, scalable system for automated plant growth.",
-      technologies: ["Gemini 2.5 Flash", "Python", "Node.js", "Flutter", "MQTT", "Raspberry Pi", "ESP32", "DHT22 Sensors", "pH Sensors", "Mosquitto Broker", "Embedded C"],
+      technologies: ["IoT", "Python", "Node.js", "Flutter", "Gemini AI", "Raspberry Pi"],
       image: "/lovable-uploads/314fe94b-27e1-4b25-908d-a7cc05e75d9d.png",
       github: "#",
       live: "#",
@@ -30,9 +30,9 @@ const Projects = () => {
     },
     {
       title: "All-in-One Fitness App",
-      description: "Comprehensive fitness companion featuring workout tracking, nutrition planning, progress analytics, and social features to help users achieve their health goals.",
+      description: "Comprehensive fitness companion featuring workout tracking, nutrition planning, and progress analytics.",
       detailedDescription: "All-In-One Fitness app project is an innovative and comprehensive platform designed to cater to the diverse needs of fitness enthusiasts, integrating features for admins, users, trainers, and experts. The app enhances user engagement by incorporating advanced functionalities like facial recognition for seamless attendance tracking, enabling accurate and efficient check-ins at gyms or fitness centers. It also includes a robust chat system, allowing users to communicate directly with trainers and experts for personalized health tips and guidance, fostering a supportive fitness community. Additionally, the app features an AI-powered chatbot, leveraging cutting-edge technology to provide instant responses, workout suggestions, and motivational support, enhancing the user experience. Built with a focus on modularity and scalability, the app aims to streamline fitness management, making it a versatile tool for users to achieve their health and fitness goals efficiently.",
-      technologies: ["Python", "Django", "MySQL", "HTML", "CSS", "JavaScript", "jQuery", "Bootstrap", "Flutter", "OpenCV", "Tensorflow", "Gemni 2.5 flash"],
+      technologies: ["Django", "React", "OpenCV", "Tensorflow", "Flutter"],
       image: "/lovable-uploads/a38ac704-4929-49fe-b3b4-eba6b58a7244.png",
       github: "#",
       live: "#",
@@ -40,142 +40,131 @@ const Projects = () => {
     },
     {
       title: "Library Management System",
-      description: "Secure library management system with JWT authentication, enabling CRUD operations for managing books, members, and lending records with role-based access control.",
+      description: "Secure system with JWT authentication, enabling CRUD operations for books and members.",
       detailedDescription: "A comprehensive Library Management System built with robust security using JWT (JSON Web Tokens) for authentication and authorization. The system streamlines library operations through essential CRUD (Create, Read, Update, Delete) functionalities with role-based access control for administrators and librarians. Features include secure user authentication, book cataloging with advanced search capabilities, member management with verification, circulation tracking, automated due date reminders, and comprehensive administrative controls for seamless library operations.",
-      technologies: ["React", "Node.js", "Express", "MongoDB", "JWT", "REST API", "JavaScript", "Tailwind CSS"],
+      technologies: ["MERN Stack", "JWT", "Tailwind CSS"],
       image: libraryLogo,
       github: "#",
       live: "#",
-      featured: true
+      featured: false
     },
     {
-      title: "Real Time Chatting Application",
-      description: "ChatSphere is a lively real-time chat app I crafted with the MERN stack and Socket.io, enabling secure sign-ups, instant messaging in private or group rooms, and easy sharing of images or files with zero lag. Deployed on Vercel and Heroku, it cuts wait times by 80% over traditional methods, making it ideal for quick team chats or fun hangouts—grab the open-source code on GitHub to dive in!",
+      title: "Real Time Chat App",
+      description: "ChatSphere: Secure, instant messaging with private rooms and file sharing using Socket.io.",
       detailedDescription: "ChatSphere is a fun, real-time chat app I built using the MERN stack (MongoDB for data, Express and Node.js for the backend, React for the sleek frontend) and Socket.io to make conversations feel instant and alive. It lets users sign up securely, jump into private or group rooms, send messages with typing indicators and read receipts, and even share images or files—all without any lag. Deployed on Vercel and Heroku, it's perfect for quick team huddles or casual catch-ups, slashing wait times by 80% compared to old-school polling, and the code's open on GitHub for anyone to tweak or join in!",
-      technologies: ["React", "Node.js", "Express", "MongoDB", "JWT", "REST API", "JavaScript", "Tailwind CSS","Socket.io","DaisyUi","Cloudinary"],
+      technologies: ["MERN Stack", "Socket.io", "Cloudinary"],
       image: chatapp,
       github: "#",
       live: "#",
-      featured: true
+      featured: false
     }
   ];
 
   return (
-    <section id="projects" className="section-padding px-6">
-      <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16 an-fade-up">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">Featured Projects</h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Innovative solutions that showcase my expertise in full-stack development and emerging technologies
+    <section id="projects" className="section-padding bg-muted/20">
+      <div className="container-width">
+        <div className="text-center mb-16 fade-up">
+          <h2 className="font-heading text-3xl md:text-5xl font-bold mb-4">Featured Projects</h2>
+          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+            A selection of my recent work and experiments.
           </p>
         </div>
-        
-        <div className="grid lg:grid-cols-2 gap-8">
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
           {projects.map((project, index) => (
-            <Card 
-              key={index} 
-              className="card-glow overflow-hidden group cursor-pointer hover:shadow-lg transition-all duration-300"
+            <Card
+              key={index}
+              className="glass-card group overflow-hidden cursor-pointer flex flex-col h-full border-none shadow-sm hover:shadow-xl transition-all duration-500"
               onClick={() => handleCardClick(project)}
             >
-              <div className="aspect-video overflow-hidden">
-                <img 
-                  src={project.image} 
+              <div className="relative aspect-video overflow-hidden">
+                <img
+                  src={project.image}
                   alt={project.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
-              </div>
-              
-              <CardHeader>
-                <div className="flex items-center justify-between">
-                  <CardTitle className="text-2xl">{project.title}</CardTitle>
-                  {project.featured && (
-                    <Badge className="bg-primary text-primary-foreground">Featured</Badge>
-                  )}
+                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                  <p className="text-white font-medium px-4 py-2 border border-white/30 rounded-full backdrop-blur-md">View Details</p>
                 </div>
-                <CardDescription className="text-base leading-relaxed">
+              </div>
+
+              <CardHeader>
+                <div className="flex items-center justify-between mb-2">
+                  <CardTitle className="text-2xl font-bold tracking-tight">{project.title}</CardTitle>
+                </div>
+                <CardDescription className="text-base line-clamp-2">
                   {project.description}
                 </CardDescription>
               </CardHeader>
-              
-              <CardContent className="space-y-6">
+
+              <CardContent className="mt-auto space-y-4">
                 <div className="flex flex-wrap gap-2">
                   {project.technologies.map((tech) => (
-                    <Badge key={tech} variant="secondary" className="text-xs">
+                    <Badge key={tech} variant="secondary" className="bg-secondary/40 text-foreground/80 hover:bg-secondary/60">
                       {tech}
                     </Badge>
                   ))}
                 </div>
-                
-                <div className="flex gap-4">
-                  <Button 
-                    variant="outline" 
-                    size="sm" 
-                    className="flex items-center gap-2"
-                    onClick={(e) => e.stopPropagation()}
+
+                <div className="flex gap-3 pt-2">
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    className="flex-1 gap-2"
+                    onClick={(e) => { e.stopPropagation(); window.open(project.github, '_blank'); }}
                   >
-                    <Github className="w-4 h-4" />
-                    Code
+                    <Github className="w-4 h-4" /> Source
                   </Button>
-                  <Button 
-                    size="sm" 
-                    className="flex items-center gap-2 btn-primary"
-                    onClick={(e) => e.stopPropagation()}
+                  <Button
+                    size="sm"
+                    className="flex-1 gap-2 bg-primary hover:bg-primary/90"
+                    onClick={(e) => { e.stopPropagation(); window.open(project.live, '_blank'); }}
                   >
-                    <ExternalLink className="w-4 h-4" />
-                    Live Demo
+                    <ExternalLink className="w-4 h-4" /> Live Demo
                   </Button>
                 </div>
               </CardContent>
             </Card>
           ))}
         </div>
-        
+
         <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
-          <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
+          <DialogContent className="max-w-4xl p-0 overflow-hidden border-none bg-background/80 backdrop-blur-xl">
             {selectedProject && (
-              <>
-                <DialogHeader>
-                  <DialogTitle className="text-2xl font-bold">{selectedProject.title}</DialogTitle>
-                </DialogHeader>
-                <div className="space-y-6">
-                  <div className="aspect-video overflow-hidden rounded-lg">
-                    <img 
-                      src={selectedProject.image} 
-                      alt={selectedProject.title}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  
-                  <div>
-                    <h3 className="text-lg font-semibold mb-3">Project Overview</h3>
+              <div className="flex flex-col md:flex-row h-[80vh] md:h-auto overflow-y-auto">
+                <div className="w-full md:w-1/2 h-64 md:h-auto relative">
+                  <img
+                    src={selectedProject.image}
+                    alt={selectedProject.title}
+                    className="w-full h-full object-cover absolute inset-0"
+                  />
+                </div>
+                <div className="w-full md:w-1/2 p-6 md:p-8 flex flex-col">
+                  <DialogHeader className="mb-4">
+                    <DialogTitle className="text-2xl md:text-3xl font-bold mb-2">{selectedProject.title}</DialogTitle>
+                    <div className="flex flex-wrap gap-2">
+                      {selectedProject.technologies.map((tech) => (
+                        <Badge key={tech} variant="outline">{tech}</Badge>
+                      ))}
+                    </div>
+                  </DialogHeader>
+
+                  <div className="flex-grow space-y-6">
                     <p className="text-muted-foreground leading-relaxed">
                       {selectedProject.detailedDescription}
                     </p>
                   </div>
-                  
-                  <div>
-                    <h3 className="text-lg font-semibold mb-3">Technology Stack</h3>
-                    <div className="flex flex-wrap gap-2">
-                      {selectedProject.technologies.map((tech) => (
-                        <Badge key={tech} variant="secondary" className="text-sm">
-                          {tech}
-                        </Badge>
-                      ))}
-                    </div>
-                  </div>
-                  
-                  <div className="flex gap-4 pt-4">
-                    <Button variant="outline" className="flex items-center gap-2">
-                      <Github className="w-4 h-4" />
-                      View Code
+
+                  <div className="flex gap-4 mt-8 pt-4 border-t border-border">
+                    <Button className="flex-1 gap-2" onClick={() => window.open(selectedProject.live, '_blank')}>
+                      <Globe className="w-4 h-4" /> Live Site
                     </Button>
-                    <Button className="flex items-center gap-2">
-                      <ExternalLink className="w-4 h-4" />
-                      Live Demo
+                    <Button variant="outline" className="flex-1 gap-2" onClick={() => window.open(selectedProject.github, '_blank')}>
+                      <Github className="w-4 h-4" /> Code
                     </Button>
                   </div>
                 </div>
-              </>
+              </div>
             )}
           </DialogContent>
         </Dialog>
