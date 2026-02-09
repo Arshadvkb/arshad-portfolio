@@ -4,8 +4,24 @@ export const Experience = () => {
     const experiences = [
 
         {
+            title: "10th",
+            company: "St Mary's English Medium School Chevrambalam",
+            duration: "2020",
+            description:
+                "Gained hands on experience in programming and problem-solving.",
+            icon: <GraduationCap className="w-5 h-5 text-primary" />,
+        },
+        {
+            title: "12th",
+            company: "St Mary's English Medium School Chevrambalam",
+            duration: "2022",
+            description:
+                "Specialized in Computer Science. Active member of the tech community and gained hands on experience in data structures and algorithms.",
+            icon: <GraduationCap className="w-5 h-5 text-primary" />,
+        },
+        {
             title: "BSc Computer Science",
-            company: "Calicut University",
+            company: "College of Applied Science Vazhakkad",
             duration: "2022 - 2025",
             description:
                 "Specialized in Computer Science. Active member of the tech community and participated in various hackathons and coding competitions.",
@@ -13,7 +29,7 @@ export const Experience = () => {
         }, {
             title: "Python and Flutter Intern",
             company: "Regional Technologies",
-            duration: "2024",
+            duration: "2025",
             description:
                 "Developed cross-platform mobile applications using Flutter and built robust backend services with Python. Collaborated on full-stack projects to deliver scalable solutions.",
             icon: <Briefcase className="w-5 h-5 text-primary" />,

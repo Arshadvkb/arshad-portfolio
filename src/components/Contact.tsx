@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Mail, MessageSquare, Calendar, MapPin } from 'lucide-react';
+import { Mail, MessageSquare, Calendar, MapPin, Phone } from 'lucide-react';
 
 const Contact = () => {
   const handleDownloadCV = () => {
@@ -33,6 +33,10 @@ const Contact = () => {
             </CardHeader>
             <CardContent className="space-y-6">
               <div className="space-y-4">
+                <div className="flex items-center gap-4">
+                  <Phone className="w-5 h-5 text-primary" />
+                  <span>+91 907 477 3366</span>
+                </div>
                 <div className="flex items-center gap-4">
                   <Mail className="w-5 h-5 text-primary" />
                   <span>arshadvkb969@gmail.com</span>

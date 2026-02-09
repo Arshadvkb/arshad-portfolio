@@ -37,6 +37,19 @@ const Skills = () => {
       icon: <Layers className="w-5 h-5 text-indigo-500" />,
       className: "hover:border-indigo-500/50"
     },
+
+    {
+      title: "Databases",
+      description: "Data Storage Solutions",
+      skills: [
+        { name: "MySQL", logo: "https://cdn.simpleicons.org/mysql" },
+        { name: "PostgreSQL", logo: "https://cdn.simpleicons.org/postgresql" },
+        { name: "MongoDB", logo: "https://cdn.simpleicons.org/mongodb" },
+
+      ],
+      icon: <Database className="w-5 h-5 text-purple-500" />,
+      className: "hover:border-purple-500/50 md:col-span-2 lg:col-span-1"
+    },
     {
       title: "Tools & Platforms",
       description: "DevOps & Workflow",
@@ -45,22 +58,11 @@ const Skills = () => {
         { name: "GitHub", logo: "https://cdn.simpleicons.org/github" },
         { name: "Postman", logo: "https://cdn.simpleicons.org/postman" },
         { name: "VS Code", logo: "https://upload.wikimedia.org/wikipedia/commons/9/9a/Visual_Studio_Code_1.35_icon.svg" },
-      ],
-      icon: <Wrench className="w-5 h-5 text-amber-500" />,
-      className: "hover:border-amber-500/50"
-    },
-    {
-      title: "Databases",
-      description: "Data Storage Solutions",
-      skills: [
-        { name: "MySQL", logo: "https://cdn.simpleicons.org/mysql" },
-        { name: "PostgreSQL", logo: "https://cdn.simpleicons.org/postgresql" },
-        { name: "MongoDB", logo: "https://cdn.simpleicons.org/mongodb" },
         { name: "Firebase", logo: "https://cdn.simpleicons.org/firebase" },
         { name: "Supabase", logo: "https://cdn.simpleicons.org/supabase" },
       ],
-      icon: <Database className="w-5 h-5 text-purple-500" />,
-      className: "hover:border-purple-500/50 md:col-span-2 lg:col-span-1"
+      icon: <Wrench className="w-5 h-5 text-amber-500" />,
+      className: "hover:border-amber-500/50"
     },
     {
       title: "IoT & Embedded",

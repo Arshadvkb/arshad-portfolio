@@ -28,11 +28,13 @@ export const Navbar = () => {
                 }`}
         >
             <div className="container-width flex items-center justify-between h-16">
+
                 <a href="#" className="font-['Bruno_Ace'] font-bold text-xl tracking-tight hover:text-primary transition-colors">
-                    ARSHAD.
+                    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bruno+Ace&display=swap" />
+                    ARSHAD VKB
                 </a>
 
-                {/* Desktop Navigation */}
+
                 <div className="hidden md:flex items-center gap-8">
                     {navLinks.map((link) => (
                         <a
