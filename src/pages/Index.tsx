@@ -7,7 +7,6 @@ import Footer from "@/components/Footer";
 import { AIAssistant } from "@/components/AIAssistant";
 import { Navbar } from "@/components/Navbar";
 import { Experience } from "@/components/Experience";
-import { GitHubStats } from "@/components/GitHubStats";
 
 const Index = () => {
   return (
@@ -18,7 +17,6 @@ const Index = () => {
           <Hero />
           <Skills />
           <Experience />
-          <GitHubStats />
           <Projects />
           <Contact />
         </main>

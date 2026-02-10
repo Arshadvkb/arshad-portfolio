@@ -11,6 +11,7 @@ const Skills = () => {
       skills: [
         { name: "Python", logo: "https://cdn.simpleicons.org/python" },
         { name: "JavaScript", logo: "https://cdn.simpleicons.org/javascript" },
+        { name: "TypeScript", logo: "https://cdn.simpleicons.org/typescript" },
         { name: "Java", logo: "https://cdn.simpleicons.org/openjdk" },
         { name: "C", logo: "https://cdn.simpleicons.org/c" },
         { name: "C++", logo: "https://cdn.simpleicons.org/cplusplus" },
@@ -111,8 +112,8 @@ const Skills = () => {
                       key={skill.name}
                       className="group/item flex items-center gap-3 px-4 py-3 text-sm font-medium rounded-lg bg-background border border-border/50 shadow-sm hover:border-primary/20 transition-all hover:shadow-md cursor-default"
                     >
-                      <div className="flex items-center justify-center p-2 rounded-md bg-zinc-100 dark:bg-zinc-200 group-hover/item:bg-zinc-200 dark:group-hover/item:bg-zinc-300 transition-colors">
-                        <img src={skill.logo} alt={skill.name} className="w-8 h-8 transition-transform duration-300 group-hover/item:scale-110" />
+                      <div className="flex items-center justify-center p-2 rounded-md bg-white shadow-sm border border-gray-100 group-hover/item:scale-105 transition-all duration-300">
+                        <img src={skill.logo} alt={skill.name} className="w-8 h-8 object-contain" />
                       </div>
                       <span className="text-foreground/80 font-semibold group-hover/item:text-foreground transition-colors">{skill.name}</span>
                     </div>
