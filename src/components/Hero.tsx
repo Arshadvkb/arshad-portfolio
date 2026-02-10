@@ -4,18 +4,30 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { ArrowDown, Github, Linkedin, Mail } from 'lucide-react';
 
+import ProfileImage from '../assets/IMG_20250113_211900_246.webp';
+
 const Hero = () => {
   const scrollToProjects = () => {
     document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
-    <section id="hero" className="min-h-screen flex flex-col justify-center items-center relative px-6 overflow-hidden bg-background">
+    <section id="hero" className="min-h-screen flex flex-col justify-center items-center relative px-6 pt-32 md:pt-40 overflow-hidden bg-background">
 
       {/* Subtle Background Pattern */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] pointer-events-none" />
 
       <div className="relative z-10 max-w-5xl mx-auto text-center space-y-8 animate-fade-up">
+
+        {/* Profile Image */}
+        <div className="mx-auto w-32 h-32 md:w-60 md:h-60 relative mb-8 ">
+          <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-primary to-blue-600 blur-xl opacity-50 animate-pulse"></div>
+          <img
+            src={ProfileImage}
+            alt="Arshad VKB"
+            className="rounded-full object-cover w-full h-full border-4 border-background shadow-2xl relative z-10"
+          />
+        </div>
 
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-primary/20 bg-primary/5 text-primary text-sm font-medium mb-6 animate-pulse">
           <span className="relative flex h-2 w-2">
