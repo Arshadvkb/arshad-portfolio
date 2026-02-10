@@ -109,10 +109,12 @@ const Skills = () => {
                   {category.skills.map((skill) => (
                     <div
                       key={skill.name}
-                      className="flex items-center gap-2 px-3 py-2 text-sm font-medium rounded-md bg-background border border-border/50 shadow-sm hover:border-primary/20 transition-colors cursor-default"
+                      className="group/item flex items-center gap-3 px-4 py-3 text-sm font-medium rounded-lg bg-background border border-border/50 shadow-sm hover:border-primary/20 transition-all hover:shadow-md cursor-default"
                     >
-                      <img src={skill.logo} alt={skill.name} className="w-4 h-4 opacity-80 group-hover:opacity-100 transition-opacity" />
-                      <span className="text-foreground/80">{skill.name}</span>
+                      <div className="flex items-center justify-center p-2 rounded-md bg-zinc-100 dark:bg-zinc-200 group-hover/item:bg-zinc-200 dark:group-hover/item:bg-zinc-300 transition-colors">
+                        <img src={skill.logo} alt={skill.name} className="w-8 h-8 transition-transform duration-300 group-hover/item:scale-110" />
+                      </div>
+                      <span className="text-foreground/80 font-semibold group-hover/item:text-foreground transition-colors">{skill.name}</span>
                     </div>
                   ))}
                 </div>
