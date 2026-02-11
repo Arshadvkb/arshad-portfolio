@@ -32,7 +32,7 @@ const Projects = () => {
       title: "All-in-One Fitness App",
       description: "Comprehensive fitness companion featuring workout tracking, nutrition planning, and progress analytics.",
       detailedDescription: "All-In-One Fitness app project is an innovative and comprehensive platform designed to cater to the diverse needs of fitness enthusiasts, integrating features for admins, users, trainers, and experts. The app enhances user engagement by incorporating advanced functionalities like facial recognition for seamless attendance tracking, enabling accurate and efficient check-ins at gyms or fitness centers. It also includes a robust chat system, allowing users to communicate directly with trainers and experts for personalized health tips and guidance, fostering a supportive fitness community. Additionally, the app features an AI-powered chatbot, leveraging cutting-edge technology to provide instant responses, workout suggestions, and motivational support, enhancing the user experience. Built with a focus on modularity and scalability, the app aims to streamline fitness management, making it a versatile tool for users to achieve their health and fitness goals efficiently.",
-      technologies: ["Django", "React", "OpenCV", "Tensorflow", "Flutter"],
+      technologies: ["Django","OpenCV", "Tensorflow", "Flutter"],
       image: "/lovable-uploads/a38ac704-4929-49fe-b3b4-eba6b58a7244.png",
       github: "#",
       live: "#",
