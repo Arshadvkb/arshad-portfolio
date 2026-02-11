@@ -5,8 +5,8 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { ExternalLink, Github, Code2, Globe, Database } from 'lucide-react';
-import libraryLogo from '@/assets/library-management-logo.png';
-import chatapp from '@/assets/chatapp.png'
+import libraryLogo from '@/assets/Modern Public Library Logo Template.png';
+import chatapp from '@/assets/Creative Chatting App Logo.png'
 
 const Projects = () => {
   const [selectedProject, setSelectedProject] = useState(null);
