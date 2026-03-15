@@ -1,119 +1,140 @@
-import React from 'react';
-import { Mail, MessageSquare, Calendar, MapPin, Phone, Download } from 'lucide-react';
+import { Mail, MapPin, Phone, Send, TerminalSquare } from "lucide-react"
 
 const Contact = () => {
-  const handleDownloadCV = () => {
-    const link = document.createElement('a');
-    link.href = '/resume.pdf';
-    link.download = 'Arshad_VKB_Resume.pdf';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
-
   return (
-    <section id="contact" className="section-padding bg-background w-full border-t-2 border-border relative">
-      <div className="absolute top-0 left-0 w-full h-[1px] bg-primary/20"></div>
-      
-      <div className="container-width z-10 relative">
-        <div className="mb-20 fade-up border-b-2 border-primary pb-6 inline-block">
-          <h2 className="font-heading text-5xl md:text-7xl font-black uppercase tracking-tighter">
-            Initialize <span className="text-primary">&</span><br/>Connect
+    <section id="contact" className="section-padding bg-background relative border-t border-white/5 overflow-hidden">
+      {/* Abstract Ambient Lights */}
+      <div className="absolute top-0 left-0 w-1/2 h-[500px] bg-primary/10 rounded-full blur-[120px] pointer-events-none -translate-x-1/2 -translate-y-1/2" />
+      <div className="absolute bottom-0 right-0 w-1/2 h-[500px] bg-accent/10 rounded-full blur-[120px] pointer-events-none translate-x-1/2 translate-y-1/2" />
+
+      <div className="container-width relative z-10">
+        <div className="mb-16 fade-up flex flex-col justify-center items-center text-center">
+           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary/50 border border-white/5 text-muted-foreground font-mono text-xs mb-4">
+            <Send className="w-3 h-3 text-primary" /> Reach Out
+          </div>
+          <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">
+            Initiate <span className="text-primary">Contact</span>
           </h2>
-          <p className="text-muted-foreground font-mono uppercase tracking-widest text-sm mt-4">
-            // ping_request.sh
+          <p className="text-foreground/70 max-w-2xl text-lg mt-4">
+            Available for freelance opportunities, system architecture consulting, and backend development roles. Let's discuss your technical requirements.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-12">
-          {/* Contact Details */}
-          <div className="brutal-card p-10 group bg-card hover:bg-[#151515] flex flex-col">
-            <div className="flex items-center gap-4 mb-8 pb-4 border-b-2 border-border">
-              <div className="p-3 bg-primary text-primary-foreground shadow-[4px_4px_0_hsl(var(--foreground))] border-2 border-foreground group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform">
-                <MessageSquare className="w-8 h-8" />
-              </div>
-              <h3 className="text-3xl font-black uppercase tracking-tight">Access_Points</h3>
-            </div>
-            
-            <div className="space-y-8 flex-grow">
-              <div className="flex items-center gap-6 group/item cursor-pointer">
-                <div className="w-12 h-12 flex items-center justify-center border-2 border-border bg-background group-hover/item:border-primary group-hover/item:text-primary transition-colors">
-                  <Phone className="w-5 h-5" />
-                </div>
-                <div>
-                  <div className="text-xs font-mono text-muted-foreground uppercase tracking-widest mb-1">Comm_Link_01</div>
-                  <div className="font-sans text-lg font-bold group-hover/item:text-primary transition-colors">+91 907 477 3366</div>
-                </div>
-              </div>
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
+          
+          {/* Contact Information */}
+          <div className="space-y-12">
+            <div className="interactive-card p-8">
+              <h3 className="text-2xl font-bold tracking-tight mb-8">Direct Comm Link</h3>
               
-              <div className="flex items-center gap-6 group/item cursor-pointer">
-                <div className="w-12 h-12 flex items-center justify-center border-2 border-border bg-background group-hover/item:border-primary group-hover/item:text-primary transition-colors">
-                  <Mail className="w-5 h-5" />
-                </div>
-                <div>
-                  <div className="text-xs font-mono text-muted-foreground uppercase tracking-widest mb-1">Comm_Link_02</div>
-                  <div className="font-sans text-lg font-bold group-hover/item:text-primary transition-colors">arshadvkb969@gmail.com</div>
-                </div>
-              </div>
+              <div className="space-y-6">
+                <a href="mailto:arshadvkb969@gmail.com" className="flex items-center space-x-5 group p-4 rounded-xl hover:bg-white/5 transition-colors">
+                  <div className="p-4 rounded-full bg-secondary text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors shadow-[0_0_15px_rgba(59,130,246,0.1)]">
+                    <Mail className="w-6 h-6" />
+                  </div>
+                  <div>
+                    <h4 className="text-sm font-semibold text-muted-foreground uppercase tracking-wider mb-1">Email Protocol</h4>
+                    <p className="text-lg text-foreground font-medium group-hover:text-primary transition-colors">arshadvkb969@gmail.com</p>
+                  </div>
+                </a>
 
-              <div className="flex items-center gap-6 group/item cursor-pointer">
-                <div className="w-12 h-12 flex items-center justify-center border-2 border-border bg-background group-hover/item:border-primary group-hover/item:text-primary transition-colors">
-                  <MapPin className="w-5 h-5" />
-                </div>
-                <div>
-                  <div className="text-xs font-mono text-muted-foreground uppercase tracking-widest mb-1">Location_Data</div>
-                  <div className="font-sans text-lg font-bold group-hover/item:text-primary transition-colors">Calicut, Kerala</div>
-                </div>
-              </div>
-
-              <div className="flex items-center gap-6 group/item cursor-pointer">
-                <div className="w-12 h-12 flex items-center justify-center border-2 border-border bg-background group-hover/item:border-primary group-hover/item:text-primary transition-colors">
-                  <Calendar className="w-5 h-5" />
-                </div>
-                <div>
-                  <div className="text-xs font-mono text-muted-foreground uppercase tracking-widest mb-1">Status</div>
-                  <div className="font-sans text-lg font-bold text-primary">Awaiting Instructions</div>
+                <div className="flex items-center space-x-5 p-4">
+                  <div className="p-4 rounded-full bg-secondary text-primary shadow-[0_0_15px_rgba(59,130,246,0.1)]">
+                    <MapPin className="w-6 h-6" />
+                  </div>
+                  <div>
+                    <h4 className="text-sm font-semibold text-muted-foreground uppercase tracking-wider mb-1">Server Location</h4>
+                    <p className="text-lg text-foreground font-medium">Kerala, India</p>
+                  </div>
                 </div>
               </div>
             </div>
 
-            <div className="pt-10 mt-6 border-t-2 border-border">
-              <button className="brutal-button w-full py-5 flex items-center justify-center gap-3 text-lg font-bold" onClick={handleDownloadCV}>
-                <Download className="w-5 h-5" /> Extract_Dataset [CV]
-              </button>
+            <div className="space-y-6">
+              <h3 className="text-2xl font-bold tracking-tight flex items-center gap-2">
+                <TerminalSquare className="w-6 h-6 text-primary" /> Core Capabilities
+              </h3>
+              
+              <div className="grid gap-4">
+                <div className="interactive-card p-6 flex flex-col relative group cursor-default">
+                  <div className="absolute top-6 right-6 font-mono text-3xl font-black text-white/5 group-hover:text-primary/10 transition-colors pointer-events-none">01</div>
+                  <h4 className="font-bold text-lg mb-2 relative z-10 group-hover:text-primary transition-colors">Backend & API Design</h4>
+                  <p className="text-sm text-foreground/70 relative z-10 leading-relaxed font-sans mt-auto">Scalable server architecture, robust RESTful + GraphQL APIs, and complex business logic.</p>
+                </div>
+                
+                <div className="interactive-card p-6 flex flex-col relative group cursor-default">
+                  <div className="absolute top-6 right-6 font-mono text-3xl font-black text-white/5 group-hover:text-primary/10 transition-colors pointer-events-none">02</div>
+                  <h4 className="font-bold text-lg mb-2 relative z-10 group-hover:text-primary transition-colors">Database Architecture</h4>
+                  <p className="text-sm text-foreground/70 relative z-10 leading-relaxed font-sans mt-auto">Advanced SQL/NoSQL schema modeling, read/write optimization, and caching layers.</p>
+                </div>
+                
+                <div className="interactive-card p-6 flex flex-col relative group cursor-default">
+                  <div className="absolute top-6 right-6 font-mono text-3xl font-black text-white/5 group-hover:text-primary/10 transition-colors pointer-events-none">03</div>
+                  <h4 className="font-bold text-lg mb-2 relative z-10 group-hover:text-primary transition-colors">Fullstack Integration</h4>
+                  <p className="text-sm text-foreground/70 relative z-10 leading-relaxed font-sans mt-auto">Seamless bridging between high-performance data layers and elegant client applications.</p>
+                </div>
+              </div>
             </div>
           </div>
 
-          {/* Services / What I Offer */}
-          <div className="brutal-card p-10 group bg-card hover:bg-[#151515] flex flex-col">
-            <div className="flex items-center gap-4 mb-8 pb-4 border-b-2 border-border">
-              <h3 className="text-3xl font-black uppercase tracking-tight pl-4 border-l-4 border-primary">Protocols</h3>
-            </div>
+          {/* Contact Form */}
+          <div className="interactive-card p-8 md:p-10 relative overflow-hidden h-max">
+            {/* Form decorative element */}
+            <div className="absolute -top-32 -right-32 w-64 h-64 bg-primary/10 rounded-full blur-[60px]" />
             
-            <div className="space-y-6 flex-grow">
-              <div className="p-6 border border-border bg-background hover:border-primary transition-colors relative overflow-hidden group/service cursor-default">
-                <div className="absolute top-0 right-0 p-2 font-mono text-5xl font-black text-border opacity-50 group-hover/service:text-primary/20 transition-colors pointer-events-none">01</div>
-                <h4 className="font-black text-xl uppercase tracking-tight mb-2 relative z-10 group-hover/service:text-primary transition-colors">Full-Stack Development</h4>
-                <p className="font-mono text-sm text-foreground/70 relative z-10 leading-relaxed">End-to-end web and mobile application development architecture and deployment.</p>
+            <h3 className="text-2xl font-bold tracking-tight mb-8 relative z-10">Secure Message Channel</h3>
+            <form className="space-y-6 relative z-10" onSubmit={(e) => e.preventDefault()}>
+              <div className="grid md:grid-cols-2 gap-6">
+                <div className="space-y-2">
+                  <label htmlFor="name" className="text-sm font-semibold text-muted-foreground uppercase tracking-wider">Name_ID</label>
+                  <input
+                    type="text"
+                    id="name"
+                    className="w-full bg-secondary/50 border border-white/10 rounded-lg px-4 py-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all duration-300"
+                    placeholder="Enter designation"
+                  />
+                </div>
+                <div className="space-y-2">
+                  <label htmlFor="email" className="text-sm font-semibold text-muted-foreground uppercase tracking-wider">Email_Address</label>
+                  <input
+                    type="email"
+                    id="email"
+                    className="w-full bg-secondary/50 border border-white/10 rounded-lg px-4 py-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all duration-300"
+                    placeholder="name@domain.com"
+                  />
+                </div>
               </div>
-              
-              <div className="p-6 border border-border bg-background hover:border-primary transition-colors relative overflow-hidden group/service cursor-default">
-                <div className="absolute top-0 right-0 p-2 font-mono text-5xl font-black text-border opacity-50 group-hover/service:text-primary/20 transition-colors pointer-events-none">02</div>
-                <h4 className="font-black text-xl uppercase tracking-tight mb-2 relative z-10 group-hover/service:text-primary transition-colors">IoT Solutions</h4>
-                <p className="font-mono text-sm text-foreground/70 relative z-10 leading-relaxed">Smart automation systems, hardware interconnectivity, and sensor integration frameworks.</p>
+              <div className="space-y-2">
+                <label htmlFor="subject" className="text-sm font-semibold text-muted-foreground uppercase tracking-wider">Subject_Line</label>
+                <input
+                  type="text"
+                  id="subject"
+                  className="w-full bg-secondary/50 border border-white/10 rounded-lg px-4 py-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all duration-300"
+                  placeholder="Query parameters"
+                />
               </div>
-              
-              <div className="p-6 border border-border bg-background hover:border-primary transition-colors relative overflow-hidden group/service cursor-default">
-                <div className="absolute top-0 right-0 p-2 font-mono text-5xl font-black text-border opacity-50 group-hover/service:text-primary/20 transition-colors pointer-events-none">03</div>
-                <h4 className="font-black text-xl uppercase tracking-tight mb-2 relative z-10 group-hover/service:text-primary transition-colors">Technical Consulting</h4>
-                <p className="font-mono text-sm text-foreground/70 relative z-10 leading-relaxed">Architecture design, technology stack optimization, and performance scaling strategies.</p>
+              <div className="space-y-2">
+                <label htmlFor="message" className="text-sm font-semibold text-muted-foreground uppercase tracking-wider">Payload</label>
+                <textarea
+                  id="message"
+                  rows={5}
+                  className="w-full bg-secondary/50 border border-white/10 rounded-lg px-4 py-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all duration-300 resize-none"
+                  placeholder="Execute transmission..."
+                ></textarea>
               </div>
-            </div>
+              <button 
+                type="submit" 
+                className="w-full premium-button justify-center gap-2 group"
+              >
+                <Send className="w-4 h-4 group-hover:-translate-y-1 group-hover:translate-x-1 transition-transform" /> 
+                Transmit Data
+              </button>
+            </form>
           </div>
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
 export default Contact;

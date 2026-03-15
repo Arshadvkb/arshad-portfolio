@@ -14,42 +14,43 @@ export const Navbar = () => {
     }, [])
 
     const navLinks = [
-        { name: "Skills", href: "#skills", label: "01" },
-        { name: "Experience", href: "#experience", label: "02" },
-        { name: "Projects", href: "#projects", label: "03" },
-        { name: "Contact", href: "#contact", label: "04" },
+        { name: "Skills", href: "#skills" },
+        { name: "Experience", href: "#experience" },
+        { name: "Projects", href: "#projects" },
     ]
 
     return (
         <nav
-            className={`fixed top-0 left-0 right-0 z-50 transition-colors duration-300 ${scrolled ? "bg-background border-b-2 border-border" : "bg-transparent"
+            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "bg-background/70 backdrop-blur-xl border-b border-white/5 shadow-sm" : "bg-transparent"
                 }`}
         >
             <div className="container-width flex items-center justify-between h-20">
 
-                <a href="#" className="font-heading font-black text-2xl tracking-tighter uppercase relative group">
-                    <span className="text-primary mr-1 opacity-0 group-hover:opacity-100 transition-opacity">*</span>
-                    Arshad<span className="text-primary">.Vkb</span>
-                    <span className="absolute -bottom-1 left-0 w-0 h-1 bg-primary group-hover:w-full transition-all duration-300"></span>
+                <a href="#" className="font-heading font-bold text-xl tracking-tight flex items-center gap-2 group">
+                    <div className="w-2 h-2 rounded-full bg-primary shadow-[0_0_10px_hsl(var(--primary))] group-hover:scale-150 transition-transform duration-300"></div>
+                    <span>Arshad<span className="text-muted-foreground font-normal">.Vkb</span></span>
                 </a>
 
                 {/* Desktop Navigation */}
-                <div className="hidden md:flex items-center gap-0 border-2 border-border bg-background">
-                    {navLinks.map((link) => (
-                        <a
-                            key={link.name}
-                            href={link.href}
-                            className="flex items-center gap-2 px-6 py-3 border-r-2 border-border text-sm font-mono uppercase tracking-widest text-foreground hover:bg-primary hover:text-primary-foreground transition-colors group"
-                        >
-                            <span className="text-[10px] opacity-50 group-hover:opacity-100">{link.label}</span>
-                            {link.name}
-                        </a>
-                    ))}
-                    <button 
+                <div className="hidden md:flex items-center gap-8">
+                    <div className="flex items-center gap-6">
+                        {navLinks.map((link) => (
+                            <a
+                                key={link.name}
+                                href={link.href}
+                                className="text-sm font-medium text-foreground/70 hover:text-primary transition-colors relative group"
+                            >
+                                {link.name}
+                                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300 rounded-full"></span>
+                            </a>
+                        ))}
+                    </div>
+
+                    <button
                         onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
-                        className="px-6 py-3 bg-primary text-primary-foreground font-mono text-sm uppercase tracking-widest font-bold hover:bg-foreground hover:text-background transition-colors"
+                        className="premium-button text-sm px-5 py-2"
                     >
-                        INITIATE://HIRE
+                        Contact Me
                     </button>
                 </div>
 
@@ -57,7 +58,7 @@ export const Navbar = () => {
                 <div className="md:hidden flex items-center">
                     <button
                         onClick={() => setIsOpen(!isOpen)}
-                        className="text-foreground focus:outline-none p-3 border-2 border-border bg-background hover:bg-primary hover:text-primary-foreground transition-colors"
+                        className="text-foreground focus:outline-none p-2 rounded-lg hover:bg-white/5 transition-colors"
                     >
                         {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
                     </button>
@@ -66,26 +67,25 @@ export const Navbar = () => {
 
             {/* Mobile Navigation */}
             {isOpen && (
-                <div className="md:hidden absolute top-20 left-0 right-0 bg-background border-b-2 border-border flex flex-col">
+                <div className="md:hidden absolute top-20 left-0 right-0 bg-background/95 backdrop-blur-xl border-b border-white/5 flex flex-col p-4 shadow-lg animate-in slide-in-from-top-2">
                     {navLinks.map((link) => (
                         <a
                             key={link.name}
                             href={link.href}
-                            className="px-6 py-4 border-b border-border text-sm font-mono uppercase tracking-widest text-foreground hover:bg-primary hover:text-primary-foreground transition-colors flex justify-between items-center group"
+                            className="px-4 py-3 text-sm font-medium text-foreground/80 hover:text-primary hover:bg-white/5 rounded-lg transition-colors"
                             onClick={() => setIsOpen(false)}
                         >
-                            <span>{link.name}</span>
-                            <span className="text-xs opacity-50 group-hover:opacity-100 text-primary">{link.label}</span>
+                            {link.name}
                         </a>
                     ))}
-                    <button 
-                        className="w-full text-left px-6 py-6 bg-primary text-primary-foreground font-mono text-sm uppercase tracking-widest font-bold hover:bg-foreground hover:text-background transition-colors"
+                    <button
+                        className="mt-4 w-full premium-button"
                         onClick={() => {
                             setIsOpen(false);
                             document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
                         }}
                     >
-                        INITIATE://HIRE
+                        Contact Me
                     </button>
                 </div>
             )}

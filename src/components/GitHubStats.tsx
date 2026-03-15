@@ -1,43 +1,45 @@
-
 import React from 'react';
 
-export const GitHubStats = () => {
-    return (
-        <section id="github-stats" className="container-width section-padding">
-            <div className="flex flex-col items-center justify-center space-y-8 animate-fade-up">
-                <div className="text-center mb-16 fade-up">
-                    <h2 className="font-heading text-4xl md:text-5xl font-bold mb-4 tracking-tight">
-                        Open Source Contributions
-                    </h2>
-                    <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-                        My coding activity and statistics on GitHub.
-                    </p>
-                </div>
+const GithubStats = () => {
+  const username = "Arshadvkb";
+  
+  return (
+    <section id="github-stats" className="section-padding bg-background w-full relative">
+      <div className="container-width px-6 z-10 relative">
+        <div className="mb-16 fade-up flex flex-col text-center items-center">
+          <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">
+             Code <span className="text-primary">Activity</span>
+          </h2>
+          <p className="text-muted-foreground text-lg mt-4 max-w-2xl">
+            Live metrics and language distribution directly from GitHub, reflecting continuous integration and development pace.
+          </p>
+        </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-4xl">
-                    <div className="flex justify-center">
-                        <img
-                            src="https://github-readme-stats.vercel.app/api?username=arshadvkb&show_icons=true&theme=transparent&hide_border=true&title_color=3b82f6&text_color=71717a&icon_color=3b82f6&text_bold=false"
-                            alt="Arshad's GitHub Stats"
-                            className="w-full h-auto"
-                        />
-                    </div>
-                    <div className="flex justify-center">
-                        <img
-                            src="https://github-readme-stats.vercel.app/api/top-langs/?username=arshadvkb&layout=compact&theme=transparent&hide_border=true&title_color=3b82f6&text_color=71717a&icon_color=3b82f6&text_bold=false"
-                            alt="Arshad's Top Languages"
-                            className="w-full h-auto"
-                        />
-                    </div>
-                </div>
-                <div className="w-full flex justify-center mt-8">
-                    <img
-                        src="https://github-readme-streak-stats.herokuapp.com/?user=arshadvkb&theme=transparent&hide_border=true&title_color=3b82f6&text_color=71717a&icon_color=3b82f6&sideNums=true&sideLabels=true&fire=3b82f6&ring=3b82f6&currStreakLabel=3b82f6"
-                        alt="Arshad's GitHub Streak"
-                        className="w-full max-w-4xl h-auto"
-                    />
-                </div>
-            </div>
-        </section>
-    );
+        <div className="grid md:grid-cols-2 gap-8 lg:gap-8">
+          <div className="interactive-card p-6 md:p-10 flex flex-col items-center justify-center">
+            <h3 className="text-sm font-semibold tracking-wider text-muted-foreground mb-6 self-start uppercase">Overview</h3>
+            <img 
+              src={`https://github-readme-stats.vercel.app/api?username=${username}&show_icons=true&title_color=3B82F6&text_color=ffffff&icon_color=06B6D4&bg_color=00000000&border_color=333333&hide_border=true&rank_icon=github`}
+              alt={`${username} GitHub Stats`}
+              className="w-full h-auto object-contain transition-all duration-500 max-w-lg"
+            />
+          </div>
+          
+          <div className="interactive-card p-6 md:p-10 flex flex-col items-center justify-center">
+            <h3 className="text-sm font-semibold tracking-wider text-muted-foreground mb-6 self-start uppercase">Top Languages</h3>
+            <img 
+              src={`https://github-readme-stats.vercel.app/api/top-langs/?username=${username}&layout=compact&title_color=3B82F6&text_color=ffffff&bg_color=00000000&border_color=333333&hide_border=true`}
+              alt={`Top Languages for ${username}`}
+              className="w-full h-auto object-contain transition-all duration-500 max-w-lg"
+            />
+          </div>
+        </div>
+      </div>
+      
+      {/* Abstract Background Element */}
+      <div className="absolute top-0 right-0 w-1/3 h-full bg-[radial-gradient(circle_at_100%_100%,hsl(var(--primary)/0.03)_0%,transparent_50%)] pointer-events-none"></div>
+    </section>
+  );
 };
+
+export default GithubStats;

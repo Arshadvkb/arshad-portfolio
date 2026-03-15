@@ -4,37 +4,38 @@
 
 @layer base {
   :root, .dark {
-    /* Stark Dark Theme - High Contrast */
-    --background: 0 0% 4%; /* #0a0a0a */
-    --foreground: 0 0% 98%; /* Whiteish */
+    /* Obsidian & Cobalt Theme - Enterprise Grade */
+    --background: 222 47% 8%; /* #0A0F1C */
+    --foreground: 210 40% 98%;
 
-    --card: 0 0% 7%; /* Slightly lighter than background #111 */
-    --card-foreground: 0 0% 98%;
+    --card: 222 47% 11%;
+    --card-foreground: 210 40% 98%;
 
-    --popover: 0 0% 7%;
-    --popover-foreground: 0 0% 98%;
+    --popover: 222 47% 11%;
+    --popover-foreground: 210 40% 98%;
 
-    /* Electric Lime Primary */
-    --primary: 74 100% 50%; /* #ccff00 */
-    --primary-foreground: 0 0% 4%;
+    /* Cobalt Blue Primary */
+    --primary: 217 91% 60%; /* #3B82F6 */
+    --primary-foreground: 210 40% 98%;
 
-    --secondary: 0 0% 12%;
-    --secondary-foreground: 0 0% 98%;
+    --secondary: 215 27.9% 16.9%;
+    --secondary-foreground: 210 40% 98%;
 
-    --muted: 0 0% 15%;
-    --muted-foreground: 0 0% 65%;
+    --muted: 215 27.9% 16.9%;
+    --muted-foreground: 215 20.2% 65.1%;
 
-    --accent: 74 100% 50%;
-    --accent-foreground: 0 0% 4%;
+    /* Cyan Accent */
+    --accent: 188 86% 53%; /* #06B6D4 */
+    --accent-foreground: 210 40% 98%;
 
-    --destructive: 0 84.2% 60.2%; /* Red */
+    --destructive: 0 84.2% 60.2%; 
     --destructive-foreground: 210 40% 98%;
 
-    --border: 0 0% 15%; /* #262626 */
-    --input: 0 0% 15%;
-    --ring: 74 100% 50%;
+    --border: 215 27.9% 16.9%;
+    --input: 215 27.9% 16.9%;
+    --ring: 217 91% 60%;
 
-    --radius: 0rem; /* Brutalist sharp corners */
+    --radius: 0.75rem; /* Elegant rounded corners */
   }
 }
 
@@ -45,14 +46,14 @@
 
   html {
     scroll-behavior: smooth;
-    /* Adding subtle grain overlay to the whole document */
     background-color: hsl(var(--background));
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
+    /* Soft noise texture for depth without being overwhelming */
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.015'/%3E%3C/svg%3E");
     background-attachment: fixed;
   }
 
   body {
-    @apply bg-transparent text-foreground font-sans antialiased selection:bg-primary/90 selection:text-primary-foreground;
+    @apply bg-transparent text-foreground font-sans antialiased selection:bg-primary/30 selection:text-primary-foreground;
   }
 
   h1,
@@ -61,32 +62,44 @@
   h4,
   h5,
   h6 {
-    @apply font-heading tracking-tight text-foreground font-bold uppercase;
+    @apply font-heading tracking-tight text-foreground font-bold;
   }
   
   ::selection {
-    @apply bg-primary text-primary-foreground;
+    @apply bg-primary/30 text-primary-foreground;
   }
 }
 
 @layer components {
-  .brutal-card {
-    @apply bg-card border border-border transition-all duration-300 relative;
+  .glass-panel {
+    @apply bg-card/60 backdrop-blur-xl border border-white/5 transition-all duration-300;
+  }
+
+  .interactive-card {
+    @apply glass-panel rounded-xl hover:border-primary/50 hover:bg-card/80 hover:shadow-[0_0_30px_-5px_hsl(var(--primary)/0.15)] hover:-translate-y-1 relative overflow-hidden;
   }
   
-  .brutal-card:hover {
-    @apply border-primary translate-x-[-2px] translate-y-[-2px];
-    box-shadow: 4px 4px 0px 0px hsl(var(--primary));
+  /* Subtle inner glow for premium feel */
+  .interactive-card::after {
+    content: '';
+    @apply absolute inset-0 rounded-xl opacity-0 transition-opacity duration-300 pointer-events-none;
+    box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.05);
   }
-  
-  .brutal-button {
-    @apply font-mono text-sm uppercase tracking-wider bg-transparent border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-200 relative;
-    box-shadow: 4px 4px 0px 0px hsl(var(--primary));
+
+  .interactive-card:hover::after {
+    @apply opacity-100;
   }
-  
-  .brutal-button:active {
-    @apply translate-x-[2px] translate-y-[2px];
-    box-shadow: 1px 1px 0px 0px hsl(var(--primary));
+
+  .premium-button {
+    @apply inline-flex items-center justify-center rounded-lg px-8 py-3 font-medium transition-all duration-300
+    bg-primary text-primary-foreground hover:bg-primary/90 
+    hover:shadow-[0_0_20px_-5px_hsl(var(--primary)/0.4)] hover:-translate-y-0.5 active:translate-y-0;
+  }
+
+  .premium-button-secondary {
+    @apply inline-flex items-center justify-center rounded-lg px-8 py-3 font-medium transition-all duration-300
+    bg-secondary/50 text-secondary-foreground border border-white/5 hover:bg-secondary/80 
+    hover:border-white/10 hover:-translate-y-0.5 active:translate-y-0;
   }
 
   .container-width {
@@ -97,18 +110,13 @@
     @apply py-24 md:py-32;
   }
 
-  .text-gradient {
-    /* We keep the name but change the effect to a stark contrast style instead of gradient */
-    @apply text-transparent bg-clip-text bg-gradient-to-br from-white to-neutral-500;
-  }
-
-  .text-gradient-primary {
-    @apply text-primary;
+  .text-glow {
+    text-shadow: 0 0 20px hsl(var(--primary) / 0.5);
   }
 
   /* Animations */
   .fade-up {
-    animation: fadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
     opacity: 0;
     transform: translateY(20px);
   }
