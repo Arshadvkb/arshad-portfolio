@@ -1,7 +1,5 @@
-
 import React, { useState } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { ExternalLink, Github, Code2, Globe, Database } from 'lucide-react';
@@ -9,10 +7,10 @@ import libraryLogo from '@/assets/Modern Public Library Logo Template.png';
 import chatapp from '@/assets/Creative Chatting App Logo.png'
 
 const Projects = () => {
-  const [selectedProject, setSelectedProject] = useState(null);
+  const [selectedProject, setSelectedProject] = useState<any>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const handleCardClick = (project) => {
+  const handleCardClick = (project: any) => {
     setSelectedProject(project);
     setIsModalOpen(true);
   };
@@ -31,7 +29,7 @@ const Projects = () => {
     {
       title: "All-in-One Fitness App",
       description: "Comprehensive fitness companion featuring workout tracking, nutrition planning, and progress analytics.",
-      detailedDescription: "All-In-One Fitness app project is an innovative and comprehensive platform designed to cater to the diverse needs of fitness enthusiasts, integrating features for admins, users, trainers, and experts. The app enhances user engagement by incorporating advanced functionalities like facial recognition for seamless attendance tracking, enabling accurate and efficient check-ins at gyms or fitness centers. It also includes a robust chat system, allowing users to communicate directly with trainers and experts for personalized health tips and guidance, fostering a supportive fitness community. Additionally, the app features an AI-powered chatbot, leveraging cutting-edge technology to provide instant responses, workout suggestions, and motivational support, enhancing the user experience. Built with a focus on modularity and scalability, the app aims to streamline fitness management, making it a versatile tool for users to achieve their health and fitness goals efficiently.",
+      detailedDescription: "All-In-One Fitness app project is an innovative and comprehensive platform designed to cater to the diverse needs of fitness enthusiasts, integrating features for admins, users, trainers, and experts. The app enhances user engagement by incorporating advanced functionalities like facial recognition for seamless attendance tracking, enabling accurate and efficient check-ins at gyms or fitness centers. It also includes a robust chat system, allowing users to communicate directly with trainers and experts for personalized health tips and guidance, fostering a supportive fitness community. Additionally, the app features an AI-powered chatbot, leveraging cutting-edge technology to provide instant responses, workout suggestions, and motivational support, enhancing the user experience. Built with a focus on modularity and scalability, the app aims to streamline fitness management, making it a versatile tool for users to achieve health goals.",
       technologies: ["Django","OpenCV", "Tensorflow", "Flutter"],
       image: "/lovable-uploads/a38ac704-4929-49fe-b3b4-eba6b58a7244.png",
       github: "#",
@@ -61,107 +59,127 @@ const Projects = () => {
   ];
 
   return (
-    <section id="projects" className="section-padding bg-muted/20">
-      <div className="container-width">
-        <div className="text-center mb-16 fade-up">
-          <h2 className="font-heading text-3xl md:text-5xl font-bold mb-4">Featured Projects</h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            A selection of my recent work and experiments.
+    <section id="projects" className="section-padding bg-background relative border-y border-border">
+      {/* Decorative Matrix Background */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:48px_48px] pointer-events-none" />
+      
+      <div className="container-width relative z-10">
+        <div className="mb-20 fade-up flex flex-col md:flex-row justify-between items-end gap-6 border-b-2 border-primary pb-6">
+          <div>
+            <h2 className="font-heading text-5xl md:text-7xl font-black uppercase tracking-tighter">
+              Featured<br/><span className="text-primary">Projects</span>
+            </h2>
+          </div>
+          <p className="text-muted-foreground font-mono uppercase tracking-widest text-sm text-right">
+            // Output_Directory<br/>
+            [4_Items_Found]
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-12">
           {projects.map((project, index) => (
-            <Card
+            <div
               key={index}
-              className="glass-card group overflow-hidden cursor-pointer flex flex-col h-full border-none shadow-sm hover:shadow-xl transition-all duration-500"
+              className="group cursor-pointer flex flex-col h-full bg-card brutal-card hover:bg-[#151515]"
               onClick={() => handleCardClick(project)}
             >
-              <div className="relative aspect-video overflow-hidden">
+              <div className="relative aspect-video overflow-hidden border-b-2 border-border group-hover:border-primary transition-colors">
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  className="w-full h-full object-cover filter grayscale contrast-125 transition-all duration-700 group-hover:scale-105 group-hover:grayscale-0 group-hover:contrast-100 mix-blend-luminosity opacity-80 group-hover:opacity-100 group-hover:mix-blend-normal"
                 />
-                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                  <p className="text-white font-medium px-4 py-2 border border-white/30 rounded-full backdrop-blur-md">View Details</p>
+                <div className="absolute top-4 right-4 bg-background text-primary font-mono text-xs font-bold px-3 py-1 border-2 border-primary shadow-[2px_2px_0_hsl(var(--primary))] uppercase opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                  Inspect
                 </div>
               </div>
 
-              <CardHeader>
-                <div className="flex items-center justify-between mb-2">
-                  <CardTitle className="text-2xl font-bold tracking-tight">{project.title}</CardTitle>
+              <div className="p-6 md:p-8 flex flex-col flex-grow">
+                <div className="flex items-center justify-between mb-4">
+                  <h3 className="text-3xl font-black uppercase tracking-tighter group-hover:text-primary transition-colors">{project.title}</h3>
                 </div>
-                <CardDescription className="text-base line-clamp-2">
+                <p className="text-foreground/80 font-sans text-lg mb-6 flex-grow">
                   {project.description}
-                </CardDescription>
-              </CardHeader>
+                </p>
 
-              <CardContent className="mt-auto space-y-4">
-                <div className="flex flex-wrap gap-2">
-                  {project.technologies.map((tech) => (
-                    <Badge key={tech} variant="secondary" className="bg-secondary/40 text-foreground/80 hover:bg-secondary/60">
-                      {tech}
-                    </Badge>
-                  ))}
-                </div>
+                <div className="mt-auto space-y-6">
+                  <div className="flex flex-wrap gap-2">
+                    {project.technologies.slice(0, 4).map((tech) => (
+                      <span key={tech} className="font-mono text-[10px] md:text-xs uppercase tracking-wider bg-secondary text-secondary-foreground px-2 py-1 border border-border group-hover:border-primary/50 transition-colors">
+                        {tech}
+                      </span>
+                    ))}
+                    {project.technologies.length > 4 && (
+                      <span className="font-mono text-[10px] md:text-xs uppercase tracking-wider bg-transparent text-muted-foreground px-2 py-1 border border-border">
+                        +{project.technologies.length - 4}
+                      </span>
+                    )}
+                  </div>
 
-                <div className="flex gap-3 pt-2">
-                  <Button
-                    variant="outline"
-                    size="sm"
-                    className="flex-1 gap-2"
-                    onClick={(e) => { e.stopPropagation(); window.open(project.github, '_blank'); }}
-                  >
-                    <Github className="w-4 h-4" /> Source
-                  </Button>
-                  <Button
-                    size="sm"
-                    className="flex-1 gap-2 bg-primary hover:bg-primary/90"
-                    onClick={(e) => { e.stopPropagation(); window.open(project.live, '_blank'); }}
-                  >
-                    <ExternalLink className="w-4 h-4" /> Live Demo
-                  </Button>
+                  <div className="flex gap-4 pt-4 border-t border-border">
+                    <button
+                      className="flex-1 font-mono text-xs uppercase tracking-wider bg-transparent text-foreground border border-border hover:bg-secondary py-3 flex items-center justify-center gap-2 transition-colors duration-200"
+                      onClick={(e) => { e.stopPropagation(); window.open(project.github, '_blank'); }}
+                    >
+                      <Github className="w-4 h-4" /> Source
+                    </button>
+                    <button
+                      className="flex-1 brutal-button py-3 flex items-center justify-center gap-2"
+                      onClick={(e) => { e.stopPropagation(); window.open(project.live, '_blank'); }}
+                    >
+                      <ExternalLink className="w-4 h-4" /> Live
+                    </button>
+                  </div>
                 </div>
-              </CardContent>
-            </Card>
+              </div>
+            </div>
           ))}
         </div>
 
         <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
-          <DialogContent className="max-w-4xl p-0 overflow-hidden border-none bg-background/80 backdrop-blur-xl">
+          <DialogContent className="max-w-5xl p-0 overflow-hidden border-2 border-primary bg-background rounded-none shadow-[12px_12px_0_hsl(var(--primary))]">
             {selectedProject && (
-              <div className="flex flex-col md:flex-row h-[80vh] md:h-auto overflow-y-auto">
-                <div className="w-full md:w-1/2 h-64 md:h-auto relative">
+              <div className="flex flex-col md:flex-row h-[85vh] md:h-auto overflow-y-auto">
+                <div className="w-full md:w-1/2 h-64 md:h-auto relative border-r-2 border-border">
+                  <div className="absolute inset-0 bg-primary/20 mix-blend-overlay z-10 pointer-events-none"></div>
                   <img
                     src={selectedProject.image}
                     alt={selectedProject.title}
-                    className="w-full h-full object-cover absolute inset-0"
+                    className="w-full h-full object-cover absolute inset-0 filter contrast-125"
                   />
+                  <div className="absolute top-4 left-4 z-20 font-mono text-xs font-bold text-background bg-primary px-2 py-1 uppercase">
+                    ID: {selectedProject.title.substring(0, 3).toUpperCase()}_{Math.floor(Math.random() * 1000)}
+                  </div>
                 </div>
-                <div className="w-full md:w-1/2 p-6 md:p-8 flex flex-col">
-                  <DialogHeader className="mb-4">
-                    <DialogTitle className="text-2xl md:text-3xl font-bold mb-2">{selectedProject.title}</DialogTitle>
+                <div className="w-full md:w-1/2 p-8 md:p-12 flex flex-col bg-background relative">
+                  
+                  {/* Decorative corner */}
+                  <div className="absolute top-0 right-0 w-16 h-16 border-l w-0 h-0 border-t-[64px] border-t-primary border-l-[64px] border-l-transparent"></div>
+                  
+                  <DialogHeader className="mb-6">
+                    <DialogTitle className="text-4xl md:text-5xl font-black uppercase tracking-tighter mb-4 pr-8">{selectedProject.title}</DialogTitle>
                     <div className="flex flex-wrap gap-2">
-                      {selectedProject.technologies.map((tech) => (
-                        <Badge key={tech} variant="outline">{tech}</Badge>
+                      {selectedProject.technologies.map((tech: string) => (
+                        <span key={tech} className="font-mono text-xs uppercase tracking-wider bg-secondary text-secondary-foreground px-2 py-1 border border-border">
+                          {tech}
+                        </span>
                       ))}
                     </div>
                   </DialogHeader>
 
-                  <div className="flex-grow space-y-6">
-                    <p className="text-muted-foreground leading-relaxed">
+                  <div className="flex-grow space-y-6 my-6">
+                    <p className="text-foreground/90 leading-relaxed font-sans text-lg">
                       {selectedProject.detailedDescription}
                     </p>
                   </div>
 
-                  <div className="flex gap-4 mt-8 pt-4 border-t border-border">
-                    <Button className="flex-1 gap-2" onClick={() => window.open(selectedProject.live, '_blank')}>
-                      <Globe className="w-4 h-4" /> Live Site
-                    </Button>
-                    <Button variant="outline" className="flex-1 gap-2" onClick={() => window.open(selectedProject.github, '_blank')}>
-                      <Github className="w-4 h-4" /> Code
-                    </Button>
+                  <div className="flex gap-4 mt-auto pt-8 border-t-2 border-border/50">
+                    <button className="flex-1 brutal-button py-4" onClick={() => window.open(selectedProject.live, '_blank')}>
+                      <Globe className="w-4 h-4 inline-block mr-2 -mt-1" /> Launch_Site
+                    </button>
+                    <button className="flex-1 font-mono text-sm uppercase tracking-wider bg-transparent text-foreground border-2 border-foreground hover:bg-foreground hover:text-background py-4 transition-all duration-200" onClick={() => window.open(selectedProject.github, '_blank')}>
+                      <Github className="w-4 h-4 inline-block mr-2 -mt-1" /> View_Code
+                    </button>
                   </div>
                 </div>
               </div>

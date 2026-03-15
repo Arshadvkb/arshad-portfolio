@@ -1,6 +1,4 @@
 import React from 'react';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
 import { Code2, Cpu, Wrench, Layers, Database, Cloud } from 'lucide-react';
 
 const Skills = () => {
@@ -26,8 +24,7 @@ const Skills = () => {
           logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
         },
       ],
-      icon: <Code2 className="w-5 h-5 text-blue-500" />,
-      className: "hover:border-blue-500/50",
+      icon: <Code2 className="w-8 h-8 text-primary" />,
     },
     {
       title: "Frameworks & Libraries",
@@ -37,15 +34,14 @@ const Skills = () => {
         { name: "Flutter", logo: "https://cdn.simpleicons.org/flutter" },
         { name: "Django", logo: "https://cdn.simpleicons.org/django" },
         { name: "Node.js", logo: "https://cdn.simpleicons.org/nodedotjs" },
-        { name: "Express", logo: "https://cdn.simpleicons.org/express/black" },
+        { name: "Express", logo: "https://cdn.simpleicons.org/express/white" },
         {
           name: "Tailwind CSS",
           logo: "https://cdn.simpleicons.org/tailwindcss",
         },
         { name: "Bootstrap", logo: "https://cdn.simpleicons.org/bootstrap" },
       ],
-      icon: <Layers className="w-5 h-5 text-indigo-500" />,
-      className: "hover:border-indigo-500/50",
+      icon: <Layers className="w-8 h-8 text-primary" />,
     },
 
     {
@@ -56,8 +52,7 @@ const Skills = () => {
         { name: "PostgreSQL", logo: "https://cdn.simpleicons.org/postgresql" },
         { name: "MongoDB", logo: "https://cdn.simpleicons.org/mongodb" },
       ],
-      icon: <Database className="w-5 h-5 text-purple-500" />,
-      className: "hover:border-purple-500/50 md:col-span-2 lg:col-span-1",
+      icon: <Database className="w-8 h-8 text-primary" />,
     },
     {
       title: "Tools & Platforms",
@@ -74,8 +69,7 @@ const Skills = () => {
         { name: "Supabase", logo: "https://cdn.simpleicons.org/supabase" },
         { name: "Cloudinary", logo: "https://cdn.simpleicons.org/cloudinary" },
       ],
-      icon: <Wrench className="w-5 h-5 text-amber-500" />,
-      className: "hover:border-amber-500/50",
+      icon: <Wrench className="w-8 h-8 text-primary" />,
     },
     {
       title: "IoT & Embedded",
@@ -87,71 +81,71 @@ const Skills = () => {
         },
         { name: "Arduino", logo: "https://cdn.simpleicons.org/arduino" },
       ],
-      icon: <Cpu className="w-5 h-5 text-emerald-500" />,
-      className: "hover:border-emerald-500/50",
+      icon: <Cpu className="w-8 h-8 text-primary" />,
     },
     {
       title: "Cloud & DevOps",
       description: "Cloud Infrastructure & Deployment",
       skills: [
         { name: "Docker", logo: "https://cdn.simpleicons.org/docker" },
-        {name: "Firebase Hosting", logo: "https://cdn.simpleicons.org/firebase"},
+        { name: "Firebase Hosting", logo: "https://cdn.simpleicons.org/firebase" },
         { name: "Vercel", logo: "https://cdn.simpleicons.org/vercel" },
         { name: "Netlify", logo: "https://cdn.simpleicons.org/netlify" },
         { name: "Render", logo: "https://cdn.simpleicons.org/render" },
       ],
-      icon: <Cloud className="w-5 h-5 text-blue-500" />,
-      className: "hover:border-blue-500/50",
+      icon: <Cloud className="w-8 h-8 text-primary" />,
     },
   ];
 
   return (
-    <section id="skills" className="section-padding bg-background w-full">
-      <div className="container-width px-6">
-        <div className="text-center mb-16 fade-up">
-          <h2 className="font-heading text-4xl md:text-5xl font-bold mb-4 tracking-tight">
-            Technical Arsenal
+    <section id="skills" className="section-padding bg-background w-full relative">
+      <div className="container-width px-6 z-10 relative">
+        <div className="mb-20 fade-up border-b-2 border-primary pb-6 inline-block">
+          <h2 className="font-heading text-5xl md:text-7xl font-black uppercase tracking-tighter">
+            Hardware <span className="text-primary">&</span><br/>Software
           </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            A curated stack of technologies I use to build robust solutions.
+          <p className="text-muted-foreground font-mono uppercase tracking-widest text-sm mt-4">
+            // Tech_Stack.manifest
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-0 border-t-2 border-l-2 border-border">
           {skillCategories.map((category, index) => (
-            <Card
+            <div
               key={index}
-              className={`group bg-card/30 backdrop-blur-sm border-border/50 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 ${category.className}`}
+              className="group bg-transparent border-b-2 border-r-2 border-border hover:bg-card transition-colors duration-300 flex flex-col h-full"
             >
-              <CardHeader>
-                <div className="flex items-center gap-3 mb-2">
-                  <div className="p-2.5 rounded-lg bg-secondary/50 group-hover:bg-secondary transition-colors">
+              <div className="p-8 border-b-2 border-border/50">
+                <div className="flex items-center justify-between mb-4">
+                  <div className="text-muted-foreground group-hover:text-primary transition-colors">
                     {category.icon}
                   </div>
-                  <CardTitle className="text-lg font-bold">{category.title}</CardTitle>
+                  <span className="font-mono text-xs text-muted-foreground uppercase opacity-50">CAT_0{index + 1}</span>
                 </div>
-                <p className="text-sm text-muted-foreground pl-1">{category.description}</p>
-              </CardHeader>
+                <h3 className="text-2xl font-black tracking-tight uppercase group-hover:text-primary transition-colors">{category.title}</h3>
+                <p className="text-sm font-mono text-muted-foreground mt-2">{category.description}</p>
+              </div>
 
-              <CardContent>
-                <div className="flex flex-wrap gap-2.5">
+              <div className="p-8 flex-grow">
+                <div className="flex flex-wrap gap-3">
                   {category.skills.map((skill) => (
                     <div
                       key={skill.name}
-                      className="group/item flex items-center gap-3 px-4 py-3 text-sm font-medium rounded-lg bg-background border border-border/50 shadow-sm hover:border-primary/20 transition-all hover:shadow-md cursor-default"
+                      className="group/item flex items-center gap-2 px-3 py-2 text-xs font-mono uppercase border border-border bg-background hover:border-primary hover:text-primary transition-all duration-200"
                     >
-                      <div className="flex items-center justify-center p-2 rounded-md bg-white shadow-sm border border-gray-100 group-hover/item:scale-105 transition-all duration-300">
-                        <img src={skill.logo} alt={skill.name} className="w-8 h-8 object-contain" />
-                      </div>
-                      <span className="text-foreground/80 font-semibold group-hover/item:text-foreground transition-colors">{skill.name}</span>
+                      <img src={skill.logo} alt={skill.name} className="w-4 h-4 object-contain filter grayscale group-hover/item:grayscale-0 transition-all duration-200" />
+                      <span>{skill.name}</span>
                     </div>
                   ))}
                 </div>
-              </CardContent>
-            </Card>
+              </div>
+            </div>
           ))}
         </div>
       </div>
+      
+      {/* Abstract Background Element */}
+      <div className="absolute top-0 right-0 w-1/2 h-full bg-[radial-gradient(circle_at_100%_0%,hsl(var(--primary)/0.05)_0%,transparent_50%)] pointer-events-none"></div>
     </section>
   );
 };
