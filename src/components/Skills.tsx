@@ -1,7 +1,7 @@
 import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Code2, Cpu, Wrench, Layers, Database } from 'lucide-react';
+import { Code2, Cpu, Wrench, Layers, Database, Cloud } from 'lucide-react';
 
 const Skills = () => {
   const skillCategories = [
@@ -15,13 +15,19 @@ const Skills = () => {
         { name: "Java", logo: "https://cdn.simpleicons.org/openjdk" },
         { name: "C", logo: "https://cdn.simpleicons.org/c" },
         { name: "C++", logo: "https://cdn.simpleicons.org/cplusplus" },
-        { name: "C#", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" },
+        {
+          name: "C#",
+          logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg",
+        },
         { name: "Dart", logo: "https://cdn.simpleicons.org/dart" },
         { name: "HTML5", logo: "https://cdn.simpleicons.org/html5" },
-        { name: "CSS3", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" },
+        {
+          name: "CSS3",
+          logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
+        },
       ],
       icon: <Code2 className="w-5 h-5 text-blue-500" />,
-      className: "hover:border-blue-500/50"
+      className: "hover:border-blue-500/50",
     },
     {
       title: "Frameworks & Libraries",
@@ -32,11 +38,14 @@ const Skills = () => {
         { name: "Django", logo: "https://cdn.simpleicons.org/django" },
         { name: "Node.js", logo: "https://cdn.simpleicons.org/nodedotjs" },
         { name: "Express", logo: "https://cdn.simpleicons.org/express/black" },
-        { name: "Tailwind CSS", logo: "https://cdn.simpleicons.org/tailwindcss" },
+        {
+          name: "Tailwind CSS",
+          logo: "https://cdn.simpleicons.org/tailwindcss",
+        },
         { name: "Bootstrap", logo: "https://cdn.simpleicons.org/bootstrap" },
       ],
       icon: <Layers className="w-5 h-5 text-indigo-500" />,
-      className: "hover:border-indigo-500/50"
+      className: "hover:border-indigo-500/50",
     },
 
     {
@@ -46,10 +55,9 @@ const Skills = () => {
         { name: "MySQL", logo: "https://cdn.simpleicons.org/mysql" },
         { name: "PostgreSQL", logo: "https://cdn.simpleicons.org/postgresql" },
         { name: "MongoDB", logo: "https://cdn.simpleicons.org/mongodb" },
-
       ],
       icon: <Database className="w-5 h-5 text-purple-500" />,
-      className: "hover:border-purple-500/50 md:col-span-2 lg:col-span-1"
+      className: "hover:border-purple-500/50 md:col-span-2 lg:col-span-1",
     },
     {
       title: "Tools & Platforms",
@@ -58,23 +66,43 @@ const Skills = () => {
         { name: "Git", logo: "https://cdn.simpleicons.org/git" },
         { name: "GitHub", logo: "https://cdn.simpleicons.org/github" },
         { name: "Postman", logo: "https://cdn.simpleicons.org/postman" },
-        { name: "VS Code", logo: "https://upload.wikimedia.org/wikipedia/commons/9/9a/Visual_Studio_Code_1.35_icon.svg" },
+        {
+          name: "VS Code",
+          logo: "https://upload.wikimedia.org/wikipedia/commons/9/9a/Visual_Studio_Code_1.35_icon.svg",
+        },
         { name: "Firebase", logo: "https://cdn.simpleicons.org/firebase" },
         { name: "Supabase", logo: "https://cdn.simpleicons.org/supabase" },
+        { name: "Cloudinary", logo: "https://cdn.simpleicons.org/cloudinary" },
       ],
       icon: <Wrench className="w-5 h-5 text-amber-500" />,
-      className: "hover:border-amber-500/50"
+      className: "hover:border-amber-500/50",
     },
     {
       title: "IoT & Embedded",
       description: "Hardware & Automation",
       skills: [
-        { name: "Raspberry Pi", logo: "https://cdn.simpleicons.org/raspberrypi" },
+        {
+          name: "Raspberry Pi",
+          logo: "https://cdn.simpleicons.org/raspberrypi",
+        },
         { name: "Arduino", logo: "https://cdn.simpleicons.org/arduino" },
       ],
       icon: <Cpu className="w-5 h-5 text-emerald-500" />,
-      className: "hover:border-emerald-500/50"
-    }
+      className: "hover:border-emerald-500/50",
+    },
+    {
+      title: "Cloud & DevOps",
+      description: "Cloud Infrastructure & Deployment",
+      skills: [
+        { name: "Docker", logo: "https://cdn.simpleicons.org/docker" },
+        {name: "Firebase Hosting", logo: "https://cdn.simpleicons.org/firebase"},
+        { name: "Vercel", logo: "https://cdn.simpleicons.org/vercel" },
+        { name: "Netlify", logo: "https://cdn.simpleicons.org/netlify" },
+        { name: "Render", logo: "https://cdn.simpleicons.org/render" },
+      ],
+      icon: <Cloud className="w-5 h-5 text-blue-500" />,
+      className: "hover:border-blue-500/50",
+    },
   ];
 
   return (
