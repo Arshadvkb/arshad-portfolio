@@ -4,6 +4,26 @@ import { Code2, Cpu, Wrench, Layers, Database, Cloud } from 'lucide-react';
 const Skills = () => {
   const skillCategories = [
     {
+      title: "Backend & APIS",
+      description: "Server architecture & logic",
+      skills: [
+        { name: "Django", logo: "https://cdn.simpleicons.org/django" },
+        { name: "Node.js", logo: "https://cdn.simpleicons.org/nodedotjs" },
+        { name: "Express", logo: "https://cdn.simpleicons.org/express/white" },
+      ],
+      icon: <Layers className="w-8 h-8 text-primary" />,
+    },
+    {
+      title: "Databases",
+      description: "Data Storage Solutions",
+      skills: [
+        { name: "MySQL", logo: "https://cdn.simpleicons.org/mysql" },
+        { name: "PostgreSQL", logo: "https://cdn.simpleicons.org/postgresql" },
+        { name: "MongoDB", logo: "https://cdn.simpleicons.org/mongodb" },
+      ],
+      icon: <Database className="w-8 h-8 text-primary" />,
+    },
+    {
       title: "Languages",
       description: "Core programming languages",
       skills: [
@@ -18,41 +38,27 @@ const Skills = () => {
           logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg",
         },
         { name: "Dart", logo: "https://cdn.simpleicons.org/dart" },
+      ],
+      icon: <Code2 className="w-8 h-8 text-primary" />,
+    },
+    {
+      title: "Frontend & Mobile",
+      description: "Client-side interfaces",
+      skills: [
+        { name: "React", logo: "https://cdn.simpleicons.org/react" },
+        { name: "Flutter", logo: "https://cdn.simpleicons.org/flutter" },
         { name: "HTML5", logo: "https://cdn.simpleicons.org/html5" },
         {
           name: "CSS3",
           logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
         },
-      ],
-      icon: <Code2 className="w-8 h-8 text-primary" />,
-    },
-    {
-      title: "Frameworks & Libraries",
-      description: "Full-stack development tools",
-      skills: [
-        { name: "React", logo: "https://cdn.simpleicons.org/react" },
-        { name: "Flutter", logo: "https://cdn.simpleicons.org/flutter" },
-        { name: "Django", logo: "https://cdn.simpleicons.org/django" },
-        { name: "Node.js", logo: "https://cdn.simpleicons.org/nodedotjs" },
-        { name: "Express", logo: "https://cdn.simpleicons.org/express/white" },
         {
           name: "Tailwind CSS",
           logo: "https://cdn.simpleicons.org/tailwindcss",
         },
         { name: "Bootstrap", logo: "https://cdn.simpleicons.org/bootstrap" },
       ],
-      icon: <Layers className="w-8 h-8 text-primary" />,
-    },
-
-    {
-      title: "Databases",
-      description: "Data Storage Solutions",
-      skills: [
-        { name: "MySQL", logo: "https://cdn.simpleicons.org/mysql" },
-        { name: "PostgreSQL", logo: "https://cdn.simpleicons.org/postgresql" },
-        { name: "MongoDB", logo: "https://cdn.simpleicons.org/mongodb" },
-      ],
-      icon: <Database className="w-8 h-8 text-primary" />,
+      icon: <Cpu className="w-8 h-8 text-primary" />,
     },
     {
       title: "Tools & Platforms",
@@ -67,21 +73,8 @@ const Skills = () => {
         },
         { name: "Firebase", logo: "https://cdn.simpleicons.org/firebase" },
         { name: "Supabase", logo: "https://cdn.simpleicons.org/supabase" },
-        { name: "Cloudinary", logo: "https://cdn.simpleicons.org/cloudinary" },
       ],
       icon: <Wrench className="w-8 h-8 text-primary" />,
-    },
-    {
-      title: "IoT & Embedded",
-      description: "Hardware & Automation",
-      skills: [
-        {
-          name: "Raspberry Pi",
-          logo: "https://cdn.simpleicons.org/raspberrypi",
-        },
-        { name: "Arduino", logo: "https://cdn.simpleicons.org/arduino" },
-      ],
-      icon: <Cpu className="w-8 h-8 text-primary" />,
     },
     {
       title: "Cloud & DevOps",

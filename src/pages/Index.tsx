@@ -7,6 +7,7 @@ import Footer from "@/components/Footer";
 import { AIAssistant } from "@/components/AIAssistant";
 import { Navbar } from "@/components/Navbar";
 import { Experience } from "@/components/Experience";
+import GithubStats from "@/components/GithubStats";
 
 const Index = () => {
   return (
@@ -18,6 +19,7 @@ const Index = () => {
           <Skills />
           <Experience />
           <Projects />
+          <GithubStats />
           <Contact />
         </main>
         <Footer />

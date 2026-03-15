@@ -93,20 +93,20 @@ const Contact = () => {
             <div className="space-y-6 flex-grow">
               <div className="p-6 border border-border bg-background hover:border-primary transition-colors relative overflow-hidden group/service cursor-default">
                 <div className="absolute top-0 right-0 p-2 font-mono text-5xl font-black text-border opacity-50 group-hover/service:text-primary/20 transition-colors pointer-events-none">01</div>
-                <h4 className="font-black text-xl uppercase tracking-tight mb-2 relative z-10 group-hover/service:text-primary transition-colors">Full-Stack Development</h4>
-                <p className="font-mono text-sm text-foreground/70 relative z-10 leading-relaxed">End-to-end web and mobile application development architecture and deployment.</p>
+                <h4 className="font-black text-xl uppercase tracking-tight mb-2 relative z-10 group-hover/service:text-primary transition-colors">Backend & API Design</h4>
+                <p className="font-mono text-sm text-foreground/70 relative z-10 leading-relaxed">Scalable server architecture, RESTful API design, and complex business logic implementation.</p>
               </div>
               
               <div className="p-6 border border-border bg-background hover:border-primary transition-colors relative overflow-hidden group/service cursor-default">
                 <div className="absolute top-0 right-0 p-2 font-mono text-5xl font-black text-border opacity-50 group-hover/service:text-primary/20 transition-colors pointer-events-none">02</div>
-                <h4 className="font-black text-xl uppercase tracking-tight mb-2 relative z-10 group-hover/service:text-primary transition-colors">IoT Solutions</h4>
-                <p className="font-mono text-sm text-foreground/70 relative z-10 leading-relaxed">Smart automation systems, hardware interconnectivity, and sensor integration frameworks.</p>
+                <h4 className="font-black text-xl uppercase tracking-tight mb-2 relative z-10 group-hover/service:text-primary transition-colors">Database Architecture</h4>
+                <p className="font-mono text-sm text-foreground/70 relative z-10 leading-relaxed">SQL/NoSQL database modeling, optimization, caching strategies, and data integrity constraints.</p>
               </div>
               
               <div className="p-6 border border-border bg-background hover:border-primary transition-colors relative overflow-hidden group/service cursor-default">
                 <div className="absolute top-0 right-0 p-2 font-mono text-5xl font-black text-border opacity-50 group-hover/service:text-primary/20 transition-colors pointer-events-none">03</div>
-                <h4 className="font-black text-xl uppercase tracking-tight mb-2 relative z-10 group-hover/service:text-primary transition-colors">Technical Consulting</h4>
-                <p className="font-mono text-sm text-foreground/70 relative z-10 leading-relaxed">Architecture design, technology stack optimization, and performance scaling strategies.</p>
+                <h4 className="font-black text-xl uppercase tracking-tight mb-2 relative z-10 group-hover/service:text-primary transition-colors">Fullstack Integration</h4>
+                <p className="font-mono text-sm text-foreground/70 relative z-10 leading-relaxed">Seamless integration between high-performance backends and interactive frontend applications.</p>
               </div>
             </div>
           </div>

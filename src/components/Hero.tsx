@@ -30,15 +30,15 @@ const Hero = () => {
             <div className="absolute -bottom-[2px] -right-[2px] w-2 h-2 bg-primary"></div>
           </div>
 
-          <h1 className="text-6xl md:text-8xl lg:text-9xl font-heading font-black tracking-tighter text-foreground leading-[0.9] uppercase">
-            Creative<br/>
-            <span className="text-transparent bg-clip-text" style={{ WebkitTextStroke: '2px hsl(var(--foreground))' }}>Developer</span><br/>
-            <span className="text-primary">&</span> Designer
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-heading font-black tracking-tighter text-foreground leading-[0.9] uppercase">
+            Backend First<br/>
+            <span className="text-transparent bg-clip-text" style={{ WebkitTextStroke: '2px hsl(var(--foreground))' }}>Fullstack</span><br/>
+            <span className="text-primary">Developer</span>
           </h1>
 
           <div className="pl-0 md:pl-8 border-l-4 border-primary">
             <p className="text-xl md:text-2xl text-muted-foreground max-w-xl leading-relaxed font-sans">
-              I Engineer <strong className="text-foreground font-bold">Unforgettable</strong> Digital Experiences. Specializing in high-performance web applications and striking UI/UX.
+              I Architect <strong className="text-foreground font-bold">Robust</strong> Business Logic. Specializing in high-performance backends, scalable databases, and seamless fullstack integrations.
             </p>
           </div>
 
