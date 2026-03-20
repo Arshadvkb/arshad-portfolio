@@ -5,6 +5,7 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } f
 import { ExternalLink, Github, Code2, Globe, Database, ArrowRight } from 'lucide-react';
 import libraryLogo from '@/assets/Modern Public Library Logo Template.png';
 import chatapp from '@/assets/Creative Chatting App Logo.png'
+import penyywatch from '@/assets/Blue_Minimalist_Financial_Consulting_Agency_Logo__3_-removebg-preview.png'
 
 const Projects = () => {
   const [selectedProject, setSelectedProject] = useState<any>(null);
@@ -18,44 +19,89 @@ const Projects = () => {
   const projects = [
     {
       title: "Aero AI",
-      description: "AI-powered aeroponics automation system optimizing plant growth via intelligent monitoring and control.",
-      detailedDescription: "The AERO AI project automates an aeroponics system by integrating Gemini 2.5 Flash for AI-driven optimization, MQTT for real-time data communication, Raspberry Pi as the central hub hosting a Mosquitto MQTT broker and Node.js server, ESP32 for interfacing with sensors (e.g., DHT22 for temperature/humidity, pH for nutrients) and actuators (e.g., ultrasonic foggers, pumps), and a Flutter-based dashboard for user monitoring and control. Sensor data is published via MQTT, processed by the Node.js server with Gemini API for intelligent decisions (e.g., adjusting misting based on humidity), and commands are sent back to the ESP32, while the Flutter dashboard displays real-time data and allows manual control, creating an efficient, scalable system for automated plant growth.",
-      technologies: ["Embedded C","Python","Node.js","Flutter","Gemini AI","Raspberry Pi"],
+      description:
+        "AI-powered aeroponics automation system optimizing plant growth via intelligent monitoring and control.",
+      detailedDescription:
+        "The AERO AI project automates an aeroponics system by integrating Gemini 2.5 Flash for AI-driven optimization, MQTT for real-time data communication, Raspberry Pi as the central hub hosting a Mosquitto MQTT broker and Node.js server, ESP32 for interfacing with sensors (e.g., DHT22 for temperature/humidity, pH for nutrients) and actuators (e.g., ultrasonic foggers, pumps), and a Flutter-based dashboard for user monitoring and control. Sensor data is published via MQTT, processed by the Node.js server with Gemini API for intelligent decisions (e.g., adjusting misting based on humidity), and commands are sent back to the ESP32, while the Flutter dashboard displays real-time data and allows manual control, creating an efficient, scalable system for automated plant growth.",
+      technologies: [
+        "Embedded C",
+        "Python",
+        "Node.js",
+        "Flutter",
+        "Gemini AI",
+        "Raspberry Pi",
+      ],
       image: "/lovable-uploads/314fe94b-27e1-4b25-908d-a7cc05e75d9d.png",
       github: "#",
       live: "#",
-      featured: true
+      featured: true,
     },
     {
       title: "All-in-One Fitness App",
-      description: "Comprehensive fitness companion featuring workout tracking, nutrition planning, and progress analytics.",
-      detailedDescription: "All-In-One Fitness app project is an innovative and comprehensive platform designed to cater to the diverse needs of fitness enthusiasts, integrating features for admins, users, trainers, and experts. The app enhances user engagement by incorporating advanced functionalities like facial recognition for seamless attendance tracking, enabling accurate and efficient check-ins at gyms or fitness centers. It also includes a robust chat system, allowing users to communicate directly with trainers and experts for personalized health tips and guidance, fostering a supportive fitness community. Additionally, the app features an AI-powered chatbot, leveraging cutting-edge technology to provide instant responses, workout suggestions, and motivational support, enhancing the user experience. Built with a focus on modularity and scalability, the app aims to streamline fitness management, making it a versatile tool for users to achieve health goals.",
-      technologies: ["Django","OpenCV", "Tensorflow", "Flutter"],
+      description:
+        "Comprehensive fitness companion featuring workout tracking, nutrition planning, and progress analytics.",
+      detailedDescription:
+        "All-In-One Fitness app project is an innovative and comprehensive platform designed to cater to the diverse needs of fitness enthusiasts, integrating features for admins, users, trainers, and experts. The app enhances user engagement by incorporating advanced functionalities like facial recognition for seamless attendance tracking, enabling accurate and efficient check-ins at gyms or fitness centers. It also includes a robust chat system, allowing users to communicate directly with trainers and experts for personalized health tips and guidance, fostering a supportive fitness community. Additionally, the app features an AI-powered chatbot, leveraging cutting-edge technology to provide instant responses, workout suggestions, and motivational support, enhancing the user experience. Built with a focus on modularity and scalability, the app aims to streamline fitness management, making it a versatile tool for users to achieve health goals.",
+      technologies: ["Django", "OpenCV", "Tensorflow", "Flutter"],
       image: "/lovable-uploads/a38ac704-4929-49fe-b3b4-eba6b58a7244.png",
       github: "#",
       live: "#",
-      featured: true
+      featured: true,
     },
     {
       title: "Library Management System",
-      description: "Secure system with JWT authentication, enabling CRUD operations for books and members.",
-      detailedDescription: "A comprehensive Library Management System built with robust security using JWT (JSON Web Tokens) for authentication and authorization. The system streamlines library operations through essential CRUD (Create, Read, Update, Delete) functionalities with role-based access control for administrators and librarians. Features include secure user authentication, book cataloging with advanced search capabilities, member management with verification, circulation tracking, automated due date reminders, and comprehensive administrative controls for seamless library operations.",
-      technologies: ["MongoDb","Express.js","React.js","Node.js", "JWT", "Tailwind CSS","Cloudinary"],
+      description:
+        "Secure system with JWT authentication, enabling CRUD operations for books and members.",
+      detailedDescription:
+        "A comprehensive Library Management System built with robust security using JWT (JSON Web Tokens) for authentication and authorization. The system streamlines library operations through essential CRUD (Create, Read, Update, Delete) functionalities with role-based access control for administrators and librarians. Features include secure user authentication, book cataloging with advanced search capabilities, member management with verification, circulation tracking, automated due date reminders, and comprehensive administrative controls for seamless library operations.",
+      technologies: [
+        "MongoDb",
+        "Express.js",
+        "React.js",
+        "Node.js",
+        "JWT",
+        "Tailwind CSS",
+        "Cloudinary",
+      ],
       image: libraryLogo,
       github: "#",
       live: "#",
-      featured: false
+      featured: false,
     },
     {
       title: "Real Time Chat App",
-      description: "ChatSphere: Secure, instant messaging with private rooms and file sharing using Socket.io.",
-      detailedDescription: "ChatSphere is a fun, real-time chat app I built using the MERN stack (MongoDB for data, Express and Node.js for the backend, React for the sleek frontend) and Socket.io to make conversations feel instant and alive. It lets users sign up securely, jump into private or group rooms, send messages with typing indicators and read receipts, and even share images or files—all without any lag. Deployed on Vercel and Heroku, it's perfect for quick team huddles or casual catch-ups, slashing wait times by 80% compared to old-school polling, and the code's open on GitHub for anyone to tweak or join in!",
-      technologies: ["MongoDb","Express.js","React.js","Node.js", "JWT", "Tailwind CSS","Cloudinary","Socket.io","DaisyUi"],
+      description:
+        "ChatSphere: Secure, instant messaging with private rooms and file sharing using Socket.io.",
+      detailedDescription:
+        "ChatSphere is a fun, real-time chat app I built using the MERN stack (MongoDB for data, Express and Node.js for the backend, React for the sleek frontend) and Socket.io to make conversations feel instant and alive. It lets users sign up securely, jump into private or group rooms, send messages with typing indicators and read receipts, and even share images or files—all without any lag. Deployed on Vercel and Heroku, it's perfect for quick team huddles or casual catch-ups, slashing wait times by 80% compared to old-school polling, and the code's open on GitHub for anyone to tweak or join in!",
+      technologies: [
+        "MongoDb",
+        "Express.js",
+        "React.js",
+        "Node.js",
+        "JWT",
+        "Tailwind CSS",
+        "Cloudinary",
+        "Socket.io",
+        "DaisyUi",
+      ],
       image: chatapp,
       github: "#",
       live: "#",
-      featured: false
-    }
+      featured: false,
+    },
+    {
+      title: "Penny Watch",
+      description:
+        "PennyWatch is a smart personal finance management app that helps users track expenses, manage budgets, and gain insights into their spending habits in real time.",
+      detailedDescription:
+        "PennyWatch is a personal finance app that helps users track income and expenses, understand spending habits, and make smarter financial decisions. With real-time tracking and simple insights, it gives a clear view of where money goes, making budgeting easier and more effective.",
+      technologies: ["Flutter", "Hive Db", "GetX"],
+      image: penyywatch,
+      github: "#",
+      live: "#",
+      featured: false,
+    },
   ];
 
   return (
