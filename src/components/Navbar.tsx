@@ -17,40 +17,42 @@ export const Navbar = () => {
         { name: "Skills", href: "#skills" },
         { name: "Experience", href: "#experience" },
         { name: "Projects", href: "#projects" },
+        { name: "Resume", href: "/resume.pdf", download: true },
     ]
 
     return (
         <nav
-            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "bg-background/70 backdrop-blur-xl border-b border-white/5 shadow-sm" : "bg-transparent"
+            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? "bg-background/80 backdrop-blur-2xl border-b border-primary/10 shadow-2xl" : "bg-transparent"
                 }`}
         >
-            <div className="container-width flex items-center justify-between h-20">
+            <div className="container-width flex items-center justify-between h-24">
 
-                <a href="#" className="font-heading font-bold text-xl tracking-tight flex items-center gap-2 group">
-                    <div className="w-2 h-2 rounded-full bg-primary shadow-[0_0_10px_hsl(var(--primary))] group-hover:scale-150 transition-transform duration-300"></div>
-                    <span>Arshad<span className="text-muted-foreground font-normal">.Vkb</span></span>
+                <a href="#" className="font-heading font-black text-2xl tracking-tighter flex items-center gap-3 group">
+                    <div className="w-3 h-3 rounded-full bg-primary shadow-[0_0_15px_hsl(var(--primary))] group-hover:scale-125 transition-transform duration-500"></div>
+                    <span className="uppercase italic">Arshad<span className="text-primary">.</span>Vkb</span>
                 </a>
 
                 {/* Desktop Navigation */}
-                <div className="hidden md:flex items-center gap-8">
-                    <div className="flex items-center gap-6">
+                <div className="hidden md:flex items-center gap-12">
+                    <div className="flex items-center gap-10">
                         {navLinks.map((link) => (
                             <a
                                 key={link.name}
                                 href={link.href}
-                                className="text-sm font-medium text-foreground/70 hover:text-primary transition-colors relative group"
+                                download={link.download ? "Arshad_VKB_CV.pdf" : undefined}
+                                className="text-xs font-bold uppercase tracking-[0.2em] text-foreground/50 hover:text-primary transition-all duration-300 relative group"
                             >
                                 {link.name}
-                                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300 rounded-full"></span>
+                                <span className="absolute -bottom-2 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-500 rounded-full"></span>
                             </a>
                         ))}
                     </div>
 
                     <button
                         onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
-                        className="premium-button text-sm px-5 py-2"
+                        className="premium-button text-xs px-8 py-3 uppercase tracking-widest font-bold"
                     >
-                        Contact Me
+                        Initiate_Sync
                     </button>
                 </div>
 
@@ -58,28 +60,31 @@ export const Navbar = () => {
                 <div className="md:hidden flex items-center">
                     <button
                         onClick={() => setIsOpen(!isOpen)}
-                        className="text-foreground focus:outline-none p-2 rounded-lg hover:bg-white/5 transition-colors"
+                        className="text-foreground focus:outline-none p-3 rounded-xl hover:bg-primary/10 transition-colors border border-white/5"
                     >
-                        {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+                        {isOpen ? <X className="h-6 w-6 text-primary" /> : <Menu className="h-6 w-6" />}
                     </button>
                 </div>
             </div>
 
             {/* Mobile Navigation */}
             {isOpen && (
-                <div className="md:hidden absolute top-20 left-0 right-0 bg-background/95 backdrop-blur-xl border-b border-white/5 flex flex-col p-4 shadow-lg animate-in slide-in-from-top-2">
-                    {navLinks.map((link) => (
-                        <a
-                            key={link.name}
-                            href={link.href}
-                            className="px-4 py-3 text-sm font-medium text-foreground/80 hover:text-primary hover:bg-white/5 rounded-lg transition-colors"
-                            onClick={() => setIsOpen(false)}
-                        >
-                            {link.name}
-                        </a>
-                    ))}
+                <div className="md:hidden absolute top-24 left-0 right-0 bg-background/95 backdrop-blur-3xl border-b border-primary/10 flex flex-col p-6 shadow-2xl animate-in slide-in-from-top-4 duration-500">
+                    <div className="flex flex-col gap-2">
+                        {navLinks.map((link) => (
+                            <a
+                                key={link.name}
+                                href={link.href}
+                                download={link.download ? "Arshad_VKB_CV.pdf" : undefined}
+                                className="px-6 py-4 text-sm font-bold uppercase tracking-widest text-foreground/70 hover:text-primary hover:bg-primary/5 rounded-2xl transition-all"
+                                onClick={() => setIsOpen(false)}
+                            >
+                                {link.name}
+                            </a>
+                        ))}
+                    </div>
                     <button
-                        className="mt-4 w-full premium-button"
+                        className="mt-6 w-full premium-button py-5 text-sm uppercase tracking-[0.2em]"
                         onClick={() => {
                             setIsOpen(false);
                             document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });

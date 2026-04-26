@@ -1,5 +1,6 @@
 import React from 'react';
 import { Code2, Cpu, Wrench, Layers, Database, Cloud } from 'lucide-react';
+import { ScrollReveal } from './ScrollReveal';
 
 const Skills = () => {
   const skillCategories = [
@@ -79,54 +80,74 @@ const Skills = () => {
   ];
 
   return (
-    <section id="skills" className="section-padding bg-background w-full relative">
+    <section id="skills" className="section-padding bg-background w-full relative overflow-hidden">
       <div className="container-width px-6 z-10 relative">
-        <div className="mb-16 fade-up flex flex-col items-center text-center">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary/50 border border-white/5 text-muted-foreground font-mono text-xs mb-4">
-            <Cpu className="w-3 h-3 text-primary" /> Technical Arsenal
-          </div>
-          <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-4">
-            Engineering <span className="text-primary">Stack</span>
-          </h2>
-          <p className="text-foreground/70 max-w-2xl text-lg">
-            A comprehensive overview of the technologies and frameworks I utilize to build scalable, high-performance applications.
-          </p>
-        </div>
-
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {skillCategories.map((category, index) => (
-            <div
-              key={index}
-              className="interactive-card p-6 flex flex-col h-full group"
-            >
-              <div className="flex items-center gap-4 mb-6">
-                <div className="p-3 rounded-xl bg-primary/10 border border-primary/20 text-primary group-hover:scale-110 transition-transform duration-300">
-                  {category.icon}
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold tracking-tight text-foreground">{category.title}</h3>
-                  <p className="text-sm text-muted-foreground">{category.description}</p>
-                </div>
-              </div>
-
-              <div className="flex flex-wrap gap-2 mt-auto">
-                {category.skills.map((skill) => (
-                  <div
-                    key={skill.name}
-                    className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-secondary/50 border border-white/5 text-sm font-medium text-foreground/80 hover:bg-secondary hover:text-foreground hover:border-white/10 transition-colors"
-                  >
-                    <img src={skill.logo} alt={skill.name} className="w-4 h-4 object-contain" />
-                    <span>{skill.name}</span>
-                  </div>
-                ))}
-              </div>
+        <ScrollReveal>
+          <div className="mb-20 flex flex-col items-center text-center">
+            <div className="inline-flex items-center gap-3 px-4 py-2 rounded-xl bg-primary/10 border border-primary/20 text-primary font-mono text-[10px] font-bold tracking-[0.3em] uppercase mb-6">
+              <Cpu className="w-4 h-4" /> Technical Arsenal
             </div>
+            <h2 className="font-heading text-5xl md:text-7xl font-black tracking-tighter mb-6 uppercase italic">
+              Core <span className="text-primary text-glow">Capabilities.</span>
+            </h2>
+            <p className="text-foreground/40 max-w-2xl text-xl font-light leading-relaxed">
+              A precise decomposition of the technologies utilized to architect high-integrity digital ecosystems.
+            </p>
+          </div>
+        </ScrollReveal>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border border-white/5 bg-[#050505] rounded-[2rem] overflow-hidden">
+          {skillCategories.map((category, index) => (
+            <ScrollReveal 
+              key={index} 
+              delay={0.1 + (index * 0.1)} 
+              direction={index % 2 === 0 ? 'up' : 'down'}
+              className={`border-white/5 transition-all duration-500 group hover:bg-primary/[0.02] ${
+                index % 3 !== 2 ? 'lg:border-r' : ''
+              } ${
+                index < 3 ? 'lg:border-b' : ''
+              } ${
+                index % 2 !== 1 ? 'md:border-r lg:md:border-r-0' : ''
+              } ${
+                index < 4 ? 'md:border-b lg:md:border-b-0' : ''
+              } border-b lg:border-b-0`}
+            >
+              <div className="p-10 flex flex-col h-full">
+                <div className="flex items-center justify-between mb-10">
+                  <div className="flex items-center gap-4">
+                    <div className="text-primary group-hover:scale-110 transition-transform duration-500">
+                      {category.icon}
+                    </div>
+                    <span className="text-[10px] font-black tracking-[0.4em] uppercase text-foreground/20">Module.0{index + 1}</span>
+                  </div>
+                </div>
+                
+                <div className="space-y-4 mb-10">
+                  <h3 className="text-4xl font-black tracking-tighter text-foreground uppercase italic group-hover:text-primary transition-colors">{category.title}</h3>
+                  <p className="text-[10px] font-bold text-muted-foreground tracking-[0.2em] uppercase leading-relaxed max-w-[200px]">{category.description}</p>
+                </div>
+
+                <div className="mt-auto">
+                  <div className="flex flex-wrap gap-2">
+                    {category.skills.map((skill) => (
+                      <div
+                        key={skill.name}
+                        className="flex items-center gap-3 px-4 py-2 rounded-xl border border-white/5 text-xs font-bold uppercase tracking-widest text-foreground/40 hover:border-primary/40 hover:text-primary hover:bg-primary/5 transition-all duration-300"
+                      >
+                        <img src={skill.logo} alt={skill.name} className="w-5 h-5 object-contain" />
+                        <span>{skill.name}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </ScrollReveal>
           ))}
         </div>
       </div>
       
-      {/* Abstract Background Element */}
-      <div className="absolute top-1/2 left-0 -translate-y-1/2 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[120px] pointer-events-none mix-blend-screen -z-0"></div>
+      {/* Refined Background Element */}
+      <div className="absolute top-1/2 right-0 -translate-y-1/2 w-[800px] h-[800px] bg-primary/5 rounded-full blur-[160px] pointer-events-none mix-blend-screen -z-0"></div>
     </section>
   );
 };
