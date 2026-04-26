@@ -1,10 +1,29 @@
 import React from 'react';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
 import { Code2, Cpu, Wrench, Layers, Database, Cloud } from 'lucide-react';
+import { ScrollReveal } from './ScrollReveal';
 
 const Skills = () => {
   const skillCategories = [
+    {
+      title: "Backend & APIS",
+      description: "Server architecture & logic",
+      skills: [
+        { name: "Django", logo: "https://cdn.simpleicons.org/django" },
+        { name: "Node.js", logo: "https://cdn.simpleicons.org/nodedotjs" },
+        { name: "Express", logo: "https://cdn.simpleicons.org/express/white" },
+      ],
+      icon: <Layers className="w-6 h-6 text-primary" />,
+    },
+    {
+      title: "Databases",
+      description: "Data storage & modeling",
+      skills: [
+        { name: "MySQL", logo: "https://cdn.simpleicons.org/mysql" },
+        { name: "PostgreSQL", logo: "https://cdn.simpleicons.org/postgresql" },
+        { name: "MongoDB", logo: "https://cdn.simpleicons.org/mongodb" },
+      ],
+      icon: <Database className="w-6 h-6 text-primary" />,
+    },
     {
       title: "Languages",
       description: "Core programming languages",
@@ -15,143 +34,120 @@ const Skills = () => {
         { name: "Java", logo: "https://cdn.simpleicons.org/openjdk" },
         { name: "C", logo: "https://cdn.simpleicons.org/c" },
         { name: "C++", logo: "https://cdn.simpleicons.org/cplusplus" },
-        {
-          name: "C#",
-          logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg",
-        },
+        { name: "C#", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" },
         { name: "Dart", logo: "https://cdn.simpleicons.org/dart" },
-        { name: "HTML5", logo: "https://cdn.simpleicons.org/html5" },
-        {
-          name: "CSS3",
-          logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
-        },
       ],
-      icon: <Code2 className="w-5 h-5 text-blue-500" />,
-      className: "hover:border-blue-500/50",
+      icon: <Code2 className="w-6 h-6 text-primary" />,
     },
     {
-      title: "Frameworks & Libraries",
-      description: "Full-stack development tools",
+      title: "Frontend & Mobile",
+      description: "Client-side interfaces",
       skills: [
         { name: "React", logo: "https://cdn.simpleicons.org/react" },
         { name: "Flutter", logo: "https://cdn.simpleicons.org/flutter" },
-        { name: "Django", logo: "https://cdn.simpleicons.org/django" },
-        { name: "Node.js", logo: "https://cdn.simpleicons.org/nodedotjs" },
-        { name: "Express", logo: "https://cdn.simpleicons.org/express/black" },
-        {
-          name: "Tailwind CSS",
-          logo: "https://cdn.simpleicons.org/tailwindcss",
-        },
+        { name: "HTML5", logo: "https://cdn.simpleicons.org/html5" },
+        { name: "CSS3", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" },
+        { name: "Tailwind CSS", logo: "https://cdn.simpleicons.org/tailwindcss" },
         { name: "Bootstrap", logo: "https://cdn.simpleicons.org/bootstrap" },
       ],
-      icon: <Layers className="w-5 h-5 text-indigo-500" />,
-      className: "hover:border-indigo-500/50",
-    },
-
-    {
-      title: "Databases",
-      description: "Data Storage Solutions",
-      skills: [
-        { name: "MySQL", logo: "https://cdn.simpleicons.org/mysql" },
-        { name: "PostgreSQL", logo: "https://cdn.simpleicons.org/postgresql" },
-        { name: "MongoDB", logo: "https://cdn.simpleicons.org/mongodb" },
-      ],
-      icon: <Database className="w-5 h-5 text-purple-500" />,
-      className: "hover:border-purple-500/50 md:col-span-2 lg:col-span-1",
+      icon: <Cpu className="w-6 h-6 text-primary" />,
     },
     {
       title: "Tools & Platforms",
-      description: "DevOps & Workflow",
+      description: "Development workflow",
       skills: [
         { name: "Git", logo: "https://cdn.simpleicons.org/git" },
         { name: "GitHub", logo: "https://cdn.simpleicons.org/github" },
         { name: "Postman", logo: "https://cdn.simpleicons.org/postman" },
-        {
-          name: "VS Code",
-          logo: "https://upload.wikimedia.org/wikipedia/commons/9/9a/Visual_Studio_Code_1.35_icon.svg",
-        },
+        { name: "VS Code", logo: "https://upload.wikimedia.org/wikipedia/commons/9/9a/Visual_Studio_Code_1.35_icon.svg" },
         { name: "Firebase", logo: "https://cdn.simpleicons.org/firebase" },
         { name: "Supabase", logo: "https://cdn.simpleicons.org/supabase" },
-        { name: "Cloudinary", logo: "https://cdn.simpleicons.org/cloudinary" },
       ],
-      icon: <Wrench className="w-5 h-5 text-amber-500" />,
-      className: "hover:border-amber-500/50",
-    },
-    {
-      title: "IoT & Embedded",
-      description: "Hardware & Automation",
-      skills: [
-        {
-          name: "Raspberry Pi",
-          logo: "https://cdn.simpleicons.org/raspberrypi",
-        },
-        { name: "Arduino", logo: "https://cdn.simpleicons.org/arduino" },
-      ],
-      icon: <Cpu className="w-5 h-5 text-emerald-500" />,
-      className: "hover:border-emerald-500/50",
+      icon: <Wrench className="w-6 h-6 text-primary" />,
     },
     {
       title: "Cloud & DevOps",
-      description: "Cloud Infrastructure & Deployment",
+      description: "Infrastructure & Deployment",
       skills: [
         { name: "Docker", logo: "https://cdn.simpleicons.org/docker" },
-        {name: "Firebase Hosting", logo: "https://cdn.simpleicons.org/firebase"},
+        { name: "Firebase Hosting", logo: "https://cdn.simpleicons.org/firebase" },
         { name: "Vercel", logo: "https://cdn.simpleicons.org/vercel" },
         { name: "Netlify", logo: "https://cdn.simpleicons.org/netlify" },
         { name: "Render", logo: "https://cdn.simpleicons.org/render" },
       ],
-      icon: <Cloud className="w-5 h-5 text-blue-500" />,
-      className: "hover:border-blue-500/50",
+      icon: <Cloud className="w-6 h-6 text-primary" />,
     },
   ];
 
   return (
-    <section id="skills" className="section-padding bg-background w-full">
-      <div className="container-width px-6">
-        <div className="text-center mb-16 fade-up">
-          <h2 className="font-heading text-4xl md:text-5xl font-bold mb-4 tracking-tight">
-            Technical Arsenal
-          </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            A curated stack of technologies I use to build robust solutions.
-          </p>
-        </div>
+    <section id="skills" className="section-padding bg-background w-full relative overflow-hidden">
+      <div className="container-width px-6 z-10 relative">
+        <ScrollReveal>
+          <div className="mb-20 flex flex-col items-center text-center">
+            <div className="inline-flex items-center gap-3 px-4 py-2 rounded-xl bg-primary/10 border border-primary/20 text-primary font-mono text-[10px] font-bold tracking-[0.3em] uppercase mb-6">
+              <Cpu className="w-4 h-4" /> Technical Arsenal
+            </div>
+            <h2 className="font-heading text-5xl md:text-7xl font-black tracking-tighter mb-6 uppercase italic">
+              Core <span className="text-primary text-glow">Capabilities.</span>
+            </h2>
+            <p className="text-foreground/40 max-w-2xl text-xl font-light leading-relaxed">
+              A precise decomposition of the technologies utilized to architect high-integrity digital ecosystems.
+            </p>
+          </div>
+        </ScrollReveal>
 
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border border-white/5 bg-[#050505] rounded-[2rem] overflow-hidden">
           {skillCategories.map((category, index) => (
-            <Card
-              key={index}
-              className={`group bg-card/30 backdrop-blur-sm border-border/50 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 ${category.className}`}
+            <ScrollReveal 
+              key={index} 
+              delay={0.1 + (index * 0.1)} 
+              direction={index % 2 === 0 ? 'up' : 'down'}
+              className={`border-white/5 transition-all duration-500 group hover:bg-primary/[0.02] ${
+                index % 3 !== 2 ? 'lg:border-r' : ''
+              } ${
+                index < 3 ? 'lg:border-b' : ''
+              } ${
+                index % 2 !== 1 ? 'md:border-r lg:md:border-r-0' : ''
+              } ${
+                index < 4 ? 'md:border-b lg:md:border-b-0' : ''
+              } border-b lg:border-b-0`}
             >
-              <CardHeader>
-                <div className="flex items-center gap-3 mb-2">
-                  <div className="p-2.5 rounded-lg bg-secondary/50 group-hover:bg-secondary transition-colors">
-                    {category.icon}
-                  </div>
-                  <CardTitle className="text-lg font-bold">{category.title}</CardTitle>
-                </div>
-                <p className="text-sm text-muted-foreground pl-1">{category.description}</p>
-              </CardHeader>
-
-              <CardContent>
-                <div className="flex flex-wrap gap-2.5">
-                  {category.skills.map((skill) => (
-                    <div
-                      key={skill.name}
-                      className="group/item flex items-center gap-3 px-4 py-3 text-sm font-medium rounded-lg bg-background border border-border/50 shadow-sm hover:border-primary/20 transition-all hover:shadow-md cursor-default"
-                    >
-                      <div className="flex items-center justify-center p-2 rounded-md bg-white shadow-sm border border-gray-100 group-hover/item:scale-105 transition-all duration-300">
-                        <img src={skill.logo} alt={skill.name} className="w-8 h-8 object-contain" />
-                      </div>
-                      <span className="text-foreground/80 font-semibold group-hover/item:text-foreground transition-colors">{skill.name}</span>
+              <div className="p-10 flex flex-col h-full">
+                <div className="flex items-center justify-between mb-10">
+                  <div className="flex items-center gap-4">
+                    <div className="text-primary group-hover:scale-110 transition-transform duration-500">
+                      {category.icon}
                     </div>
-                  ))}
+                    <span className="text-[10px] font-black tracking-[0.4em] uppercase text-foreground/20">Module.0{index + 1}</span>
+                  </div>
                 </div>
-              </CardContent>
-            </Card>
+                
+                <div className="space-y-4 mb-10">
+                  <h3 className="text-4xl font-black tracking-tighter text-foreground uppercase italic group-hover:text-primary transition-colors">{category.title}</h3>
+                  <p className="text-[10px] font-bold text-muted-foreground tracking-[0.2em] uppercase leading-relaxed max-w-[200px]">{category.description}</p>
+                </div>
+
+                <div className="mt-auto">
+                  <div className="flex flex-wrap gap-2">
+                    {category.skills.map((skill) => (
+                      <div
+                        key={skill.name}
+                        className="flex items-center gap-3 px-4 py-2 rounded-xl border border-white/5 text-xs font-bold uppercase tracking-widest text-foreground/40 hover:border-primary/40 hover:text-primary hover:bg-primary/5 transition-all duration-300"
+                      >
+                        <img src={skill.logo} alt={skill.name} className="w-5 h-5 object-contain" />
+                        <span>{skill.name}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </ScrollReveal>
           ))}
         </div>
       </div>
+      
+      {/* Refined Background Element */}
+      <div className="absolute top-1/2 right-0 -translate-y-1/2 w-[800px] h-[800px] bg-primary/5 rounded-full blur-[160px] pointer-events-none mix-blend-screen -z-0"></div>
     </section>
   );
 };
