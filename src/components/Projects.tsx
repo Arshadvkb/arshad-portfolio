@@ -7,6 +7,8 @@ import { ScrollReveal } from './ScrollReveal';
 import libraryLogo from '@/assets/Modern Public Library Logo Template.png';
 import chatapp from '@/assets/Creative Chatting App Logo.png'
 import penyywatch from '@/assets/Blue_Minimalist_Financial_Consulting_Agency_Logo__3_-removebg-preview.png'
+import cubecollab from '@/assets/Add a heading.png'
+import autoscribe from '@/assets/Add a heading (1).png'
 
 const Projects = () => {
   const [selectedProject, setSelectedProject] = useState<any>(null);
@@ -99,6 +101,28 @@ const Projects = () => {
         "PennyWatch is a personal finance app that helps users track income and expenses, understand spending habits, and make smarter financial decisions. With real-time tracking and simple insights, it gives a clear view of where money goes, making budgeting easier and more effective.",
       technologies: ["Flutter", "Hive Db", "GetX"],
       image: penyywatch,
+      github: "#",
+      live: "#",
+      featured: false,
+    },
+    {
+      title: "Cube Collab",
+      description:
+        "Cube Collab is a real-time collaborative platform that enables teams to create, edit, and manage projects seamlessly across multiple users in a unified workspace.",
+      detailedDescription: "Cube Collab is a modern collaboration platform designed to streamline teamwork by allowing multiple users to work together in real time within a shared digital workspace. It integrates features like live editing, document synchronization, task management, and communication tools to enhance productivity and coordination among teams. Built with scalability and performance in mind, Cube Collab supports seamless interaction between frontend and backend systems, making it ideal for developers, creators, and teams who need an efficient and centralized environment to collaborate, manage projects, and track progress effectively.",
+      technologies: ["MongoDb", "Express.js", "Node.js", "React", "AWS", "Docker"],
+      image: cubecollab,
+      github: "https://github.com/Arshadvkb/Cube-Collab",
+      live: "#",
+      featured: false,
+    },
+    {
+      title: "AutoScribe",
+      description:
+        "AutoScribe is an AI-powered platform that helps students upload their notes and instantly get clear, concise, and structured summaries.",
+      detailedDescription: "AutoScribe is a student-focused productivity tool designed to simplify studying by transforming lengthy notes into easy-to-understand summaries using AI. Students can upload their handwritten or digital notes, and the platform intelligently processes the content to generate concise summaries, key points, and organized study material. By reducing information overload and highlighting the most important concepts, AutoScribe helps students save time, improve retention, and prepare more effectively for exams, making learning more efficient and focused.",
+      technologies: ["Firebase", "Python", "Node.js", "React", "Typescript", "Docker"],
+      image:autoscribe,
       github: "#",
       live: "#",
       featured: false,
