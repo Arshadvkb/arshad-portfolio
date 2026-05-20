@@ -71,7 +71,11 @@ const Contact = () => {
                 <h3 className="text-sm font-black tracking-[0.4em] uppercase text-foreground/20 border-b border-white/5 pb-6">Direct_Links</h3>
                 
                 <div className="space-y-6">
-                  <a href="mailto:arshadvkb969@gmail.com" className="flex items-center space-x-8 group p-6 rounded-3xl bg-[#080808] border border-white/5 hover:border-primary/30 transition-all duration-500 hover:shadow-2xl hover:shadow-primary/5">
+                  <a 
+                    id="contact-email-link"
+                    href="mailto:arshadvkb969@gmail.com" 
+                    className="flex items-center space-x-8 group p-6 rounded-3xl bg-[#080808] border border-white/5 hover:border-primary/30 transition-all duration-500 hover:shadow-2xl hover:shadow-primary/5"
+                  >
                     <div className="p-5 rounded-2xl bg-primary/5 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-500 shadow-2xl">
                       <Mail className="w-7 h-7" />
                     </div>
@@ -173,6 +177,7 @@ const Contact = () => {
                   ></textarea>
                 </div>
                 <button 
+                  id="contact-submit-btn"
                   type="submit" 
                   disabled={isSending || isSent}
                   className="w-full premium-button group flex items-center justify-center gap-5 py-6 text-sm font-black tracking-[0.3em] uppercase italic disabled:opacity-50 disabled:cursor-not-allowed"

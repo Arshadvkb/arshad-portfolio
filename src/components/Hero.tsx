@@ -15,31 +15,31 @@ const Hero = () => {
 
   return (
     <section id="hero" className="min-h-screen flex flex-col justify-center relative px-6 md:px-12 pt-32 pb-20 overflow-hidden bg-background">
-      
+
       {/* Sleek architectural background elements */}
       <div className="absolute inset-0 grid-bg opacity-10 [mask-image:radial-gradient(ellipse_80%_80%_at_50%_0%,#000_70%,transparent_100%)] pointer-events-none" />
-      
+
       {/* Refined luminous accents */}
-      <motion.div 
+      <motion.div
         style={{ y: y1 }}
-        className="absolute top-[5%] -right-[10%] w-[500px] h-[500px] bg-primary/10 rounded-full blur-[120px] pointer-events-none opacity-30 mix-blend-screen" 
+        className="absolute top-[5%] -right-[10%] w-[500px] h-[500px] bg-primary/10 rounded-full blur-[120px] pointer-events-none opacity-30 mix-blend-screen"
       />
-      <motion.div 
+      <motion.div
         style={{ y: y2 }}
-        className="absolute -bottom-[15%] -left-[10%] w-[700px] h-[700px] bg-accent/5 rounded-full blur-[140px] pointer-events-none opacity-20 mix-blend-screen" 
+        className="absolute -bottom-[15%] -left-[10%] w-[700px] h-[700px] bg-accent/5 rounded-full blur-[140px] pointer-events-none opacity-20 mix-blend-screen"
       />
 
       <div className="max-w-7xl mx-auto w-full relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 items-center">
-        
+
         {/* Text Content - Focused and High-Impact */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
           className="col-span-1 lg:col-span-7 space-y-12 z-20"
         >
-          
-          <motion.div 
+
+          <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.2, duration: 0.8 }}
@@ -53,16 +53,16 @@ const Hero = () => {
           </motion.div>
 
           <div className="space-y-6">
-            <motion.h1 
+            <motion.h1
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3, duration: 1, ease: [0.16, 1, 0.3, 1] }}
               className="text-7xl md:text-8xl lg:text-[10rem] font-heading font-black tracking-tighter text-foreground leading-[0.85] uppercase"
             >
-              Backend<br/>
+              Backend<br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-accent to-primary bg-300% animate-gradient">Architect</span>
             </motion.h1>
-            <motion.p 
+            <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5, duration: 1 }}
@@ -72,28 +72,28 @@ const Hero = () => {
             </motion.p>
           </div>
 
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.7, duration: 1 }}
             className="flex flex-col sm:flex-row gap-4 pt-4"
           >
-            <button 
-              onClick={scrollToProjects} 
+            <button
+              onClick={scrollToProjects}
               className="premium-button group flex items-center justify-center gap-4 py-5 px-8 text-xs tracking-[0.2em] uppercase font-bold"
             >
-              <Terminal className="w-4 h-4 group-hover:text-accent transition-colors" /> 
+              <Terminal className="w-4 h-4 group-hover:text-accent transition-colors" />
               View Architecture
             </button>
-            <a 
-              href="/resume.pdf" 
+            <a
+              href="/resume.pdf"
               download="Arshad_VKB_CV.pdf"
               className="premium-button-secondary flex items-center justify-center gap-4 py-5 px-8 text-xs tracking-[0.2em] uppercase font-bold border-primary/20 hover:border-primary/60 bg-primary/5 text-primary transition-all duration-300"
             >
-              <ArrowDown className="w-4 h-4 animate-bounce" /> 
+              <ArrowDown className="w-4 h-4 animate-bounce" />
               Download CV
             </a>
-            <button 
+            <button
               onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
               className="premium-button-secondary py-5 px-8 text-xs tracking-[0.2em] uppercase font-bold border-white/5 hover:border-white/20 bg-transparent text-foreground/70"
             >
@@ -103,20 +103,20 @@ const Hero = () => {
         </motion.div>
 
         {/* Visual/Image Element - Minimalist and Precise */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, x: 50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.4, duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
           className="col-span-1 lg:col-span-5 relative mt-12 lg:mt-0 flex justify-center lg:justify-end z-10"
         >
           <div className="relative w-full max-w-sm aspect-[3/4] group">
-            
+
             {/* Precision corner accents */}
             <div className="absolute top-0 left-0 w-12 h-12 border-t-2 border-l-2 border-primary/40 rounded-tl-3xl -translate-x-2 -translate-y-2 group-hover:translate-x-0 group-hover:translate-y-0 transition-transform duration-500" />
             <div className="absolute bottom-0 right-0 w-12 h-12 border-b-2 border-r-2 border-primary/40 rounded-br-3xl translate-x-2 translate-y-2 group-hover:translate-x-0 group-hover:translate-y-0 transition-transform duration-500" />
-            
+
             {/* Main Visual Frame */}
-            <motion.div 
+            <motion.div
               whileHover={{ scale: 1.02 }}
               transition={{ duration: 0.5 }}
               className="relative h-full w-full rounded-2xl overflow-hidden bg-[#0A0A0A] border border-white/5 shadow-[0_0_50px_-12px_rgba(197,160,89,0.1)] transition-all duration-700"
@@ -126,14 +126,14 @@ const Hero = () => {
                 alt="Arshad VKB"
                 className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-all duration-1000 ease-out scale-110 group-hover:scale-100"
               />
-              
+
               {/* Subtle tech overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-60" />
               <div className="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
             </motion.div>
-            
+
             {/* Floating Technical HUD */}
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, scale: 0.8, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               transition={{ delay: 1, duration: 0.8 }}
@@ -149,14 +149,14 @@ const Hero = () => {
                 </div>
               </div>
             </motion.div>
-            
+
           </div>
         </motion.div>
 
       </div>
 
       {/* Floating Network Links - Vertical Line Motif */}
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.2, duration: 1 }}
@@ -176,13 +176,13 @@ const Hero = () => {
       </motion.div>
 
       {/* Mobile Social Links */}
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 1.2 }}
         className="mt-24 flex lg:hidden justify-center gap-6 z-30 relative pb-4"
       >
-         <a href="https://github.com/arshadvkb" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile" className="p-4 rounded-2xl glass-panel text-foreground/70 hover:text-primary transition-colors">
+        <a href="https://github.com/arshadvkb" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile" className="p-4 rounded-2xl glass-panel text-foreground/70 hover:text-primary transition-colors">
           <Github className="w-5 h-5" />
         </a>
         <a href="https://www.linkedin.com/in/arshad-vkb-b860a0323" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile" className="p-4 rounded-2xl glass-panel text-foreground/70 hover:text-primary transition-colors">
@@ -196,7 +196,7 @@ const Hero = () => {
         </a>
       </motion.div>
 
-      <motion.div 
+      <motion.div
         style={{ opacity }}
         animate={{ y: [0, 10, 0] }}
         transition={{ duration: 2, repeat: Infinity }}
@@ -204,7 +204,7 @@ const Hero = () => {
       >
         <ArrowDown className="text-primary/50 w-6 h-6" />
       </motion.div>
-      
+
     </section>
   );
 };

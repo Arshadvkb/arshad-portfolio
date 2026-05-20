@@ -63,6 +63,7 @@ export const Experience = () => {
                 distance={50}
               >
                 <div
+                  id={`experience-item-${index}`}
                   className={`relative flex flex-col md:flex-row gap-12 ${index % 2 === 0 ? "md:flex-row-reverse" : ""} group`}
                 >
                   {/* Technical Marker */}
@@ -76,7 +77,10 @@ export const Experience = () => {
                   </div>
 
                   {/* Content Card - Minimalist and Premium */}
-                  <div className={`ml-24 md:ml-0 md:w-[calc(50%-4rem)] p-10 flex flex-col bg-[#080808] border border-white/5 rounded-3xl hover:border-primary/20 transition-all duration-500 hover:shadow-[0_20px_50px_-12px_rgba(197,160,89,0.1)] ${index % 2 === 0 ? "md:text-left" : "md:text-left"}`}>
+                  <div 
+                    id={`experience-card-${exp.title.toLowerCase().replace(/\s+/g, '-')}`}
+                    className={`ml-24 md:ml-0 md:w-[calc(50%-4rem)] p-10 flex flex-col bg-[#080808] border border-white/5 rounded-3xl hover:border-primary/20 transition-all duration-500 hover:shadow-[0_20px_50px_-12px_rgba(197,160,89,0.1)] ${index % 2 === 0 ? "md:text-left" : "md:text-left"}`}
+                  >
                     <div className="flex items-center gap-4 mb-6">
                       <span className="text-[10px] font-black tracking-[0.2em] uppercase text-primary bg-primary/10 px-3 py-1 rounded-lg border border-primary/20">
                         {exp.duration}

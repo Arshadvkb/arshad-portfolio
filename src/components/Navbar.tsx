@@ -27,7 +27,7 @@ export const Navbar = () => {
         >
             <div className="container-width flex items-center justify-between h-24">
 
-                <a href="#" className="font-heading font-black text-2xl tracking-tighter flex items-center gap-3 group">
+                <a id="nav-logo" href="#" className="font-heading font-black text-2xl tracking-tighter flex items-center gap-3 group">
                     <div className="w-3 h-3 rounded-full bg-primary shadow-[0_0_15px_hsl(var(--primary))] group-hover:scale-125 transition-transform duration-500"></div>
                     <span className="uppercase italic">Arshad<span className="text-primary">.</span>Vkb</span>
                 </a>
@@ -38,6 +38,7 @@ export const Navbar = () => {
                         {navLinks.map((link) => (
                             <a
                                 key={link.name}
+                                id={`nav-link-${link.name.toLowerCase()}`}
                                 href={link.href}
                                 download={link.download ? "Arshad_VKB_CV.pdf" : undefined}
                                 className="text-xs font-bold uppercase tracking-[0.2em] text-foreground/50 hover:text-primary transition-all duration-300 relative group"
@@ -49,6 +50,7 @@ export const Navbar = () => {
                     </div>
 
                     <button
+                        id="nav-btn-initiate-sync"
                         onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
                         className="premium-button text-xs px-8 py-3 uppercase tracking-widest font-bold"
                     >
@@ -59,6 +61,7 @@ export const Navbar = () => {
                 {/* Mobile Menu Toggle */}
                 <div className="md:hidden flex items-center">
                     <button
+                        id="nav-mobile-menu-toggle"
                         onClick={() => setIsOpen(!isOpen)}
                         className="text-foreground focus:outline-none p-3 rounded-xl hover:bg-primary/10 transition-colors border border-white/5"
                     >
@@ -74,6 +77,7 @@ export const Navbar = () => {
                         {navLinks.map((link) => (
                             <a
                                 key={link.name}
+                                id={`nav-link-mobile-${link.name.toLowerCase()}`}
                                 href={link.href}
                                 download={link.download ? "Arshad_VKB_CV.pdf" : undefined}
                                 className="px-6 py-4 text-sm font-bold uppercase tracking-widest text-foreground/70 hover:text-primary hover:bg-primary/5 rounded-2xl transition-all"
@@ -84,6 +88,7 @@ export const Navbar = () => {
                         ))}
                     </div>
                     <button
+                        id="nav-btn-contact-mobile"
                         className="mt-6 w-full premium-button py-5 text-sm uppercase tracking-[0.2em]"
                         onClick={() => {
                             setIsOpen(false);
