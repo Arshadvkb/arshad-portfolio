@@ -35,6 +35,7 @@ const Footer = () => {
               {['Home', 'Skills', 'Experience', 'Projects', 'Contact'].map((link) => (
                 <a 
                   key={link} 
+                  id={`footer-link-${link.toLowerCase()}`}
                   href={`#${link.toLowerCase()}`} 
                   className="w-full text-foreground/50 hover:text-primary transition-all duration-300 flex items-center gap-3 text-xs font-bold uppercase tracking-widest group"
                 >
@@ -43,6 +44,7 @@ const Footer = () => {
                 </a>
               ))}
               <a 
+                id="footer-link-resume"
                 href="/resume.pdf" 
                 download="Arshad_VKB_CV.pdf"
                 className="w-full text-foreground/50 hover:text-primary transition-all duration-300 flex items-center gap-3 text-xs font-bold uppercase tracking-widest group"
@@ -58,9 +60,11 @@ const Footer = () => {
             <h4 className="text-[10px] font-black tracking-[0.4em] uppercase text-foreground/20 italic">Command_Center</h4>
             <div className="flex flex-col space-y-5">
               <a
+                id="footer-social-github"
                 href="https://github.com/Arshadvkb"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="GitHub Profile"
                 className="group flex items-center gap-4 text-xs font-bold uppercase tracking-widest text-foreground/50 hover:text-primary transition-all w-max"
               >
                 <div className="p-3 rounded-xl bg-[#0A0A0A] border border-white/5 group-hover:border-primary/40 group-hover:bg-primary/5 transition-all">
@@ -69,9 +73,11 @@ const Footer = () => {
                 GIT_HUB
               </a>
               <a
+                id="footer-social-linkedin"
                 href="https://linkedin.com/in/arshad-vkb-b860a0323"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="LinkedIn Profile"
                 className="group flex items-center gap-4 text-xs font-bold uppercase tracking-widest text-foreground/50 hover:text-primary transition-all w-max"
               >
                 <div className="p-3 rounded-xl bg-[#0A0A0A] border border-white/5 group-hover:border-primary/40 group-hover:bg-primary/5 transition-all">
@@ -80,9 +86,11 @@ const Footer = () => {
                 LINKED_IN
               </a>
               <a
+                id="footer-social-instagram"
                 href="https://www.instagram.com/arshadvkb/"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Instagram Profile"
                 className="group flex items-center gap-4 text-xs font-bold uppercase tracking-widest text-foreground/50 hover:text-primary transition-all w-max"
               >
                 <div className="p-3 rounded-xl bg-[#0A0A0A] border border-white/5 group-hover:border-primary/40 group-hover:bg-primary/5 transition-all">
@@ -91,7 +99,9 @@ const Footer = () => {
                 INSTAGRAM
               </a>
               <a
-                href="mailto:arshadvkb969.com"
+                id="footer-social-mail"
+                href="mailto:arshadvkb969@gmail.com"
+                aria-label="Email Arshad"
                 className="group flex items-center gap-4 text-xs font-bold uppercase tracking-widest text-foreground/50 hover:text-primary transition-all w-max"
               >
                 <div className="p-3 rounded-xl bg-[#0A0A0A] border border-white/5 group-hover:border-primary/40 group-hover:bg-primary/5 transition-all">

@@ -159,6 +159,7 @@ const Projects = () => {
               direction={index % 2 === 0 ? 'left' : 'right'}
             >
               <div
+                id={`project-card-${project.title.toLowerCase().replace(/\s+/g, '-')}`}
                 className="group cursor-pointer interactive-card flex flex-col h-full bg-[#080808] border-white/5 hover:border-primary/20"
                 onClick={() => handleCardClick(project)}
               >
@@ -201,12 +202,14 @@ const Projects = () => {
 
                   <div className="flex gap-4 pt-8 border-t border-white/5">
                     <button
+                      id={`project-repo-btn-${project.title.toLowerCase().replace(/\s+/g, '-')}`}
                       className="flex-1 premium-button-secondary text-[10px] h-12 uppercase tracking-widest font-black"
                       onClick={(e) => { e.stopPropagation(); window.open(project.github, '_blank'); }}
                     >
                       <Github className="w-4 h-4 mr-3" /> Repository
                     </button>
                     <button
+                      id={`project-log-btn-${project.title.toLowerCase().replace(/\s+/g, '-')}`}
                       className="flex-1 premium-button text-[10px] h-12 uppercase tracking-widest font-black"
                       onClick={(e) => { e.stopPropagation(); handleCardClick(project); }}
                     >
@@ -224,6 +227,7 @@ const Projects = () => {
         <DialogContent className="max-w-6xl p-0 overflow-hidden border border-primary/20 bg-[#080808] rounded-[32px] shadow-2xl backdrop-blur-3xl group [&>button]:hidden">
           {/* Custom Close Button */}
           <div 
+            id="project-dialog-close"
             onClick={() => setIsModalOpen(false)}
             className="absolute top-8 right-8 z-50 p-4 rounded-2xl bg-black/40 border border-white/10 text-foreground/40 hover:text-primary hover:border-primary/40 cursor-pointer transition-all duration-300 group/close flex items-center gap-3 backdrop-blur-xl"
           >
@@ -286,10 +290,18 @@ const Projects = () => {
                 </div>
 
                 <div className="flex flex-col sm:flex-row gap-6 mt-auto pt-10 border-t border-white/5">
-                  <button className="flex-1 premium-button h-16 text-[10px] font-black uppercase tracking-[0.3em] italic" onClick={() => window.open(selectedProject.live, '_blank')}>
+                  <button 
+                    id="project-dialog-live-btn"
+                    className="flex-1 premium-button h-16 text-[10px] font-black uppercase tracking-[0.3em] italic" 
+                    onClick={() => window.open(selectedProject.live, '_blank')}
+                  >
                     <Globe className="w-5 h-5 mr-3 text-accent" /> Execute Live_Sync
                   </button>
-                  <button className="flex-1 premium-button-secondary h-16 text-[10px] font-black uppercase tracking-[0.3em] italic" onClick={() => window.open(selectedProject.github, '_blank')}>
+                  <button 
+                    id="project-dialog-source-btn"
+                    className="flex-1 premium-button-secondary h-16 text-[10px] font-black uppercase tracking-[0.3em] italic" 
+                    onClick={() => window.open(selectedProject.github, '_blank')}
+                  >
                     <Github className="w-5 h-5 mr-3" /> Pull Source
                   </button>
                 </div>
