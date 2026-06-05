@@ -8,7 +8,6 @@ import { AIAssistant } from "@/components/AIAssistant";
 import { Navbar } from "@/components/Navbar";
 import { Experience } from "@/components/Experience";
 import { MouseTracker } from "@/components/MouseTracker";
-import { ScrollReveal } from "@/components/ScrollReveal";
 import { motion, useScroll, useSpring } from "framer-motion";
 
 const ScrollProgress = () => {
@@ -36,22 +35,10 @@ const Index = () => {
         <Navbar />
         <main className="flex flex-col gap-0 w-full">
           <Hero />
-          
-          <ScrollReveal delay={0.1}>
-            <Skills />
-          </ScrollReveal>
-          
-          <ScrollReveal delay={0.1}>
-            <Experience />
-          </ScrollReveal>
-          
-          <ScrollReveal delay={0.1}>
-            <Projects />
-          </ScrollReveal>
-          
-          <ScrollReveal delay={0.1}>
-            <Contact />
-          </ScrollReveal>
+          <Skills />
+          <Experience />
+          <Projects />
+          <Contact />
         </main>
         <Footer />
         <AIAssistant />

@@ -152,7 +152,7 @@ const Skills = () => {
               <Cpu className="w-4 h-4" /> Technical Arsenal
             </div>
             <h2 className="font-heading text-5xl md:text-7xl font-black tracking-tighter mb-6 uppercase italic">
-              Core <span className="text-primary text-glow">Capabilities.</span>
+              Skill <span className="text-primary text-glow">Set.</span>
             </h2>
             <p className="text-foreground/40 max-w-2xl text-xl font-light leading-relaxed">
               A precise decomposition of the technologies utilized to architect high-integrity digital ecosystems.

@@ -49,49 +49,49 @@ const Contact = () => {
 
       <div className="container-width relative z-10">
         <ScrollReveal>
-          <div className="mb-24 flex flex-col items-start">
+          <div className="mb-16 md:mb-24 flex flex-col items-start">
             <div className="inline-flex items-center gap-3 px-4 py-2 rounded-xl bg-primary/10 border border-primary/20 text-primary font-mono text-[10px] font-bold tracking-[0.3em] uppercase mb-6">
               <Send className="w-4 h-4" /> Reach Out
             </div>
-            <h2 className="font-heading text-5xl md:text-7xl font-black tracking-tighter mb-6 uppercase italic">
+            <h2 className="font-heading text-4xl sm:text-5xl md:text-7xl font-black tracking-tighter mb-6 uppercase italic">
               Initiate <span className="text-primary">Sync.</span>
             </h2>
-            <p className="text-foreground/40 max-w-2xl text-xl font-light leading-relaxed">
+            <p className="text-foreground/40 max-w-2xl text-lg sm:text-xl font-light leading-relaxed">
               Available for high-stakes backend consultations and full-cycle system deployments.
             </p>
           </div>
         </ScrollReveal>
 
-        <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-start">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-24 items-start">
           
           {/* Contact Information */}
-          <div className="space-y-16">
+          <div className="space-y-12 md:space-y-16">
             <ScrollReveal direction="left" delay={0.2}>
-              <div className="space-y-10">
+              <div className="space-y-8 sm:space-y-10">
                 <h3 className="text-sm font-black tracking-[0.4em] uppercase text-foreground/20 border-b border-white/5 pb-6">Direct_Links</h3>
                 
                 <div className="space-y-6">
                   <a 
                     id="contact-email-link"
                     href="mailto:arshadvkb969@gmail.com" 
-                    className="flex items-center space-x-8 group p-6 rounded-3xl bg-[#080808] border border-white/5 hover:border-primary/30 transition-all duration-500 hover:shadow-2xl hover:shadow-primary/5"
+                    className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-8 group p-5 sm:p-6 rounded-2xl sm:rounded-3xl bg-[#080808] border border-white/5 hover:border-primary/30 transition-all duration-500 hover:shadow-2xl hover:shadow-primary/5"
                   >
-                    <div className="p-5 rounded-2xl bg-primary/5 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-500 shadow-2xl">
-                      <Mail className="w-7 h-7" />
+                    <div className="p-4 sm:p-5 rounded-xl sm:rounded-2xl bg-primary/5 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-500 shadow-2xl">
+                      <Mail className="w-6 h-6 sm:w-7 sm:h-7" />
                     </div>
-                    <div>
+                    <div className="min-w-0 w-full">
                       <h4 className="text-[10px] font-black text-muted-foreground uppercase tracking-[0.2em] mb-2">Protocol: SMTP</h4>
-                      <p className="text-xl text-foreground font-black group-hover:text-primary transition-colors tracking-tight italic">arshadvkb969@gmail.com</p>
+                      <p className="text-base sm:text-lg md:text-xl text-foreground font-black group-hover:text-primary transition-colors tracking-tight italic break-all">arshadvkb969@gmail.com</p>
                     </div>
                   </a>
 
-                  <div className="flex items-center space-x-8 p-6 rounded-3xl bg-[#080808] border border-white/5 group hover:border-primary/20 transition-all duration-500">
-                    <div className="p-5 rounded-2xl bg-primary/5 text-primary shadow-2xl group-hover:bg-primary/10 transition-colors">
-                      <MapPin className="w-7 h-7" />
+                  <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-8 p-5 sm:p-6 rounded-2xl sm:rounded-3xl bg-[#080808] border border-white/5 group hover:border-primary/20 transition-all duration-500">
+                    <div className="p-4 sm:p-5 rounded-xl sm:rounded-2xl bg-primary/5 text-primary shadow-2xl group-hover:bg-primary/10 transition-colors">
+                      <MapPin className="w-6 h-6 sm:w-7 sm:h-7" />
                     </div>
-                    <div>
+                    <div className="min-w-0 w-full">
                       <h4 className="text-[10px] font-black text-muted-foreground uppercase tracking-[0.2em] mb-2">Node_Location</h4>
-                      <p className="text-xl text-foreground font-black tracking-tight italic">Kerala, India // IST</p>
+                      <p className="text-base sm:text-lg md:text-xl text-foreground font-black tracking-tight italic break-all">Kerala, India // IST</p>
                     </div>
                   </div>
                 </div>
@@ -99,20 +99,20 @@ const Contact = () => {
             </ScrollReveal>
 
             <ScrollReveal direction="left" delay={0.4}>
-              <div className="space-y-10">
+              <div className="space-y-8 sm:space-y-10">
                 <h3 className="text-sm font-black tracking-[0.4em] uppercase text-foreground/20 border-b border-white/5 pb-6 flex items-center gap-4">
                   <TerminalSquare className="w-5 h-5 text-primary/40" /> Operations
                 </h3>
                 
                 <div className="grid gap-4">
-                  <div className="p-8 rounded-3xl bg-[#080808] border border-white/5 relative group cursor-default hover:border-primary/20 transition-all duration-500">
-                    <div className="absolute top-8 right-8 font-mono text-4xl font-black text-white/5 group-hover:text-primary/10 transition-colors pointer-events-none italic">01</div>
+                  <div className="p-6 sm:p-8 rounded-2xl sm:rounded-3xl bg-[#080808] border border-white/5 relative group cursor-default hover:border-primary/20 transition-all duration-500">
+                    <div className="absolute top-6 right-6 sm:top-8 sm:right-8 font-mono text-3xl sm:text-4xl font-black text-white/5 group-hover:text-primary/10 transition-colors pointer-events-none italic">01</div>
                     <h4 className="font-black text-lg mb-3 relative z-10 group-hover:text-primary transition-colors uppercase italic">Backend design</h4>
                     <p className="text-sm text-foreground/40 relative z-10 leading-relaxed font-light font-sans max-w-[280px]">Scalable server architecture, robust RESTful + GraphQL APIs, and complex business logic.</p>
                   </div>
                   
-                  <div className="p-8 rounded-3xl bg-[#080808] border border-white/5 relative group cursor-default hover:border-primary/20 transition-all duration-500">
-                    <div className="absolute top-8 right-8 font-mono text-4xl font-black text-white/5 group-hover:text-primary/10 transition-colors pointer-events-none italic">02</div>
+                  <div className="p-6 sm:p-8 rounded-2xl sm:rounded-3xl bg-[#080808] border border-white/5 relative group cursor-default hover:border-primary/20 transition-all duration-500">
+                    <div className="absolute top-6 right-6 sm:top-8 sm:right-8 font-mono text-3xl sm:text-4xl font-black text-white/5 group-hover:text-primary/10 transition-colors pointer-events-none italic">02</div>
                     <h4 className="font-black text-lg mb-3 relative z-10 group-hover:text-primary transition-colors uppercase italic">Database Engineering</h4>
                     <p className="text-sm text-foreground/40 relative z-10 leading-relaxed font-light font-sans max-w-[280px]">Advanced SQL/NoSQL schema modeling, read/write optimization, and caching layers.</p>
                   </div>
@@ -123,14 +123,14 @@ const Contact = () => {
 
           {/* Contact Form */}
           <ScrollReveal direction="right" delay={0.3}>
-            <div className="p-10 md:p-14 bg-[#080808] border border-white/5 rounded-[40px] relative overflow-hidden group hover:border-primary/30 transition-all duration-700 hover:shadow-[0_40px_100px_-20px_rgba(197,160,89,0.1)]">
+            <div className="p-6 sm:p-10 md:p-14 bg-[#080808] border border-white/5 rounded-3xl sm:rounded-[40px] relative overflow-hidden group hover:border-primary/30 transition-all duration-700 hover:shadow-[0_40px_100px_-20px_rgba(197,160,89,0.1)]">
               {/* Form decorative background pattern */}
               <div className="absolute inset-0 grid-bg opacity-5 group-hover:opacity-10 transition-opacity" />
               <div className="absolute -top-32 -right-32 w-80 h-80 bg-primary/10 rounded-full blur-[80px] pointer-events-none opacity-50" />
               
-              <h3 className="text-4xl font-black tracking-tighter mb-12 relative z-10 uppercase italic">Secure Message <span className="text-primary">Tunnel.</span></h3>
-              <form ref={formRef} className="space-y-8 relative z-10" onSubmit={handleSubmit}>
-                <div className="grid md:grid-cols-2 gap-8">
+              <h3 className="text-2xl sm:text-3xl md:text-4xl font-black tracking-tighter mb-8 sm:mb-12 relative z-10 uppercase italic">Secure Message <span className="text-primary">Tunnel.</span></h3>
+              <form ref={formRef} className="space-y-6 sm:space-y-8 relative z-10" onSubmit={handleSubmit}>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
                   <div className="space-y-3">
                     <label htmlFor="name" className="text-[10px] font-black text-muted-foreground uppercase tracking-[0.3em] ml-2">Identify_Host</label>
                     <input

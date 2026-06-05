@@ -9,7 +9,7 @@ interface ScrollRevealProps {
   direction?: 'up' | 'down' | 'left' | 'right';
   duration?: number;
   distance?: number;
-  threshold?: number;
+  threshold?: number | "some" | "all";
   once?: boolean;
 }
 
@@ -21,7 +21,7 @@ export const ScrollReveal = ({
   direction = 'up',
   duration = 0.8,
   distance = 30,
-  threshold = 0.2,
+  threshold = 0.05,
   once = true,
 }: ScrollRevealProps) => {
   const directions = {
