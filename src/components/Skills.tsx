@@ -71,6 +71,7 @@ const Skills = () => {
       description: "Infrastructure & Deployment",
       skills: [
         { name: "Docker", logo: "https://cdn.simpleicons.org/docker" },
+        { name: "GitHub Actions", logo: "https://cdn.simpleicons.org/githubactions" },
         { name: "Firebase Hosting", logo: "https://cdn.simpleicons.org/firebase" },
         { name: "Vercel", logo: "https://cdn.simpleicons.org/vercel" },
         { name: "Netlify", logo: "https://cdn.simpleicons.org/netlify" },
