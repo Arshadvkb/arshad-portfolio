@@ -133,6 +133,16 @@ const Skills = () => {
       level: 88
     },
     {
+      name: "Git",
+      category: "Version Control",
+      role: "TIER_03 // VERSION_CONTROL",
+      logo: "https://cdn.simpleicons.org/git",
+      glowColor: "rgba(240, 80, 50, 0.15)",
+      description: "Managing source code history, orchestrating complex branching workflows, resolving conflicts, and ensuring repository integrity.",
+      tags: ["Branching", "Merge Conflicts", "Rebase", "Gitflow"],
+      level: 92
+    },
+    {
       name: "Firebase",
       category: "Cloud Services",
       role: "TIER_03 // CLOUD_SERVICES",
