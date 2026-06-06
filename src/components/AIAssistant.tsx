@@ -169,8 +169,8 @@ What would you like to know?`;
 
       {/* AI Assistant Chat Window */}
       {isOpen && (
-        <Card className="fixed bottom-6 right-6 z-50 w-96 h-[500px] shadow-2xl bg-background border-border">
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-3">
+        <Card className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 w-[calc(100vw-2rem)] sm:w-96 h-[500px] max-h-[80vh] sm:max-h-[500px] shadow-2xl bg-background border-border flex flex-col">
+          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-3 flex-shrink-0">
             <CardTitle className="text-lg flex items-center gap-2">
              
               AI Assistant
@@ -183,7 +183,7 @@ What would you like to know?`;
               <X className="w-4 h-4" />
             </Button>
           </CardHeader>
-          <CardContent className="flex flex-col h-[400px] p-4">
+          <CardContent className="flex flex-col flex-1 min-h-0 p-4">
             <ScrollArea className="flex-1 pr-3 mb-4">
               <div className="space-y-4">
                 {messages.map((message) => (

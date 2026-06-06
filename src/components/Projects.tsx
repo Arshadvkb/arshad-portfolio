@@ -136,12 +136,12 @@ const Projects = () => {
       
       <div className="container-width relative z-10">
         <ScrollReveal>
-          <div className="mb-24 flex flex-col md:flex-row justify-between items-end gap-10 border-b border-white/5 pb-16">
+          <div className="mb-16 md:mb-24 flex flex-col md:flex-row justify-between items-start md:items-end gap-6 md:gap-10 border-b border-white/5 pb-12 md:pb-16">
             <div className="space-y-6">
               <div className="inline-flex items-center gap-3 px-4 py-2 rounded-xl bg-primary/10 border border-primary/20 text-primary font-mono text-[10px] font-bold tracking-[0.3em] uppercase">
                 <Code2 className="w-4 h-4" /> Systems Architecture
               </div>
-              <h2 className="font-heading text-5xl md:text-8xl font-black tracking-tighter uppercase italic">
+              <h2 className="font-heading text-4xl sm:text-6xl md:text-8xl font-black tracking-tighter uppercase italic">
                 Major <span className="text-primary">Works.</span>
               </h2>
             </div>
@@ -151,7 +151,7 @@ const Projects = () => {
           </div>
         </ScrollReveal>
 
-        <div className="grid md:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
           {projects.map((project, index) => (
             <ScrollReveal 
               key={index} 
@@ -178,138 +178,138 @@ const Projects = () => {
                   </div>
                 </div>
 
-                <div className="p-10 flex flex-col flex-grow relative z-20">
+                <div className="p-6 sm:p-8 md:p-10 flex flex-col flex-grow relative z-20">
                   <div className="flex items-center justify-between mb-4">
-                    <h3 className="text-3xl font-black tracking-tight group-hover:text-primary transition-colors uppercase italic">{project.title}</h3>
+                    <h3 className="text-2xl sm:text-3xl font-black tracking-tight group-hover:text-primary transition-colors uppercase italic">{project.title}</h3>
                   </div>
-                  <p className="text-foreground/50 font-sans text-base leading-relaxed mb-8 flex-grow font-light">
+                  <p className="text-foreground/50 font-sans text-sm sm:text-base leading-relaxed mb-8 flex-grow font-light">
                     {project.description}
                   </p>
 
-                  <div className="mt-auto space-y-8">
-                    <div className="flex flex-wrap gap-3">
+                  <div className="mt-auto space-y-6 sm:space-y-8">
+                    <div className="flex flex-wrap gap-2 sm:gap-3">
                       {project.technologies.slice(0, 4).map((tech) => (
-                        <span key={tech} className="font-bold text-[10px] tracking-widest uppercase px-3 py-1.5 rounded-lg bg-white/5 border border-white/5 text-foreground/40 group-hover:border-primary/20 group-hover:text-primary transition-all">
+                        <span key={tech} className="font-bold text-[9px] sm:text-[10px] tracking-widest uppercase px-2.5 py-1.5 rounded-lg bg-white/5 border border-white/5 text-foreground/40 group-hover:border-primary/20 group-hover:text-primary transition-all">
                           {tech}
                         </span>
                       ))}
                       {project.technologies.length > 4 && (
-                        <span className="font-bold text-[10px] tracking-widest uppercase px-3 py-1.5 rounded-lg bg-transparent border border-white/5 text-foreground/20">
+                        <span className="font-bold text-[9px] sm:text-[10px] tracking-widest uppercase px-2.5 py-1.5 rounded-lg bg-transparent border border-white/5 text-foreground/20">
                           +{project.technologies.length - 4}
                         </span>
                       )}
                     </div>
 
-                  <div className="flex gap-4 pt-8 border-t border-white/5">
-                    <button
-                      id={`project-repo-btn-${project.title.toLowerCase().replace(/\s+/g, '-')}`}
-                      className="flex-1 premium-button-secondary text-[10px] h-12 uppercase tracking-widest font-black"
-                      onClick={(e) => { e.stopPropagation(); window.open(project.github, '_blank'); }}
-                    >
-                      <Github className="w-4 h-4 mr-3" /> Repository
-                    </button>
-                    <button
-                      id={`project-log-btn-${project.title.toLowerCase().replace(/\s+/g, '-')}`}
-                      className="flex-1 premium-button text-[10px] h-12 uppercase tracking-widest font-black"
-                      onClick={(e) => { e.stopPropagation(); handleCardClick(project); }}
-                    >
-                      <ArrowRight className="w-4 h-4 mr-3" /> System_Log
-                    </button>
+                    <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-6 sm:pt-8 border-t border-white/5">
+                      <button
+                        id={`project-repo-btn-${project.title.toLowerCase().replace(/\s+/g, '-')}`}
+                        className="w-full sm:flex-1 premium-button-secondary text-[10px] h-12 uppercase tracking-widest font-black"
+                        onClick={(e) => { e.stopPropagation(); window.open(project.github, '_blank'); }}
+                      >
+                        <Github className="w-4 h-4 mr-3" /> Repository
+                      </button>
+                      <button
+                        id={`project-log-btn-${project.title.toLowerCase().replace(/\s+/g, '-')}`}
+                        className="w-full sm:flex-1 premium-button text-[10px] h-12 uppercase tracking-widest font-black"
+                        onClick={(e) => { e.stopPropagation(); handleCardClick(project); }}
+                      >
+                        <ArrowRight className="w-4 h-4 mr-3" /> System_Log
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
+            </ScrollReveal>
+          ))}
+        </div>
+
+        <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
+          <DialogContent className="w-[92vw] max-w-6xl p-0 overflow-hidden border border-primary/20 bg-[#080808] rounded-2xl sm:rounded-[32px] shadow-2xl backdrop-blur-3xl group [&>button]:hidden">
+            {/* Custom Close Button */}
+            <div 
+              id="project-dialog-close"
+              onClick={() => setIsModalOpen(false)}
+              className="absolute top-4 right-4 sm:top-8 sm:right-8 z-50 p-2.5 sm:p-4 rounded-xl sm:rounded-2xl bg-black/40 border border-white/10 text-foreground/40 hover:text-primary hover:border-primary/40 cursor-pointer transition-all duration-300 group/close flex items-center gap-3 backdrop-blur-xl"
+            >
+              <span className="text-[10px] font-black uppercase tracking-widest opacity-0 group-hover/close:opacity-100 transition-opacity hidden sm:inline">Close</span>
+              <X className="w-4 h-4 sm:w-5 sm:w-5" />
             </div>
-          </ScrollReveal>
-        ))}
-      </div>
 
-      <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
-        <DialogContent className="max-w-6xl p-0 overflow-hidden border border-primary/20 bg-[#080808] rounded-[32px] shadow-2xl backdrop-blur-3xl group [&>button]:hidden">
-          {/* Custom Close Button */}
-          <div 
-            id="project-dialog-close"
-            onClick={() => setIsModalOpen(false)}
-            className="absolute top-8 right-8 z-50 p-4 rounded-2xl bg-black/40 border border-white/10 text-foreground/40 hover:text-primary hover:border-primary/40 cursor-pointer transition-all duration-300 group/close flex items-center gap-3 backdrop-blur-xl"
-          >
-            <span className="text-[10px] font-black uppercase tracking-widest opacity-0 group-hover/close:opacity-100 transition-opacity">Close</span>
-            <X className="w-5 h-5" />
-          </div>
-
-          {selectedProject && (
-            <div className="flex flex-col lg:flex-row min-h-[600px] max-h-[90vh] overflow-y-auto lg:overflow-hidden">
-              {/* Visual Side */}
-              <div className="w-full lg:w-1/2 relative bg-[#050505] overflow-hidden h-[400px] lg:h-auto">
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent to-[#080808] z-10 lg:block hidden"></div>
-                <div className="absolute inset-0 bg-gradient-to-t from-[#080808] to-transparent z-10 lg:hidden block"></div>
-                <img
-                  src={selectedProject.image}
-                  alt={selectedProject.title}
-                  className="w-full h-full object-cover opacity-80"
-                />
-                <div className="absolute top-12 left-12 z-20">
-                  <div className="p-4 rounded-2xl bg-primary/10 backdrop-blur-3xl border border-primary/20 text-primary">
-                    <Code2 className="w-8 h-8" />
-                  </div>
-                </div>
-              </div>
-
-              {/* Content Side */}
-              <div className="w-full lg:w-1/2 p-8 md:p-16 lg:p-20 flex flex-col relative z-20 overflow-y-auto custom-scrollbar">
-                
-                <DialogHeader className="mb-12 text-left">
-                  <div className="flex items-center gap-4 mb-6">
-                    <span className="text-[10px] font-black tracking-[0.4em] uppercase text-primary">Deployment_ID: PRJ-00{projects.indexOf(selectedProject) + 1}</span>
-                    <div className="h-px flex-grow bg-primary/10" />
-                  </div>
-                  <DialogTitle className="text-4xl md:text-6xl font-black tracking-tighter uppercase italic mb-6">
-                    {selectedProject.title}<span className="text-primary">.</span>
-                  </DialogTitle>
-                  <DialogDescription className="text-xs font-bold tracking-[0.4em] uppercase text-foreground/30">
-                    Systems Architecture Documentation
-                  </DialogDescription>
-                </DialogHeader>
-
-                <div className="flex-grow space-y-12 mb-16">
-                  <div className="space-y-4">
-                    <h4 className="text-[10px] font-black tracking-[0.3em] uppercase text-foreground/20">Executive_Summary</h4>
-                    <p className="text-foreground/60 leading-relaxed font-sans text-lg font-light">
-                      {selectedProject.detailedDescription}
-                    </p>
-                  </div>
-
-                  <div className="space-y-6">
-                    <h4 className="text-[10px] font-black tracking-[0.3em] uppercase text-foreground/20">Integrated_Stack</h4>
-                    <div className="flex flex-wrap gap-3">
-                      {selectedProject.technologies.map((tech: string) => (
-                        <span key={tech} className="font-bold text-[10px] tracking-widest uppercase px-4 py-2 rounded-xl bg-white/5 border border-white/5 text-foreground/40">
-                          {tech}
-                        </span>
-                      ))}
+            {selectedProject && (
+              <div className="flex flex-col lg:flex-row min-h-[500px] lg:min-h-[600px] max-h-[85vh] lg:max-h-[90vh] overflow-y-auto lg:overflow-hidden">
+                {/* Visual Side */}
+                <div className="w-full lg:w-1/2 relative bg-[#050505] overflow-hidden h-[200px] sm:h-[300px] lg:h-auto">
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent to-[#080808] z-10 lg:block hidden"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#080808] to-transparent z-10 lg:hidden block"></div>
+                  <img
+                    src={selectedProject.image}
+                    alt={selectedProject.title}
+                    className="w-full h-full object-cover opacity-80"
+                  />
+                  <div className="absolute top-6 left-6 sm:top-12 sm:left-12 z-20">
+                    <div className="p-3 sm:p-4 rounded-xl sm:rounded-2xl bg-primary/10 backdrop-blur-3xl border border-primary/20 text-primary">
+                      <Code2 className="w-6 h-6 sm:w-8 sm:h-8" />
                     </div>
                   </div>
                 </div>
 
-                <div className="flex flex-col sm:flex-row gap-6 mt-auto pt-10 border-t border-white/5">
-                  <button 
-                    id="project-dialog-live-btn"
-                    className="flex-1 premium-button h-16 text-[10px] font-black uppercase tracking-[0.3em] italic" 
-                    onClick={() => window.open(selectedProject.live, '_blank')}
-                  >
-                    <Globe className="w-5 h-5 mr-3 text-accent" /> Execute Live_Sync
-                  </button>
-                  <button 
-                    id="project-dialog-source-btn"
-                    className="flex-1 premium-button-secondary h-16 text-[10px] font-black uppercase tracking-[0.3em] italic" 
-                    onClick={() => window.open(selectedProject.github, '_blank')}
-                  >
-                    <Github className="w-5 h-5 mr-3" /> Pull Source
-                  </button>
+                {/* Content Side */}
+                <div className="w-full lg:w-1/2 p-6 sm:p-10 md:p-16 lg:p-20 flex flex-col relative z-20 overflow-y-auto custom-scrollbar">
+                  
+                  <DialogHeader className="mb-8 md:mb-12 text-left">
+                    <div className="flex items-center gap-4 mb-4 sm:mb-6">
+                      <span className="text-[10px] font-black tracking-[0.4em] uppercase text-primary">Deployment_ID: PRJ-00{projects.indexOf(selectedProject) + 1}</span>
+                      <div className="h-px flex-grow bg-primary/10" />
+                    </div>
+                    <DialogTitle className="text-3xl sm:text-4xl md:text-6xl font-black tracking-tighter uppercase italic mb-4 sm:mb-6">
+                      {selectedProject.title}<span className="text-primary">.</span>
+                    </DialogTitle>
+                    <DialogDescription className="text-[10px] sm:text-xs font-bold tracking-[0.4em] uppercase text-foreground/30">
+                      Systems Architecture Documentation
+                    </DialogDescription>
+                  </DialogHeader>
+
+                  <div className="flex-grow space-y-8 md:space-y-12 mb-10 md:mb-16">
+                    <div className="space-y-3 sm:space-y-4">
+                      <h4 className="text-[9px] sm:text-[10px] font-black tracking-[0.3em] uppercase text-foreground/20">Executive_Summary</h4>
+                      <p className="text-foreground/60 leading-relaxed font-sans text-sm sm:text-lg font-light">
+                        {selectedProject.detailedDescription}
+                      </p>
+                    </div>
+
+                    <div className="space-y-4 sm:space-y-6">
+                      <h4 className="text-[9px] sm:text-[10px] font-black tracking-[0.3em] uppercase text-foreground/20">Integrated_Stack</h4>
+                      <div className="flex flex-wrap gap-2 sm:gap-3">
+                        {selectedProject.technologies.map((tech: string) => (
+                          <span key={tech} className="font-bold text-[9px] sm:text-[10px] tracking-widest uppercase px-3 py-1.5 sm:px-4 sm:py-2 rounded-lg sm:rounded-xl bg-white/5 border border-white/5 text-foreground/40">
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 mt-auto pt-6 sm:pt-10 border-t border-white/5">
+                    <button 
+                      id="project-dialog-live-btn"
+                      className="flex-1 premium-button h-14 sm:h-16 text-[10px] font-black uppercase tracking-[0.3em] italic" 
+                      onClick={() => window.open(selectedProject.live, '_blank')}
+                    >
+                      <Globe className="w-4 h-4 sm:w-5 sm:h-5 mr-3 text-accent" /> Execute Live_Sync
+                    </button>
+                    <button 
+                      id="project-dialog-source-btn"
+                      className="flex-1 premium-button-secondary h-14 sm:h-16 text-[10px] font-black uppercase tracking-[0.3em] italic" 
+                      onClick={() => window.open(selectedProject.github, '_blank')}
+                    >
+                      <Github className="w-4 h-4 sm:w-5 sm:h-5 mr-3" /> Pull Source
+                    </button>
+                  </div>
                 </div>
               </div>
-            </div>
-          )}
-        </DialogContent>
-      </Dialog>
+            )}
+          </DialogContent>
+        </Dialog>
       </div>
     </section>
   );
