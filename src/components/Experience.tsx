@@ -3,35 +3,47 @@ import { ScrollReveal } from "./ScrollReveal";
 
 export const Experience = () => {
     const experiences = [
-        {
-            title: "10th",
-            company: "St Mary's English Medium School Chevrambalam",
-            duration: "2020",
-            description: "Gained hands on experience in programming and problem-solving.",
-            icon: <GraduationCap className="w-5 h-5 text-primary" />,
-        },
-        {
-            title: "12th",
-            company: "St Mary's English Medium School Chevrambalam",
-            duration: "2022",
-            description: "Specialized in Computer Science. Active member of the tech community and gained hands on experience in data structures and algorithms.",
-            icon: <GraduationCap className="w-5 h-5 text-primary" />,
-        },
-        {
-            title: "BSc Computer Science",
-            company: "College of Applied Science Vazhakkad",
-            duration: "2022 - 2025",
-            description: "Specialized in Computer Science. Active member of the tech community and participated in various hackathons and coding competitions.",
-            icon: <GraduationCap className="w-5 h-5 text-primary" />,
-        }, 
-        {
-            title: "Python and Flutter Intern",
-            company: "Regional Technologies",
-            duration: "2025",
-            description: "Developed cross-platform mobile applications using Flutter and built robust backend services with Python. Collaborated on full-stack projects to deliver scalable solutions.",
-            icon: <Briefcase className="w-5 h-5 text-primary" />,
-        },
-    ]
+      {
+        title: "10th",
+        company: "St Mary's English Medium School Chevrambalam",
+        duration: "2020",
+        description:
+          "Gained hands on experience in programming and problem-solving.",
+        icon: <GraduationCap className="w-5 h-5 text-primary" />,
+      },
+      {
+        title: "12th",
+        company: "St Mary's English Medium School Chevrambalam",
+        duration: "2022",
+        description:
+          "Specialized in Computer Science. Active member of the tech community and gained hands on experience in data structures and algorithms.",
+        icon: <GraduationCap className="w-5 h-5 text-primary" />,
+      },
+      {
+        title: "BSc Computer Science",
+        company: "College of Applied Science Vazhakkad",
+        duration: "2022 - 2025",
+        description:
+          "Specialized in Computer Science. Active member of the tech community and participated in various hackathons and coding competitions.",
+        icon: <GraduationCap className="w-5 h-5 text-primary" />,
+      },
+      {
+        title: "Python and Flutter Intern",
+        company: "Regional Technologies",
+        duration: "2025",
+        description:
+          "Developed cross-platform mobile applications using Flutter and built robust backend services with Python. Collaborated on full-stack projects to deliver scalable solutions.",
+        icon: <Briefcase className="w-5 h-5 text-primary" />,
+      },
+      {
+        title: "MERN Stack Developer",
+        company: "Bridgeon",
+        duration: "2026",
+        description:
+          "Contributed to full-stack application development by building scalable features with MongoDB, Express.js, React.js, and Node.js.",
+        icon: <Briefcase className="w-5 h-5 text-primary" />,
+      },
+    ];
 
   return (
     <section id="experience" className="section-padding bg-background relative overflow-hidden border-t border-white/5">
